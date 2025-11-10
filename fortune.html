@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Brand | Destiny Reading (Fortune Telling)</title>
+  <title>Your Brand | Destiny Reading (Chinese-Style)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 和首页一样的依赖 -->
+  <!-- 和其它页面保持一致的依赖 -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-inter text-dark bg-light antialiased">
 
-  <!-- 顶部导航：和首页风格统一，只是当前页面高亮 Destiny Reading -->
-  <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+  <!-- 顶部导航：Destiny Reading 高亮 -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-      <!-- Logo 回首页 -->
       <a href="index.html#home" class="flex items-center space-x-2">
         <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
           <i class="fa fa-moon-o text-white text-xl"></i>
@@ -25,82 +23,82 @@
       </a>
       <nav class="hidden md:flex items-center space-x-8">
         <a href="fortune.html" class="text-secondary font-semibold">Destiny Reading</a>
-        <a href="feng-shui.html" class="text-white hover:text-secondary transition-colors font-medium">Feng Shui</a>
-        <a href="shop.html" class="text-white hover:text-secondary transition-colors font-medium">Shop</a>
-        <a href="index.html#testimonials" class="text-white hover:text-secondary transition-colors font-medium">Testimonials</a>
-        <a href="#contact" class="bg-secondary hover:bg-secondary/90 text-white px-6 py-2 rounded-full transition-all font-medium">
-          Contact
-        </a>
+        <a href="feng-shui.html">Feng Shui</a>
+        <a href="shop.html">Shop</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
       <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
         <i class="fa fa-bars"></i>
       </button>
     </div>
-    <!-- 手机菜单 -->
-    <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
+
+    <!-- 手机导航 -->
+    <div id="mobile-menu"
+         class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
       <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
         <a href="fortune.html" class="text-primary font-medium py-2">Destiny Reading</a>
         <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
         <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
         <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
-        <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
+        <a href="index.html#contact"
+           class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
           Contact
         </a>
       </div>
     </div>
   </header>
 
-  <!-- HERO：顶部介绍 + 行动按钮 -->
+  <!-- HERO：命运解读首屏 -->
   <section class="relative pt-32 pb-20 lg:pb-28 overflow-hidden">
-    <!-- 背景图+遮罩 -->
     <div class="absolute inset-0 z-0">
-      <img src="https://picsum.photos/id/1074/1600/900" alt="Destiny reading" class="w-full h-full object-cover">
+      <!-- 可以换成你自己的命理/八字相关照片 -->
+      <img src="https://picsum.photos/id/1050/1600/900" alt="Destiny reading background" class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-black/70"></div>
     </div>
 
     <div class="relative z-10">
       <div class="container mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <!-- 左：文字 -->
+          <!-- 左侧文字 -->
           <div class="text-white fade-in">
-            <p class="uppercase tracking-[0.25em] text-xs text-secondary mb-4">FORTUNE TELLING · DESTINY READING</p>
-            <h1 class="text-[clamp(2.2rem,4.5vw,3.5rem)] font-bold mb-4 leading-tight">
-              Destiny Reading<br>for real-life decisions
+            <p class="uppercase tracking-[0.25em] text-xs text-secondary mb-4">DESTINY READING · CHINESE-STYLE</p>
+            <h1 class="text-[clamp(2.2rem,4.5vw,3.4rem)] font-bold mb-4 leading-tight">
+              Clear answers from a<br>Chinese-style destiny reading
             </h1>
             <p class="text-white/90 mb-6 text-[clamp(0.95rem,2vw,1.05rem)]">
-              A one-on-one Chinese-style destiny reading using your birth details to understand your timing,
-              patterns, and direction around work, money, relationships, and major life shifts.
+              Using your birth date and time, I look at classic topics Chinese fortune-telling has focused on
+              for centuries: career and money, relationships and marriage, health, family, timing, and major life cycles.
             </p>
-            <ul class="text-white/90 space-y-2 mb-8 text-sm">
-              <li>• Clear picture of your current cycle (not just “good or bad luck”)</li>
-              <li>• Practical suggestions for the next 6–18 months</li>
-              <li>• Calm, honest, and straightforward style — no fear-based language</li>
-            </ul>
+            <p class="text-white/75 text-sm mb-8">
+              All readings are written – no voice or video call – so you can reread them when you need clarity.
+            </p>
             <div class="flex flex-col sm:flex-row gap-4">
-              <a href="#packages" class="bg-secondary hover:bg-secondary/90 text-white px-8 py-3 rounded-full font-medium text-sm sm:text-base">
+              <a href="#packages"
+                 class="bg-secondary hover:bg-secondary/90 text-white px-8 py-3 rounded-full font-medium text-sm sm:text-base">
                 View reading packages
               </a>
-              <a href="#contact" class="border border-white/70 hover:border-secondary hover:text-secondary text-white px-8 py-3 rounded-full font-medium text-sm sm:text-base">
-                Book a session
+              <a href="#how-it-works"
+                 class="border border-white/70 hover:border-secondary hover:text-secondary text-white px-8 py-3 rounded-full font-medium text-sm sm:text-base">
+                How it works
               </a>
             </div>
-            <p class="mt-4 text-xs text-white/70">
-              Approx. 30–90 minutes depending on package · Online (voice or video) · English only
-            </p>
           </div>
 
-          <!-- 右：信息卡片 -->
+          <!-- 右侧信息块 -->
           <div class="fade-in">
-            <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 lg:p-10 text-dark">
-              <h2 class="text-xl font-bold mb-4">What you can use this for</h2>
+            <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 lg:p-10 text-dark">
+              <h2 class="text-xl font-bold mb-4">What a Chinese destiny reading looks at</h2>
               <div class="space-y-4 text-sm">
                 <div class="flex gap-3">
                   <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <i class="fa fa-briefcase text-primary text-sm"></i>
                   </div>
                   <div>
-                    <p class="font-semibold mb-1">Career & money</p>
-                    <p class="text-gray-600">Changing jobs, starting a business, or deciding whether to stay or move.</p>
+                    <p class="font-semibold mb-1">Career & money flow</p>
+                    <p class="text-gray-600">
+                      Your natural strengths, work style, and how money tends to come and go through different periods.
+                    </p>
                   </div>
                 </div>
                 <div class="flex gap-3">
@@ -108,24 +106,38 @@
                     <i class="fa fa-heart-o text-primary text-sm"></i>
                   </div>
                   <div>
-                    <p class="font-semibold mb-1">Love & relationships</p>
-                    <p class="text-gray-600">Understanding your patterns in love, family, and close partnerships.</p>
+                    <p class="font-semibold mb-1">Relationships & marriage</p>
+                    <p class="text-gray-600">
+                      Patterns in love, intimacy, and partnership, and when energy supports connection or separation.
+                    </p>
                   </div>
                 </div>
                 <div class="flex gap-3">
                   <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <i class="fa fa-plane text-primary text-sm"></i>
+                    <i class="fa fa-home text-primary text-sm"></i>
                   </div>
                   <div>
-                    <p class="font-semibold mb-1">Life direction</p>
-                    <p class="text-gray-600">Timing for relocation, study, or other big changes that affect your path.</p>
+                    <p class="font-semibold mb-1">Family & home</p>
+                    <p class="text-gray-600">
+                      Dynamics with parents, children, and home life, including when it’s supportive to move or stay.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-3">
+                  <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <i class="fa fa-heartbeat text-primary text-sm"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold mb-1">Health & energy patterns</p>
+                    <p class="text-gray-600">
+                      General tendencies in physical vitality, stress, and where you may need long-term support.
+                    </p>
                   </div>
                 </div>
               </div>
-              <div class="mt-6 border-t pt-4 text-xs text-gray-500">
-                This session is for spiritual and personal insight only. It does not replace professional legal,
-                medical, mental health, or financial advice.
-              </div>
+              <p class="mt-6 text-xs text-gray-500">
+                Readings are spiritual guidance, not a substitute for medical, psychological, financial, or legal advice.
+              </p>
             </div>
           </div>
         </div>
@@ -133,290 +145,271 @@
     </div>
   </section>
 
-  <!-- 模块：适合谁 -->
+  <!-- 模块：你可以用算命解决哪些问题 -->
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center mb-10 fade-in">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Is this reading for you?</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">What people usually ask in a Chinese-style reading</h2>
         <p class="text-gray-600">
-          This is not about predicting lottery numbers. It is about understanding your own nature and timing so you
-          can make grounded decisions.
+          In traditional Chinese fortune-telling, we look not only at “good or bad”, but at timing, tendencies,
+          and how to work with your nature instead of fighting it.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-light rounded-2xl shadow-md p-6 card-hover fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-            <i class="fa fa-question text-primary"></i>
-          </div>
-          <h3 class="font-semibold mb-2">You’re at a crossroads</h3>
-          <p class="text-gray-600 text-sm">
-            You feel a big change is coming but you’re not sure if it’s time to move, quit, or wait.
-          </p>
+      <div class="grid md:grid-cols-3 gap-6 text-sm">
+        <div class="bg-light rounded-2xl shadow-md p-6 fade-in">
+          <h3 class="font-semibold mb-3 flex items-center gap-2">
+            <i class="fa fa-briefcase text-primary text-sm"></i>
+            Career & money
+          </h3>
+          <ul class="text-gray-600 space-y-2">
+            <li>• Is this a good time to change jobs or start a business?</li>
+            <li>• How does money tend to flow in my chart?</li>
+            <li>• What kind of work fits my nature?</li>
+          </ul>
         </div>
-        <div class="bg-light rounded-2xl shadow-md p-6 card-hover fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-            <i class="fa fa-repeat text-primary"></i>
-          </div>
-          <h3 class="font-semibold mb-2">Patterns keep repeating</h3>
-          <p class="text-gray-600 text-sm">
-            Similar relationship, money, or work situations keep happening and you want to understand why.
-          </p>
+
+        <div class="bg-light rounded-2xl shadow-md p-6 fade-in">
+          <h3 class="font-semibold mb-3 flex items-center gap-2">
+            <i class="fa fa-heart-o text-primary text-sm"></i>
+            Love, marriage & family
+          </h3>
+          <ul class="text-gray-600 space-y-2">
+            <li>• Is this relationship long-term potential or short season?</li>
+            <li>• When is it easier for me to meet a stable partner?</li>
+            <li>• Marriage, children, and family timing.</li>
+          </ul>
         </div>
-        <div class="bg-light rounded-2xl shadow-md p-6 card-hover fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-            <i class="fa fa-line-chart text-primary"></i>
-          </div>
-          <h3 class="font-semibold mb-2">You want a long-term view</h3>
-          <p class="text-gray-600 text-sm">
-            You want to see the bigger cycles of your life so you can plan with more confidence.
-          </p>
+
+        <div class="bg-light rounded-2xl shadow-md p-6 fade-in">
+          <h3 class="font-semibold mb-3 flex items-center gap-2">
+            <i class="fa fa-clock-o text-primary text-sm"></i>
+            Timing & big decisions
+          </h3>
+          <ul class="text-gray-600 space-y-2">
+            <li>• Is this year supportive for moving or staying?</li>
+            <li>• Which years feel heavier or easier for me?</li>
+            <li>• What patterns keep repeating and why?</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 套餐设计：三个套餐 -->
-  <section id="packages" class="py-18 bg-gray-50 pt-16 pb-20">
+  <!-- 套餐区域 -->
+  <section id="packages" class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center mb-10 fade-in">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Destiny Reading Packages</h2>
+      <div class="max-w-3xl mx-auto text-center mb-12 fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Choose your destiny reading package</h2>
         <p class="text-gray-600">
-          You can adjust the prices to your real rates. For U.S. clients，清楚的套餐会让他们更容易选择。
+          All readings are written only – no live call – so you can read slowly, highlight, and return to them
+          when you need to make decisions.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- 套餐 1：入门 -->
-        <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col card-hover fade-in">
-          <p class="text-xs uppercase tracking-[0.2em] text-gray-500 mb-2">STARTER</p>
-          <h3 class="text-lg font-bold mb-1">Quick Check-In</h3>
-          <p class="text-primary font-semibold mb-2">$79</p>
-          <p class="text-gray-600 text-sm mb-4">
-            30-minute focused reading for 1–2 specific questions.
-          </p>
-          <ul class="text-sm text-gray-700 space-y-2 mb-6">
-            <li>• 30-minute online call (voice or video)</li>
-            <li>• Focus on 1–2 key topics (work, money, or relationship)</li>
-            <li>• Short timing overview for the next 6–12 months</li>
-          </ul>
-          <button
-            type="button"
-            class="mt-auto w-full bg-primary/10 hover:bg-primary/20 text-primary py-2.5 rounded-full text-sm font-medium"
-            data-package="Quick Check-In (30 min)"
-          >
-            Book Quick Check-In
-          </button>
-        </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- 单个问题 -->
+        <article class="bg-white rounded-2xl shadow-xl p-7 flex flex-col fade-in">
+          <div class="mb-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-secondary mb-2">SIMPLE & FOCUSED</p>
+            <h3 class="text-lg font-bold mb-2">Single Question Reading</h3>
+            <p class="text-gray-600 text-sm">
+              One clear question, one focused answer based on your Chinese destiny chart.
+            </p>
+          </div>
+          <div class="mb-4">
+            <p class="text-2xl font-bold text-primary">$XX</p>
+            <p class="text-xs text-gray-500">Written response · approx. 400–700 words</p>
+          </div>
+          <div class="border-t border-gray-200 pt-4 mb-4 text-sm">
+            <p class="font-semibold text-gray-800 mb-2">Good for questions like:</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>• “Is this a supportive year to change jobs?”</li>
+              <li>• “What is the potential of this relationship?”</li>
+              <li>• “Should I move or stay in my current city?”</li>
+            </ul>
+          </div>
+          <div class="text-sm text-gray-600 mb-6">
+            <p class="font-semibold mb-1">What you receive:</p>
+            <ul class="space-y-1">
+              <li>• A written answer in email (English)</li>
+              <li>• Short explanation of the timing and pattern behind your question</li>
+              <li>• Simple suggestions on how to work with the current energy</li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <p class="text-xs text-gray-500 mb-2">No voice or video call. Written only.</p>
+            <a href="#how-it-works"
+               class="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full text-sm font-medium">
+              Start with a single question
+            </a>
+          </div>
+        </article>
 
-        <!-- 套餐 2：主打 -->
-        <div class="bg-white rounded-2xl shadow-lg p-6 border border-secondary relative flex flex-col card-hover fade-in">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs px-3 py-1 rounded-full">
-            Most Popular
-          </span>
-          <p class="text-xs uppercase tracking-[0.2em] text-gray-500 mb-2 mt-2 text-center">DEEP DIVE</p>
-          <h3 class="text-lg font-bold mb-1 text-center">Full Destiny Reading</h3>
-          <p class="text-primary font-semibold mb-2 text-center">$189</p>
-          <p class="text-gray-600 text-sm mb-4 text-center">
-            60–75 minutes to map out your nature, cycles, and decisions.
-          </p>
-          <ul class="text-sm text-gray-700 space-y-2 mb-6">
-            <li>• 60–75 minute online session</li>
-            <li>• Full chart overview: strengths, stress points, emotional patterns</li>
-            <li>• 10-year cycle highlights + next 1–3 years timing</li>
-            <li>• Time for your questions (career, money, relationships, relocation, etc.)</li>
-          </ul>
-          <button
-            type="button"
-            class="mt-auto w-full bg-secondary hover:bg-secondary/90 text-white py-2.5 rounded-full text-sm font-medium"
-            data-package="Full Destiny Reading (60–75 min)"
-          >
-            Book Full Reading
-          </button>
-        </div>
+        <!-- 三个问题 -->
+        <article class="bg-white rounded-2xl shadow-2xl p-7 flex flex-col border border-secondary/40 fade-in">
+          <div class="mb-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-secondary mb-2">MOST POPULAR</p>
+            <h3 class="text-lg font-bold mb-2">Three Question Reading</h3>
+            <p class="text-gray-600 text-sm">
+              Up to three related or different questions about career, money, love, family, health or timing.
+            </p>
+          </div>
+          <div class="mb-4">
+            <p class="text-2xl font-bold text-primary">$XX</p>
+            <p class="text-xs text-gray-500">Written response · approx. 900–1,500 words</p>
+          </div>
+          <div class="border-t border-gray-200 pt-4 mb-4 text-sm">
+            <p class="font-semibold text-gray-800 mb-2">Examples of three-question sets:</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>• “Career direction, money flow, and best timing in the next 2–3 years.”</li>
+              <li>• “Relationship, marriage potential, and family/children timing.”</li>
+              <li>• “Move vs. stay, work changes, and overall luck this year.”</li>
+            </ul>
+          </div>
+          <div class="text-sm text-gray-600 mb-6">
+            <p class="font-semibold mb-1">What you receive:</p>
+            <ul class="space-y-1">
+              <li>• A structured written reading sent by email</li>
+              <li>• Short overview of your chart nature (strengths / challenges)</li>
+              <li>• Timing focus: which years are heavier or lighter for your questions</li>
+              <li>• Practical suggestions rooted in traditional Chinese thinking, translated into modern life</li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <p class="text-xs text-gray-500 mb-2">No live session. You read in your own time.</p>
+            <a href="#how-it-works"
+               class="inline-flex items-center justify-center w-full bg-secondary hover:bg-secondary/90 text-white py-2.5 rounded-full text-sm font-semibold">
+              Choose the three-question reading
+            </a>
+          </div>
+        </article>
 
-        <!-- 套餐 3：高级 -->
-        <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col card-hover fade-in">
-          <p class="text-xs uppercase tracking-[0.2em] text-gray-500 mb-2">INTENSIVE</p>
-          <h3 class="text-lg font-bold mb-1">Year Roadmap</h3>
-          <p class="text-primary font-semibold mb-2">$299</p>
-          <p class="text-gray-600 text-sm mb-4">
-            For major transitions or planning an important year ahead.
-          </p>
-          <ul class="text-sm text-gray-700 space-y-2 mb-6">
-            <li>• 90-minute session or 2 × 45-minute calls</li>
-            <li>• Detailed focus on work, money, and relationships</li>
-            <li>• Month-by-month key timing for the next 12–18 months</li>
-            <li>• Short written summary of main points (sent by email)</li>
-          </ul>
-          <button
-            type="button"
-            class="mt-auto w-full bg-primary/10 hover:bg-primary/20 text-primary py-2.5 rounded-full text-sm font-medium"
-            data-package="Year Roadmap (90 min)"
-          >
-            Book Year Roadmap
-          </button>
-        </div>
+        <!-- 完整解析 -->
+        <article class="bg-white rounded-2xl shadow-xl p-7 flex flex-col fade-in">
+          <div class="mb-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-secondary mb-2">FULL ANALYSIS</p>
+            <h3 class="text-lg font-bold mb-2">Full Life Path Analysis</h3>
+            <p class="text-gray-600 text-sm">
+              A deeper overview of your whole chart – career, money, relationships, health, personality, and major life cycles.
+            </p>
+          </div>
+          <div class="mb-4">
+            <p class="text-2xl font-bold text-primary">$XX</p>
+            <p class="text-xs text-gray-500">Written report · approx. 2,000–3,000 words</p>
+          </div>
+          <div class="border-t border-gray-200 pt-4 mb-4 text-sm">
+            <p class="font-semibold text-gray-800 mb-2">This reading covers:</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>• Personality tendencies & how you handle pressure</li>
+              <li>• Career & money patterns across different life stages</li>
+              <li>• Love, marriage, and family themes</li>
+              <li>• General health & energy directions (not medical)</li>
+              <li>• Key 10-year and yearly cycles you’re in now</li>
+            </ul>
+          </div>
+          <div class="text-sm text-gray-600 mb-6">
+            <p class="font-semibold mb-1">What you receive:</p>
+            <ul class="space-y-1">
+              <li>• A detailed written PDF or long email you can save</li>
+              <li>• Timeline view: where you’ve been, where you are, where you’re heading</li>
+              <li>• Suggestions on how to use your stronger periods wisely</li>
+              <li>• Space to send one short follow-up clarification by email</li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <p class="text-xs text-gray-500 mb-2">Best if this is your first full Chinese-style reading.</p>
+            <a href="#how-it-works"
+               class="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full text-sm font-medium">
+              Request a full life analysis
+            </a>
+          </div>
+        </article>
       </div>
-
-      <p class="mt-6 text-xs text-gray-500 max-w-3xl mx-auto text-center">
-        You can always change these prices in the code to match your real rates. The structure (3 clear levels) is what
-        matters most for clients.
-      </p>
     </div>
   </section>
 
-  <!-- 模块：流程 -->
-  <section class="py-16 bg-white">
+  <!-- 流程：选择套餐-填写信息-付款-解答 -->
+  <section id="how-it-works" class="py-18 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center mb-10 fade-in">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">How the process works</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">How the reading process works</h2>
         <p class="text-gray-600">
-          Simple, transparent steps from sending your request to receiving your reading.
+          This is a structured written service, not a live conversation. Many clients appreciate being able
+          to read slowly and return to their reading over time.
         </p>
       </div>
 
       <div class="grid md:grid-cols-4 gap-6 text-sm">
         <div class="bg-light rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-3">
             1
           </div>
-          <h3 class="font-semibold mb-2">Submit form</h3>
+          <h3 class="font-semibold mb-2">Choose a package</h3>
           <p class="text-gray-600">
-            Choose a package below, share your birth details, time zone, and main questions.
+            Decide whether you need a single question, three questions, or a full life analysis.
           </p>
         </div>
         <div class="bg-light rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-3">
             2
           </div>
-          <h3 class="font-semibold mb-2">Confirm date & time</h3>
+          <h3 class="font-semibold mb-2">Fill in your details</h3>
           <p class="text-gray-600">
-            You receive an email with available time slots. We confirm a time that works for you.
+            You’ll send your birth date, birth time (if known), birth place, and your question(s) in clear English.
           </p>
         </div>
         <div class="bg-light rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-3">
             3
           </div>
           <h3 class="font-semibold mb-2">Complete payment</h3>
           <p class="text-gray-600">
-            You receive a secure payment link (for example PayPal or Stripe) to confirm your booking.
+            A secure payment link is provided. Once payment is confirmed, your chart is prepared and interpreted.
           </p>
         </div>
         <div class="bg-light rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-3">
             4
           </div>
-          <h3 class="font-semibold mb-2">Have the session</h3>
+          <h3 class="font-semibold mb-2">Receive your written reading</h3>
           <p class="text-gray-600">
-            We meet online at the scheduled time. You can record the call for personal use if you’d like.
+            Your reading is sent by email within the stated timeframe, and you can reread it whenever you need guidance.
           </p>
         </div>
+      </div>
+
+      <div class="max-w-2xl mx-auto mt-10 text-center text-sm text-gray-600 fade-in">
+        <p class="mb-2">
+          Typical delivery time and payment methods can be adjusted to your preferences. If you already have a payment system,
+          simply link each package button to its corresponding payment page.
+        </p>
+        <p class="text-xs text-gray-500 mt-2">
+          For any urgent questions or if you are unsure which package fits your situation, you can reach out by email first.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- 简单 FAQ -->
+  <!-- 小提示 / 联系方式（无表单，仅文案） -->
   <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center mb-10 fade-in">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Frequently asked questions</h2>
-      </div>
-
-      <div class="max-w-3xl mx-auto space-y-6">
-        <div class="bg-white rounded-2xl shadow-md p-6 fade-in">
-          <h3 class="font-semibold mb-2 text-sm md:text-base">What information do you need from me?</h3>
-          <p class="text-gray-600 text-sm md:text-base">
-            Your full name, date of birth, time of birth (if known), city of birth, your current city, time zone,
-            and your main questions or focus areas.
-          </p>
-        </div>
-        <div class="bg-white rounded-2xl shadow-md p-6 fade-in">
-          <h3 class="font-semibold mb-2 text-sm md:text-base">What if I don’t know my exact birth time?</h3>
-          <p class="text-gray-600 text-sm md:text-base">
-            If you don’t know your birth time, we can still work with a more general chart. Some details may be more
-            broad, but we can still see patterns and timing.
-          </p>
-        </div>
-        <div class="bg-white rounded-2xl shadow-md p-6 fade-in">
-          <h3 class="font-semibold mb-2 text-sm md:text-base">Can you tell me exactly what will happen?</h3>
-          <p class="text-gray-600 text-sm md:text-base">
-            No one can guarantee exact events. This reading focuses on your natural tendencies and timing so you can
-            make better decisions with your own free will.
-          </p>
-        </div>
+      <div class="max-w-2xl mx-auto text-center fade-in">
+        <h2 class="text-xl md:text-2xl font-bold mb-4">Questions before you book?</h2>
+        <p class="text-gray-600 mb-4 text-sm md:text-base">
+          If you’re not sure how to phrase your questions or which package to choose, you’re welcome to send a short email first.
+        </p>
+        <p class="text-sm text-gray-700 mb-2">
+          <span class="font-semibold">Email:</span> youremail@example.com
+        </p>
+        <p class="text-xs text-gray-500">
+          Replace this email with your real contact. You can answer manually and send your payment links there.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- 预约表单：套餐按钮会自动选中这里的套餐 -->
-  <section id="contact" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto bg-light rounded-2xl shadow-xl overflow-hidden">
-        <div class="flex flex-col md:flex-row">
-          <!-- 左侧说明 -->
-          <div class="md:w-1/2 bg-primary p-10 text-white fade-in">
-            <h2 class="text-2xl font-bold mb-4">Book a destiny reading</h2>
-            <p class="mb-4 text-sm md:text-base">
-              Please choose a package (or “Not sure yet”) and include your birth details and time zone in the message.
-            </p>
-            <p class="mb-2"><strong>Email:</strong> youremail@example.com</p>
-            <p class="text-xs text-white/80">
-              Replace this with your real email. You’ll reply manually with available times and payment details.
-            </p>
-            <div class="mt-8 space-y-3 text-sm">
-              <p class="font-semibold mb-1">What to include:</p>
-              <p>• Date of birth (YYYY-MM-DD)</p>
-              <p>• Time of birth (if known)</p>
-              <p>• City/country of birth & current city</p>
-              <p>• Your main questions / topics</p>
-            </div>
-          </div>
-
-          <!-- 右侧表单 -->
-          <div class="md:w-1/2 p-10 bg-white fade-in">
-            <form>
-              <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Name</label>
-                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Email</label>
-                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Package</label>
-                <select
-                  id="packageSelect"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm"
-                >
-                  <option value="Not sure yet">Not sure yet – please recommend</option>
-                  <option value="Quick Check-In (30 min)">Quick Check-In (30 min)</option>
-                  <option value="Full Destiny Reading (60–75 min)">Full Destiny Reading (60–75 min)</option>
-                  <option value="Year Roadmap (90 min)">Year Roadmap (90 min)</option>
-                </select>
-              </div>
-              <div class="mb-6">
-                <label class="block text-gray-700 mb-2">Message</label>
-                <textarea
-                  id="messageField"
-                  rows="5"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm"
-                  placeholder="Please include your date of birth, time of birth (if known), city of birth, current city, time zone, and what you want to focus on."
-                ></textarea>
-              </div>
-              <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-medium text-sm md:text-base">
-                Send booking request
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 页脚简版：和首页整体风格统一 -->
+  <!-- 页脚 -->
   <footer class="bg-dark text-white py-8">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
       <span>© 2025 Your Brand. All rights reserved.</span>
@@ -424,43 +417,13 @@
     </div>
   </footer>
 
-  <!-- 回到顶部按钮（如果你的 script.js 有用到这个 ID，就会继续生效） -->
-  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+  <!-- 回到顶部按钮 -->
+  <button id="back-to-top"
+          class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
     <i class="fa fa-chevron-up"></i>
   </button>
 
-  <!-- 复用你全站的脚本（滚动效果、导航等） -->
- <script src="script.js"></script>
-
-  <!-- 本页面额外的小脚本：点击套餐按钮 → 自动选中套餐 + 滚动到表单 -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var packageSelect = document.getElementById('packageSelect');
-      var messageField = document.getElementById('messageField');
-      var contactSection = document.getElementById('contact');
-
-      document.querySelectorAll('[data-package]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var pkg = btn.getAttribute('data-package');
-          if (packageSelect && pkg) {
-            packageSelect.value = pkg;
-          }
-          if (messageField && !messageField.value) {
-            messageField.value =
-              'Package: ' + pkg + '\\n\\n' +
-              'My birth details:\\n' +
-              '- Date of birth: \\n' +
-              '- Time of birth (if known): \\n' +
-              '- City of birth: \\n' +
-              '- Current city & time zone: \\n\\n' +
-              'Main questions / focus:';
-          }
-          if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      });
-    });
-  </script>
+  <!-- 全站脚本：导航、动画等 -->
+  <script src="script.js"></script>
 </body>
 </html>
