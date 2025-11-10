@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Brand | Book Your Destiny Reading</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 统一依赖 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-inter text-dark bg-light antialiased">
+
+  <!-- 导航：Destiny Reading 高亮 -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html#home" class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+          <i class="fa fa-moon-o text-white text-xl"></i>
+        </div>
+        <span class="text-2xl font-bold text-white">Your Brand</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="fortune.html" class="text-secondary font-semibold">Destiny Reading</a>
+        <a href="feng-shui.html">Feng Shui</a>
+        <a href="shop.html">Shop</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- 手机菜单 -->
+    <div id="mobile-menu"
+         class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <a href="fortune.html" class="text-primary font-medium py-2">Destiny Reading</a>
+        <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
+        <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
+        <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
+        <a href="index.html#contact"
+           class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
+          Contact
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 顶部：步骤 & 说明 -->
+  <section class="pt-32 pb-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto mb-8 fade-in">
+        <p class="uppercase tracking-[0.22em] text-xs text-secondary mb-2">
+          DESTINY READING · BOOKING
+        </p>
+        <h1 class="text-[clamp(1.9rem,3.2vw,2.6rem)] font-bold text-dark mb-3">
+          Confirm your package and share your details
+        </h1>
+        <p class="text-gray-600 text-sm md:text-base">
+          This page is for Chinese-style destiny readings (BaZi / Four Pillars). All readings are written only – no voice or video –
+          so you can reread them whenever you need clarity.
+        </p>
+      </div>
+
+      <!-- 4 步骤流程条：选择套餐 - 填信息 - 付款 - 解答 -->
+      <div class="grid md:grid-cols-4 gap-4 text-xs md:text-sm mb-4 fade-in">
+        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3 border border-secondary/70">
+          <div class="w-7 h-7 rounded-full bg-secondary text-white flex items-center justify-center text-xs">1</div>
+          <div>
+            <p class="font-semibold text-dark">Choose package</p>
+            <p class="text-gray-500">You’ve just done this.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3 border border-primary/50">
+          <div class="w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center text-xs">2</div>
+          <div>
+            <p class="font-semibold text-dark">Fill in details</p>
+            <p class="text-gray-500">Birth data & your questions.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3">
+          <div class="w-7 h-7 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-xs">3</div>
+          <div>
+            <p class="font-semibold text-gray-700">Complete payment</p>
+            <p class="text-gray-500">Payment link sent by email.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3">
+          <div class="w-7 h-7 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-xs">4</div>
+          <div>
+            <p class="font-semibold text-gray-700">Receive reading</p>
+            <p class="text-gray-500">Written destiny reading.</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 fade-in">
+        Current process: choose a package → fill in this form → receive an email with payment link and estimated delivery time → receive your written reading after payment.
+      </p>
+    </div>
+  </section>
+
+  <!-- 主内容：左侧套餐信息 + 右侧表单 -->
+  <section class="pb-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-3 gap-10 items-start">
+        <!-- 左侧：套餐信息 -->
+        <aside class="lg:col-span-1">
+          <div class="bg-white rounded-2xl shadow-xl p-6 fade-in">
+            <p class="text-xs uppercase tracking-[0.18em] text-secondary mb-2">YOUR SELECTION</p>
+            <h2 id="packageName" class="text-lg font-bold mb-1">
+              Destiny Reading Package
+            </h2>
+            <p id="packageTagline" class="text-gray-600 text-sm mb-4">
+              A Chinese-style written destiny reading.
+            </p>
+            <div class="flex items-baseline gap-2 mb-4">
+              <span id="packagePrice" class="text-2xl font-bold text-primary">$XX</span>
+              <span class="text-xs text-gray-500">USD · written only</span>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">
+              <p class="font-semibold mb-1">This package is suitable when:</p>
+              <ul class="list-disc list-inside space-y-1" id="packageBullets">
+                <li>You want a Chinese-style reading focused on real-life decisions.</li>
+                <li>You prefer a written answer you can reread.</li>
+              </ul>
+            </div>
+            <a href="fortune.html#packages"
+               class="inline-flex items-center text-xs text-gray-500 hover:text-primary">
+              <i class="fa fa-angle-left mr-1"></i> Change package
+            </a>
+            <p class="mt-4 text-[11px] text-gray-400">
+              Note: Readings are spiritual guidance based on traditional Chinese destiny methods (BaZi / Four Pillars).
+              They do not replace medical, financial, or legal advice.
+            </p>
+          </div>
+        </aside>
+
+        <!-- 右侧：填写信息表单 -->
+        <div class="lg:col-span-2">
+          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 fade-in">
+            <h2 class="text-lg md:text-xl font-bold mb-4">Step 2 – Fill in your details</h2>
+            <p class="text-gray-600 text-sm mb-6">
+              Please fill in your birth information and questions in clear English. This is what traditional
+              Chinese fortune-tellers use to see your timing, patterns, and life direction.
+            </p>
+
+            <!-- 提交后使用邮箱接收：你可以改成自己的后端或支付系统 -->
+            <form action="mailto:youremail@example.com" method="post" enctype="text/plain" class="space-y-6">
+              <!-- 隐藏字段：套餐名称 -->
+              <input type="hidden" name="Selected package" id="packageInput" value="Destiny Reading Package">
+
+              <!-- 联系信息 -->
+              <div>
+                <h3 class="font-semibold text-sm mb-3">Contact details</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Your full name</label>
+                    <input type="text" name="Name"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           required>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Email address</label>
+                    <input type="email" name="Email"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           required>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Time zone / City</label>
+                    <input type="text" name="Time zone / City"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           placeholder="e.g. PST · Los Angeles" required>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Preferred language</label>
+                    <select name="Preferred language"
+                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                      <option>English</option>
+                      <option>Chinese + English</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 出生信息 -->
+              <div>
+                <h3 class="font-semibold text-sm mb-3">Birth information (for Chinese destiny chart)</h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Birth date</label>
+                    <input type="text" name="Birth date"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           placeholder="YYYY-MM-DD" required>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Birth time</label>
+                    <input type="text" name="Birth time"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           placeholder="Exact or approx., e.g. 14:30">
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Birth place</label>
+                    <input type="text" name="Birth place"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           placeholder="City, Country" required>
+                  </div>
+                </div>
+                <p class="mt-2 text-[11px] text-gray-500">
+                  If you don’t know your exact birth time, please say “unknown” or “around (morning/afternoon/evening)”.
+                  I will take this into account when reading your chart.
+                </p>
+              </div>
+
+              <!-- 问题部分 -->
+              <div>
+                <h3 class="font-semibold text-sm mb-3">Your question(s)</h3>
+                <p id="questionHint" class="text-xs text-gray-500 mb-3">
+                  If you chose the single-question reading, please use Question 1 and keep it focused.
+                </p>
+                <div class="space-y-3">
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Question 1</label>
+                    <textarea name="Question 1" rows="3"
+                              class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                              placeholder="Example: Is this a good year to change jobs or is it better to wait?"
+                              required></textarea>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Question 2 (optional)</label>
+                    <textarea name="Question 2" rows="3"
+                              class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                              placeholder="If you selected the three-question reading or full analysis, use this space."></textarea>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Question 3 (optional)</label>
+                    <textarea name="Question 3" rows="3"
+                              class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                              placeholder="For a third question, or leave blank."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 背景描述 -->
+              <div>
+                <h3 class="font-semibold text-sm mb-3">Background / context (optional)</h3>
+                <textarea name="Background / context" rows="4"
+                          class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                          placeholder="Anything you want me to know about your situation, recent changes, or how you’re feeling.">
+                </textarea>
+                <p class="mt-2 text-[11px] text-gray-500">
+                  You don’t need to write your whole life story – a few clear sentences are enough. The chart will show the rest.
+                </p>
+              </div>
+
+              <!-- 同意事项 -->
+              <div class="space-y-2 text-xs text-gray-600">
+                <label class="flex items-start gap-2">
+                  <input type="checkbox" name="Agreement" value="Yes"
+                         class="mt-0.5 w-3.5 h-3.5 border-gray-300 rounded" required>
+                  <span>
+                    I understand this is a spiritual guidance service based on traditional Chinese destiny methods.
+                    It is not a replacement for medical, psychological, financial, or legal advice.
+                  </span>
+                </label>
+                <p class="text-[11px] text-gray-500">
+                  After you submit this form, you’ll receive an email confirming your package, total price, payment link, and the
+                  estimated delivery time for your written reading.
+                </p>
+              </div>
+
+              <!-- 提交按钮 -->
+              <div class="pt-2">
+                <button type="submit"
+                        class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg text-sm font-medium flex items-center justify-center gap-2">
+                  <i class="fa fa-paper-plane text-xs"></i>
+                  <span>Send my details & request payment link</span>
+                </button>
+                <p class="mt-2 text-[11px] text-gray-500">
+                  If the mail app does not open automatically on your device, you can also copy these questions and email them to
+                  <span class="font-semibold">youremail@example.com</span>. (Replace this with your real email.)
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- 小提示：如何提问更适合中国式算命 -->
+      <div class="max-w-3xl mx-auto mt-12 text-sm text-gray-700 fade-in">
+        <h2 class="font-semibold mb-3">Tips for asking good questions in a Chinese-style reading</h2>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Focus on timing (“when”) and direction (“which way”) more than yes/no.</li>
+          <li>It’s okay to mention what you’ve already tried or how long something has been difficult.</li>
+          <li>Try to keep each question about one main topic: work, money, relationship, moving, health, etc.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-8">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
+      <span>© 2025 Your Brand. All rights reserved.</span>
+      <span>Destiny Reading · Feng Shui · Spiritual Shop</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button id="back-to-top"
+          class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+  <!-- 全站脚本 -->
+  <script src="script.js"></script>
+
+  <!-- 本页小脚本：根据 ?package=single/three/full 自动更新套餐信息 -->
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var key = params.get('package') || 'single';
+
+      var config = {
+        single: {
+          name: 'Single Question Reading',
+          tagline: 'One clear question, one focused written answer based on your Chinese destiny chart.',
+          price: '$XX',
+          bullets: [
+            'You have one main decision or situation and want a clear answer.',
+            'You want to test how a Chinese-style reading feels before doing more.',
+          ],
+          hint: 'If you chose the single-question reading, please use Question 1 for your main question. You can add background in the context section below.',
+        },
+        three: {
+          name: 'Three Question Reading',
+          tagline: 'Up to three questions on career, money, relationships, family, health, or timing.',
+          price: '$XX',
+          bullets: [
+            'You are looking at a few areas at the same time (work, money, love, moving, etc.).',
+            'You want more detail and timing around your next 1–3 years.',
+          ],
+          hint: 'If you chose the three-question reading, please use Question 1–3 for your three main questions. They can be separate or related.',
+        },
+        full: {
+          name: 'Full Life Path Analysis',
+          tagline: 'A broader look at your whole chart – personality, work, relationships, health tendencies, and major cycles.',
+          price: '$XX',
+          bullets: [
+            'This is your first deep Chinese-style reading and you want a full overview.',
+            'You want to understand your nature and life cycles, not just one moment.',
+          ],
+          hint: 'If you chose the full analysis, you can list one or two key questions, or describe your overall focus for this stage of life.',
+        }
+      };
+
+      var data = config[key] || config.single;
+
+      var nameEl = document.getElementById('packageName');
+      var taglineEl = document.getElementById('packageTagline');
+      var priceEl = document.getElementById('packagePrice');
+      var bulletsEl = document.getElementById('packageBullets');
+      var pkgInput = document.getElementById('packageInput');
+      var questionHintEl = document.getElementById('questionHint');
+
+      if (nameEl) nameEl.textContent = data.name;
+      if (taglineEl) taglineEl.textContent = data.tagline;
+      if (priceEl) priceEl.textContent = data.price;
+      if (pkgInput) pkgInput.value = data.name;
+      if (questionHintEl) questionHintEl.textContent = data.hint;
+
+      if (bulletsEl && data.bullets) {
+        bulletsEl.innerHTML = '';
+        data.bullets.forEach(function (line) {
+          var li = document.createElement('li');
+          li.textContent = line;
+          bulletsEl.appendChild(li);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
