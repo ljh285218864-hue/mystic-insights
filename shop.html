@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mystic Insights | Spiritual Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-inter text-dark bg-light antialiased">
+
+  <!-- 顶部导航 -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+          <i class="fa fa-star text-white text-xl"></i>
+        </div>
+        <span class="text-2xl font-bold text-white">Mystic Insights</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="fortune.html" class="text-white hover:text-secondary transition-colors font-medium">Fortune Telling</a>
+        <a href="feng-shui.html" class="text-white hover:text-secondary transition-colors font-medium">Feng Shui</a>
+        <a href="shop.html" class="text-secondary font-semibold">Shop</a>
+        <a href="index.html#testimonials" class="text-white hover:text-secondary transition-colors font-medium">Testimonials</a>
+        <a href="#contact" class="bg-secondary hover:bg-secondary/90 text-white px-6 py-2 rounded-full transition-all font-medium">Contact Us</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Fortune Telling</a>
+        <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
+        <a href="shop.html" class="text-primary font-medium py-2">Shop</a>
+        <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
+        <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 首屏 -->
+  <section class="pt-32 pb-10 bg-white">
+    <div class="container mx-auto px-4 text-center fade-in">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">Spiritual Shop</h1>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Objects chosen to support the same energy and principles used in your fortune telling and feng shui sessions.
+      </p>
+    </div>
+  </section>
+
+  <!-- 商品列表 -->
+  <section class="pb-16 bg-white">
+    <div class="container mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- 示例商品 1 -->
+      <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover fade-in">
+        <img src="https://picsum.photos/id/118/400/300" alt="Brass Incense Burner" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="font-semibold mb-1">Brass Incense Burner</h3>
+          <p class="text-gray-600 text-sm mb-3">Steady, clean burning for meditation or work rituals.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-primary">$39.00</span>
+            <a href="#contact" class="text-primary text-sm font-medium">Contact to order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 示例商品 2 -->
+      <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover fade-in">
+        <img src="https://picsum.photos/id/133/400/300" alt="Feng Shui Wealth Coins" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="font-semibold mb-1">Feng Shui Wealth Coins</h3>
+          <p class="text-gray-600 text-sm mb-3">Traditional-style coins for wealth corners and money bowls.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-primary">$19.00</span>
+            <a href="#contact" class="text-primary text-sm font-medium">Contact to order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 示例商品 3 -->
+      <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover fade-in">
+        <img src="https://picsum.photos/id/175/400/300" alt="Crystal Clarity Set" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="font-semibold mb-1">Crystal Clarity Set</h3>
+          <p class="text-gray-600 text-sm mb-3">Crystals selected for mental clarity and emotional grounding.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-primary">$49.00</span>
+            <a href="#contact" class="text-primary text-sm font-medium">Contact to order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 示例商品 4 -->
+      <div class="bg-light rounded-xl shadow-md overflow-hidden card-hover fade-in">
+        <img src="https://picsum.photos/id/237/400/300" alt="Feng Shui Wind Chime" class="w-full h-56 object-cover">
+        <div class="p-5">
+          <h3 class="font-semibold mb-1">Feng Shui Wind Chime</h3>
+          <p class="text-gray-600 text-sm mb-3">Supports gentle, positive qi flow when placed well.</p>
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-primary">$29.00</span>
+            <a href="#contact" class="text-primary text-sm font-medium">Contact to order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 说明 + 联系表单 -->
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-10 fade-in">
+        <h2 class="text-2xl font-bold mb-3">How to place an order</h2>
+        <p class="text-gray-600">
+          Send us a message with which item(s) you’d like, your country or state, and we’ll reply with shipping options and a payment link.
+        </p>
+      </div>
+      <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/2 bg-primary p-10 text-white fade-in">
+            <h2 class="text-2xl font-bold mb-4">Ask about a product</h2>
+            <p class="mb-4">
+              You can also ask which items match your current feng shui or personal situation.
+            </p>
+            <p class="mb-2"><strong>Email:</strong> youremail@example.com</p>
+            <p class="text-sm text-white/80">Replace this with your real email.</p>
+          </div>
+          <div class="md:w-1/2 p-10 fade-in">
+            <form>
+              <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Name</label>
+                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Email</label>
+                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 mb-2">Interested In</label>
+                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                  <option>Shop Products</option>
+                  <option>Fortune Telling</option>
+                  <option>Feng Shui</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-700 mb-2">Message</label>
+                <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Write which product(s) you want and your country/state."></textarea>
+              </div>
+              <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-medium">
+                Send Request
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white py-8">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
+      <span>© 2025 Mystic Insights. All rights reserved.</span>
+      <span>Fortune Telling · Feng Shui · Spiritual Shop</span>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
