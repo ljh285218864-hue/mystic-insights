@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Brand | Feng Shui Consultation</title>
+  <title>Your Brand | Feng Shui for Homes & Workspaces</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 和首页、算命页一样的依赖 -->
+  <!-- 与其他页面保持一致 -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="font-inter text-dark bg-light antialiased">
 
-  <!-- 顶部导航：整体风格和其他页面统一，当前高亮 Feng Shui -->
-  <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+  <!-- 顶部导航：Feng Shui 高亮 -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-      <!-- Logo 回首页 -->
       <a href="index.html#home" class="flex items-center space-x-2">
         <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
           <i class="fa fa-moon-o text-white text-xl"></i>
@@ -24,13 +22,11 @@
         <span class="text-2xl font-bold text-white">Your Brand</span>
       </a>
       <nav class="hidden md:flex items-center space-x-8">
-        <a href="fortune.html" class="text-white hover:text-secondary transition-colors font-medium">Destiny Reading</a>
+        <a href="fortune.html">Destiny Reading</a>
         <a href="feng-shui.html" class="text-secondary font-semibold">Feng Shui</a>
-        <a href="shop.html" class="text-white hover:text-secondary transition-colors font-medium">Shop</a>
-        <a href="index.html#testimonials" class="text-white hover:text-secondary transition-colors font-medium">Testimonials</a>
-        <a href="#contact" class="bg-secondary hover:bg-secondary/90 text-white px-6 py-2 rounded-full transition-all font-medium">
-          Contact
-        </a>
+        <a href="shop.html">Shop</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
       <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
         <i class="fa fa-bars"></i>
@@ -38,24 +34,26 @@
     </div>
 
     <!-- 手机菜单 -->
-    <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
+    <div id="mobile-menu"
+         class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
       <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
         <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
         <a href="feng-shui.html" class="text-primary font-medium py-2">Feng Shui</a>
         <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
         <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
-        <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
+        <a href="index.html#contact"
+           class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
           Contact
         </a>
       </div>
     </div>
   </header>
 
-  <!-- HERO：顶部大图 + 简介 -->
+  <!-- HERO：风水首屏 -->
   <section class="relative pt-32 pb-20 lg:pb-28 overflow-hidden">
-    <!-- 背景图 -->
     <div class="absolute inset-0 z-0">
-      <img src="https://picsum.photos/id/164/1600/900" alt="Feng shui interior" class="w-full h-full object-cover">
+      <!-- 背景图可以换成你自己的家居 / 办公室图片 -->
+      <img src="https://picsum.photos/id/164/1600/900" alt="Calm home interior" class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-black/70"></div>
     </div>
 
@@ -64,44 +62,45 @@
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <!-- 左侧文字 -->
           <div class="text-white fade-in">
-            <p class="uppercase tracking-[0.25em] text-xs text-secondary mb-4">FENG SHUI · HOME & WORKSPACE</p>
-            <h1 class="text-[clamp(2.2rem,4.5vw,3.5rem)] font-bold mb-4 leading-tight">
-              Feng Shui consultation<br>for your home and workspace
+            <p class="uppercase tracking-[0.25em] text-xs text-secondary mb-4">FENG SHUI · CHINESE-STYLE</p>
+            <h1 class="text-[clamp(2.1rem,4.5vw,3.3rem)] font-bold mb-4 leading-tight">
+              Chinese feng shui for real homes,<br>modern work, and everyday life
             </h1>
-            <p class="text-white/90 mb-6 text-[clamp(0.95rem,2vw,1.05rem)]">
-              A practical feng shui session based on traditional principles, adjusted to modern life.
-              We focus on what you can realistically change in your current home or office.
+            <p class="text-white/90 mb-5 text-[clamp(0.95rem,2vw,1.05rem)]">
+              Instead of “good luck vs bad luck”, traditional Chinese feng shui looks at how your space supports
+              or drains your sleep, focus, finances, and relationships.
             </p>
-            <ul class="text-white/90 space-y-2 mb-8 text-sm">
-              <li>• Improve sleep, focus, and a sense of stability</li>
-              <li>• Support career and money flow with realistic adjustments</li>
-              <li>• Create a space that quietly supports your energy instead of draining it</li>
-            </ul>
+            <p class="text-white/80 text-sm mb-8">
+              I use classical Chinese principles (direction, qi flow, timing) and translate them into practical changes
+              you can make in a U.S. home or workspace – without rebuilding everything.
+            </p>
             <div class="flex flex-col sm:flex-row gap-4">
-              <a href="#packages" class="bg-secondary hover:bg-secondary/90 text-white px-8 py-3 rounded-full font-medium text-sm sm:text-base">
+              <a href="#packages"
+                 class="bg-secondary hover:bg-secondary/90 text-white px-8 py-3 rounded-full font-medium text-sm sm:text-base">
                 View feng shui packages
               </a>
-              <a href="#contact" class="border border-white/70 hover:border-secondary hover:text-secondary text-white px-8 py-3 rounded-full font-medium text-sm sm:text-base">
-                Book a consultation
+              <a href="#how-it-works"
+                 class="border border-white/70 hover:border-secondary hover:text-secondary text-white px-8 py-3 rounded-full font-medium text-sm sm:text-base">
+                How a consultation works
               </a>
             </div>
-            <p class="mt-4 text-xs text-white/70">
-              Online sessions · We work from your floor plan, photos, and short videos of your space.
-            </p>
           </div>
 
-          <!-- 右侧卡片 -->
+          <!-- 右侧信息块：风水看什么 -->
           <div class="fade-in">
-            <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-8 lg:p-10 text-dark">
-              <h2 class="text-xl font-bold mb-4">What we look at</h2>
+            <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 lg:p-10 text-dark">
+              <h2 class="text-xl font-bold mb-4">What Chinese feng shui looks at</h2>
               <div class="space-y-4 text-sm">
                 <div class="flex gap-3">
                   <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <i class="fa fa-sign-in text-primary text-sm"></i>
+                    <i class="fa fa-home text-primary text-sm"></i>
                   </div>
                   <div>
-                    <p class="font-semibold mb-1">Entrance & first impression</p>
-                    <p class="text-gray-600">How energy enters your space and what it “meets” first when coming in.</p>
+                    <p class="font-semibold mb-1">Entrance & front door</p>
+                    <p class="text-gray-600">
+                      In Chinese feng shui, the entrance is where qi – the “breath” of the house – comes in.
+                      We look at how easy it is for good energy, opportunities, and people to arrive.
+                    </p>
                   </div>
                 </div>
                 <div class="flex gap-3">
@@ -109,24 +108,42 @@
                     <i class="fa fa-bed text-primary text-sm"></i>
                   </div>
                   <div>
-                    <p class="font-semibold mb-1">Sleep & recovery area</p>
-                    <p class="text-gray-600">Bedroom and resting areas so your body has a chance to truly recharge.</p>
+                    <p class="font-semibold mb-1">Bedroom & sleep</p>
+                    <p class="text-gray-600">
+                      Bed position, doors, windows, and what is around you when you sleep can affect rest,
+                      anxiety, and how “safe” your body feels at night.
+                    </p>
                   </div>
                 </div>
                 <div class="flex gap-3">
                   <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <i class="fa fa-desktop text-primary text-sm"></i>
+                    <i class="fa fa-briefcase text-primary text-sm"></i>
                   </div>
                   <div>
-                    <p class="font-semibold mb-1">Work & money corner</p>
-                    <p class="text-gray-600">Desk placement and money-related zones to support steady growth.</p>
+                    <p class="font-semibold mb-1">Desk, kitchen & money areas</p>
+                    <p class="text-gray-600">
+                      Work desk, stove, and certain corners of the home relate to income, stability,
+                      and how quickly money flows in and out.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-3">
+                  <div class="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <i class="fa fa-compass text-primary text-sm"></i>
+                  </div>
+                  <div>
+                    <p class="font-semibold mb-1">Direction, layout & timing</p>
+                    <p class="text-gray-600">
+                      Classical feng shui uses direction and time cycles (like “flying stars”) to understand
+                      which rooms are naturally calmer, stronger, or more sensitive in a given period.
+                    </p>
                   </div>
                 </div>
               </div>
-              <div class="mt-6 border-t pt-4 text-xs text-gray-500">
-                We do our best to work with rental limitations and shared spaces. You don’t need to rebuild everything
-                to feel a difference.
-              </div>
+              <p class="mt-6 text-xs text-gray-500">
+                Feng shui is spiritual and energetic guidance. It does not replace medical, psychological, financial,
+                or legal advice.
+              </p>
             </div>
           </div>
         </div>
@@ -134,348 +151,355 @@
     </div>
   </section>
 
-  <!-- 模块：适合谁 -->
+  <!-- 可以解决哪些问题（面向美国用户的痛点） -->
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center mb-10 fade-in">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Is a feng shui consultation right for you?</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">What can feng shui help with?</h2>
         <p class="text-gray-600">
-          You don’t have to be “into” spirituality to benefit. Many clients just feel that something is off with their
-          home or workspace.
+          Traditional Chinese feng shui has always been used for very practical things: sleep, health, family harmony,
+          money flow, business, and when to move or stay.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-light rounded-2xl shadow-md p-6 card-hover fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-            <i class="fa fa-home text-primary"></i>
-          </div>
-          <h3 class="font-semibold mb-2">Your home feels heavy or chaotic</h3>
-          <p class="text-gray-600 text-sm">
-            You clean, organize, and still feel something is not “restful” or supportive.
-          </p>
+      <div class="grid md:grid-cols-3 gap-6 text-sm">
+        <div class="bg-light rounded-2xl shadow-md p-6 fade-in">
+          <h3 class="font-semibold mb-3 flex items-center gap-2">
+            <i class="fa fa-moon-o text-primary text-sm"></i>
+            Sleep, stress & health
+          </h3>
+          <ul class="text-gray-600 space-y-2">
+            <li>• Difficulty falling asleep or waking up exhausted.</li>
+            <li>• Feeling “on edge” at home for no clear reason.</li>
+            <li>• A bedroom that never feels fully restful or safe.</li>
+          </ul>
         </div>
-        <div class="bg-light rounded-2xl shadow-md p-6 card-hover fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-            <i class="fa fa-briefcase text-primary"></i>
-          </div>
-          <h3 class="font-semibold mb-2">Work & money feel unstable</h3>
-          <p class="text-gray-600 text-sm">
-            Projects come and go quickly, or money doesn’t stay. You want your space to support more stability.
-          </p>
+
+        <div class="bg-light rounded-2xl shadow-md p-6 fade-in">
+          <h3 class="font-semibold mb-3 flex items-center gap-2">
+            <i class="fa fa-usd text-primary text-sm"></i>
+            Money, work & stability
+          </h3>
+          <ul class="text-gray-600 space-y-2">
+            <li>• Income goes up and down but doesn’t stay steady.</li>
+            <li>• Feeling blocked with career progress or clients.</li>
+            <li>• A home office that drains focus instead of supporting it.</li>
+          </ul>
         </div>
-        <div class="bg-light rounded-2xl shadow-md p-6 card-hover fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-            <i class="fa fa-refresh text-primary"></i>
-          </div>
-          <h3 class="font-semibold mb-2">You’re entering a new phase</h3>
-          <p class="text-gray-600 text-sm">
-            Moving, getting married, changing jobs, or starting a business — and you want your space to match this shift.
-          </p>
+
+        <div class="bg-light rounded-2xl shadow-md p-6 fade-in">
+          <h3 class="font-semibold mb-3 flex items-center gap-2">
+            <i class="fa fa-heart-o text-primary text-sm"></i>
+            Relationships & family life
+          </h3>
+          <ul class="text-gray-600 space-y-2">
+            <li>• Tension at home that feels heavier in certain rooms.</li>
+            <li>• Couples always arguing in the same corner / area.</li>
+            <li>• A home that feels “stuck” when you’re ready for change.</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 套餐：三个档位 -->
-  <section id="packages" class="pt-16 pb-20 bg-gray-50">
+  <!-- 套餐设计 -->
+  <section id="packages" class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center mb-10 fade-in">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Feng Shui Consultation Packages</h2>
+      <div class="max-w-3xl mx-auto text-center mb-12 fade-in">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Feng shui consultation packages</h2>
         <p class="text-gray-600">
-          You can freely adjust the prices to your own rate. The structure—three clear options—helps clients decide faster.
+          All sessions are remote. We work from your floor plan, photos, and a short description of your situation.
+          You receive a clear written plan so you can make changes step by step.
+        </p>
+        <p class="text-xs text-gray-500 mt-3">
+          When you’re ready, click a package to connect and receive a payment link.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <!-- 套餐 1：Quick Home Check -->
-        <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col card-hover fade-in">
-          <p class="text-xs uppercase tracking-[0.2em] text-gray-500 mb-2">STARTER</p>
-          <h3 class="text-lg font-bold mb-1">Quick Home Check</h3>
-          <p class="text-primary font-semibold mb-2">$129</p>
-          <p class="text-gray-600 text-sm mb-4">
-            For studios or small apartments, or if you want a focused check on a few key rooms.
-          </p>
-          <ul class="text-sm text-gray-700 space-y-2 mb-6">
-            <li>• Up to 45-minute online session</li>
-            <li>• Focus on entrance + bedroom + one key area (e.g. work or money corner)</li>
-            <li>• Suggestions you can apply within the next 1–2 weeks</li>
-          </ul>
-          <button
-            type="button"
-            class="mt-auto w-full bg-primary/10 hover:bg-primary/20 text-primary py-2.5 rounded-full text-sm font-medium"
-            data-package="Quick Home Check (up to 45 min)"
-          >
-            Book Quick Home Check
-          </button>
-        </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- 套餐一：Single Room Reset -->
+        <article class="bg-white rounded-2xl shadow-xl p-7 flex flex-col fade-in">
+          <div class="mb-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-secondary mb-2">FOCUSED</p>
+            <h3 class="text-lg font-bold mb-2">Single Room Reset</h3>
+            <p class="text-gray-600 text-sm">
+              Feng shui for one key room – usually the bedroom or home office – to support better sleep or focus.
+            </p>
+          </div>
+          <div class="mb-4">
+            <p class="text-2xl font-bold text-primary">$XX</p>
+            <p class="text-xs text-gray-500">One room · written plan</p>
+          </div>
+          <div class="border-t border-gray-200 pt-4 mb-4 text-sm">
+            <p class="font-semibold text-gray-800 mb-2">This is ideal if:</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>• You mainly struggle with sleep, rest, or anxiety.</li>
+              <li>• You work from home and your desk never feels right.</li>
+              <li>• You want to “test” feng shui on a smaller space first.</li>
+            </ul>
+          </div>
+          <div class="text-sm text-gray-600 mb-6">
+            <p class="font-semibold mb-1">What you receive:</p>
+            <ul class="space-y-1">
+              <li>• Review of your floor plan (or simple sketch) and photos of one room</li>
+              <li>• Recommended bed / desk position and key furniture adjustments</li>
+              <li>• Suggestions for lighting, elements, and objects you already own</li>
+              <li>• Written summary you can refer back to</li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <p class="text-xs text-gray-500 mb-2">Remote only · No in-person visit</p>
+            <a href="index.html#contact"
+               class="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full text-sm font-medium">
+              Start with a single room
+            </a>
+          </div>
+        </article>
 
-        <!-- 套餐 2：Full Home / Apartment -->
-        <div class="bg-white rounded-2xl shadow-lg p-6 border border-secondary relative flex flex-col card-hover fade-in">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white text-xs px-3 py-1 rounded-full">
-            Most Popular
-          </span>
-          <p class="text-xs uppercase tracking-[0.2em] text-gray-500 mb-2 mt-2 text-center">COMPLETE HOME</p>
-          <h3 class="text-lg font-bold mb-1 text-center">Full Home / Apartment</h3>
-          <p class="text-primary font-semibold mb-2 text-center">$249</p>
-          <p class="text-gray-600 text-sm mb-4 text-center">
-            A full walkthrough of your home layout, especially for people staying at least 1–2 more years.
-          </p>
-          <ul class="text-sm text-gray-700 space-y-2 mb-6">
-            <li>• 60–90-minute online session</li>
-            <li>• Review floor plan, entrance, bedrooms, living room, and main work/money areas</li>
-            <li>• Prioritized action list: what to change now, later, or not touch</li>
-            <li>• Follow-up email with bullet-point summary</li>
-          </ul>
-          <button
-            type="button"
-            class="mt-auto w-full bg-secondary hover:bg-secondary/90 text-white py-2.5 rounded-full text-sm font-medium"
-            data-package="Full Home / Apartment (60–90 min)"
-          >
-            Book Full Home Session
-          </button>
-        </div>
+        <!-- 套餐二：Home Consultation（主力推荐） -->
+        <article class="bg-white rounded-2xl shadow-2xl p-7 flex flex-col border border-secondary/40 fade-in">
+          <div class="mb-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-secondary mb-2">MOST CHOSEN</p>
+            <h3 class="text-lg font-bold mb-2">Full Home Feng Shui</h3>
+            <p class="text-gray-600 text-sm">
+              A complete look at your apartment or house: entrance, bedrooms, living room, work areas, and money areas.
+            </p>
+          </div>
+          <div class="mb-4">
+            <p class="text-2xl font-bold text-primary">$XX</p>
+            <p class="text-xs text-gray-500">Whole home · written plan</p>
+          </div>
+          <div class="border-t border-gray-200 pt-4 mb-4 text-sm">
+            <p class="font-semibold text-gray-800 mb-2">Good fit when:</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>• You’ve recently moved or are about to move.</li>
+              <li>• Home feels heavy, chaotic, or “not quite yours yet”.</li>
+              <li>• You want support for sleep, money, and relationships together.</li>
+            </ul>
+          </div>
+          <div class="text-sm text-gray-600 mb-6">
+            <p class="font-semibold mb-1">What you receive:</p>
+            <ul class="space-y-1">
+              <li>• Review of your floor plan and key room photos</li>
+              <li>• Clear map of which areas support health, money, and relationships</li>
+              <li>• Step-by-step recommendations (what to move, what to remove, what to add)</li>
+              <li>• Priority list: “do these first” vs “do these later”</li>
+              <li>• One short follow-up email for clarification</li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <p class="text-xs text-gray-500 mb-2">Best for long-term homes or families</p>
+            <a href="index.html#contact"
+               class="inline-flex items-center justify-center w-full bg-secondary hover:bg-secondary/90 text-white py-2.5 rounded-full text-sm font-semibold">
+              Book a full home consultation
+            </a>
+          </div>
+        </article>
 
-        <!-- 套餐 3：Home + Work / Business -->
-        <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col card-hover fade-in">
-          <p class="text-xs uppercase tracking-[0.2em] text-gray-500 mb-2">INTENSIVE</p>
-          <h3 class="text-lg font-bold mb-1">Home + Work Combo</h3>
-          <p class="text-primary font-semibold mb-2">$399</p>
-          <p class="text-gray-600 text-sm mb-4">
-            For business owners or remote workers who use more than one main space.
-          </p>
-          <ul class="text-sm text-gray-700 space-y-2 mb-6">
-            <li>• 2 × 60-minute sessions (home + office/studio)</li>
-            <li>• Detailed focus on money flow, client flow, and focus zones</li>
-            <li>• Priority list for both spaces, with practical steps</li>
-            <li>• Short written summary and simple diagram suggestions</li>
-          </ul>
-          <button
-            type="button"
-            class="mt-auto w-full bg-primary/10 hover:bg-primary/20 text-primary py-2.5 rounded-full text-sm font-medium"
-            data-package="Home + Work Combo (2 × 60 min)"
-          >
-            Book Home + Work Combo
-          </button>
-        </div>
+        <!-- 套餐三：Business / Studio -->
+        <article class="bg-white rounded-2xl shadow-xl p-7 flex flex-col fade-in">
+          <div class="mb-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-secondary mb-2">BUSINESS</p>
+            <h3 class="text-lg font-bold mb-2">Studio / Office Feng Shui</h3>
+            <p class="text-gray-600 text-sm">
+              For small businesses, studios, or offices where client flow, visibility, and team energy matter.
+            </p>
+          </div>
+          <div class="mb-4">
+            <p class="text-2xl font-bold text-primary">$XX</p>
+            <p class="text-xs text-gray-500">Business space · written plan</p>
+          </div>
+          <div class="border-t border-gray-200 pt-4 mb-4 text-sm">
+            <p class="font-semibold text-gray-800 mb-2">Designed for:</p>
+            <ul class="space-y-1 text-gray-600">
+              <li>• Therapists, healers, or coaches with a studio office</li>
+              <li>• Small shops, salons, or wellness spaces</li>
+              <li>• Founders who want their work environment to match their goals</li>
+            </ul>
+          </div>
+          <div class="text-sm text-gray-600 mb-6">
+            <p class="font-semibold mb-1">What you receive:</p>
+            <ul class="space-y-1">
+              <li>• Review of floor plan, photos, and business focus</li>
+              <li>• Recommendations for entrance, waiting area, and key work zones</li>
+              <li>• Suggestions to support client flow and focus</li>
+              <li>• Written action plan you can share with your team or designer</li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <p class="text-xs text-gray-500 mb-2">Remote. In-person visits can be discussed separately.</p>
+            <a href="index.html#contact"
+               class="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full text-sm font-medium">
+              Inquire about business feng shui
+            </a>
+          </div>
+        </article>
       </div>
-
-      <p class="mt-6 text-xs text-gray-500 max-w-3xl mx-auto text-center">
-        Prices here are just example numbers. You can update them directly in the code to match your real fees and currency,
-        while keeping the same structure.
-      </p>
     </div>
   </section>
 
-  <!-- 模块：重点区域（Entrance/Bedroom/Workspace/Wealth Corner） -->
-  <section class="py-16 bg-white">
+  <!-- 咨询流程：选择套餐 - 提交资料 - 付款 - 收到方案 -->
+  <section id="how-it-works" class="py-18 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center mb-10 fade-in">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Key areas we’ll focus on</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">How a feng shui consultation works</h2>
         <p class="text-gray-600">
-          We don’t just move furniture randomly. We focus on a few powerful zones that change how your space actually feels.
+          The process is simple and fully online. You do not need to believe in anything specific –
+          just a willingness to experiment with your space.
         </p>
       </div>
 
       <div class="grid md:grid-cols-4 gap-6 text-sm">
         <div class="bg-light rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <i class="fa fa-sign-in text-primary"></i>
-          </div>
-          <h3 class="font-semibold mb-2">Entrance</h3>
-          <p class="text-gray-600">
-            How energy and people enter your home, and the first impression your space gives you every day.
-          </p>
-        </div>
-        <div class="bg-light rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <i class="fa fa-bed text-primary"></i>
-          </div>
-          <h3 class="font-semibold mb-2">Bedroom</h3>
-          <p class="text-gray-600">
-            Bed direction, position, and what surrounds you — critical for rest, health, and emotional balance.
-          </p>
-        </div>
-        <div class="bg-light rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <i class="fa fa-desktop text-primary"></i>
-          </div>
-          <h3 class="font-semibold mb-2">Workspace</h3>
-          <p class="text-gray-600">
-            Desk placement, back support, and what you face — so work feels more stable and focused.
-          </p>
-        </div>
-        <div class="bg-light rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <i class="fa fa-usd text-primary"></i>
-          </div>
-          <h3 class="font-semibold mb-2">Wealth / long-term area</h3>
-          <p class="text-gray-600">
-            Areas connected to savings, long-term projects, and future stability — not just quick cash.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 流程 -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center mb-10 fade-in">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">How the consultation works</h2>
-      </div>
-
-      <div class="grid md:grid-cols-4 gap-6 text-sm">
-        <div class="bg-white rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4">
+          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-3">
             1
           </div>
-          <h3 class="font-semibold mb-2">Send your request</h3>
+          <h3 class="font-semibold mb-2">Choose a package</h3>
           <p class="text-gray-600">
-            Use the form below, choose a package, and tell us about your space (home, apartment, or office).
+            Pick the option that matches your situation: one room, full home, or business space.
           </p>
         </div>
-        <div class="bg-white rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4">
+        <div class="bg-light rounded-2xl shadow-md p-6 text-center fade-in">
+          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-3">
             2
           </div>
-          <h3 class="font-semibold mb-2">Share floor plan & photos</h3>
+          <h3 class="font-semibold mb-2">Send floor plan & photos</h3>
           <p class="text-gray-600">
-            We’ll ask for a simple floor plan (it can be a simple sketch) and photos or short videos.
+            You’ll send a simple floor plan (or sketch), basic measurements, photos, and a short description of your concerns.
           </p>
         </div>
-        <div class="bg-white rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4">
+        <div class="bg-light rounded-2xl shadow-md p-6 text-center fade-in">
+          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-3">
             3
           </div>
-          <h3 class="font-semibold mb-2">Confirm time & payment</h3>
+          <h3 class="font-semibold mb-2">Complete payment</h3>
           <p class="text-gray-600">
-            We agree on a time and send you a secure payment link before the session.
+            A secure payment link is provided after we confirm the scope and space details by email.
           </p>
         </div>
-        <div class="bg-white rounded-2xl shadow-md p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-4">
+        <div class="bg-light rounded-2xl shadow-md p-6 text-center fade-in">
+          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mx-auto mb-3">
             4
           </div>
-          <h3 class="font-semibold mb-2">Online consultation</h3>
+          <h3 class="font-semibold mb-2">Receive your feng shui plan</h3>
           <p class="text-gray-600">
-            We meet on video/voice, walk through your space together, and create a realistic plan for changes.
+            You receive a written plan with clear suggestions you can apply gradually, room by room.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-2xl mx-auto mt-10 text-center text-sm text-gray-600 fade-in">
+        <p class="mb-2">
+          If you prefer, we can also add a short online call to walk through the main points after you’ve read your plan.
+        </p>
+        <p class="text-xs text-gray-500 mt-2">
+          Calls are optional. Many clients prefer written-only so they can make changes in their own time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 信任感：我会做什么 / 不会做什么 -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-10">
+        <div class="fade-in">
+          <h2 class="text-xl md:text-2xl font-bold mb-4">How I approach feng shui</h2>
+          <p class="text-gray-600 text-sm md:text-base mb-4">
+            Feng shui has a long history in China of being used quietly – to choose houses, open businesses, arrange family homes,
+            and support health. My approach is traditional at the core, but translated into modern language and practical steps.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>• I look at the real structure of your home or office, not just decor trends.</li>
+            <li>• I combine direction, layout, and timing, not just “lucky items”.</li>
+            <li>• I prioritize changes that are realistic for renters and busy people.</li>
+            <li>• I explain why I suggest something, so you can understand, not just follow.</li>
+          </ul>
+        </div>
+
+        <div class="fade-in">
+          <h2 class="text-xl md:text-2xl font-bold mb-4">What I don’t do</h2>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li>• I don’t try to scare you with “bad luck” or fatalistic language.</li>
+            <li>• I don’t tell you to rebuild your whole house or buy endless products.</li>
+            <li>• I don’t promise to make you rich or fix every problem overnight.</li>
+            <li>• I don’t replace medical, psychological, or financial professionals.</li>
+          </ul>
+          <p class="text-gray-600 text-sm mt-4">
+            Feng shui is about stacking small advantages in your favor and reducing friction in your daily life.
+            It works best when it’s combined with honest self-reflection and practical action.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="py-16 bg-white">
+  <!-- FAQ：美国用户常见问题，增加信任与成交 -->
+  <section class="py-18 bg-white">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center mb-10 fade-in">
+      <div class="max-w-3xl mx-auto mb-10 text-center fade-in">
         <h2 class="text-2xl md:text-3xl font-bold mb-4">Frequently asked questions</h2>
+        <p class="text-gray-600">
+          A few common questions from people who are curious about feng shui but don’t want anything extreme or superstitious.
+        </p>
       </div>
 
-      <div class="max-w-3xl mx-auto space-y-6">
-        <div class="bg-light rounded-2xl shadow-md p-6 fade-in">
-          <h3 class="font-semibold mb-2 text-sm md:text-base">Can feng shui be done online?</h3>
-          <p class="text-gray-600 text-sm md:text-base">
-            Yes. With a floor plan, photos, and video, we can see the main flows and blocks in your space.
-            Many clients are outside my city, so sessions are designed for online work.
+      <div class="max-w-3xl mx-auto space-y-6 text-sm text-gray-700">
+        <div class="bg-light rounded-2xl shadow-md p-5 fade-in">
+          <h3 class="font-semibold mb-2">Do I need to “believe” in feng shui for it to work?</h3>
+          <p>
+            You don’t have to force yourself to believe anything. Many clients treat it as a mix of traditional wisdom and
+            environmental psychology. We make changes, you live with them, and you notice how your sleep, mood, and focus respond.
           </p>
         </div>
-        <div class="bg-light rounded-2xl shadow-md p-6 fade-in">
-          <h3 class="font-semibold mb-2 text-sm md:text-base">Do I need to buy a lot of new things?</h3>
-          <p class="text-gray-600 text-sm md:text-base">
-            Not necessarily. We first work with layout, placement, and what you already have. Any objects (like plants
-            or specific feng shui items) are added only if truly helpful and realistic.
+
+        <div class="bg-light rounded-2xl shadow-md p-5 fade-in">
+          <h3 class="font-semibold mb-2">Will you ask me to buy a lot of objects from your shop?</h3>
+          <p>
+            No. Classical feng shui starts with structure, layout, and how you use space. Sometimes a few objects (like a solid
+            headboard or a proper desk) help, but most suggestions use what you already own. My shop is optional, not required.
           </p>
         </div>
-        <div class="bg-light rounded-2xl shadow-md p-6 fade-in">
-          <h3 class="font-semibold mb-2 text-sm md:text-base">What if I rent or share my space?</h3>
-          <p class="text-gray-600 text-sm md:text-base">
-            We take your limitations seriously. Many clients live in rentals or share with family or roommates.
-            We focus on changes you can control: your room, your desk, and how you use the space.
+
+        <div class="bg-light rounded-2xl shadow-md p-5 fade-in">
+          <h3 class="font-semibold mb-2">Can you work with apartments or rentals?</h3>
+          <p>
+            Yes. Many clients live in apartments, condos, or rentals with strict rules. I focus on adjustments that respect
+            your limitations: furniture placement, room usage, what you see when you wake up and when you come home.
+          </p>
+        </div>
+
+        <div class="bg-light rounded-2xl shadow-md p-5 fade-in">
+          <h3 class="font-semibold mb-2">I’m not in the U.S. Can we still work together?</h3>
+          <p>
+            Yes, as long as you can send a floor plan or simple sketch and clear photos. All guidance is written in English.
+            Time zones only matter if you choose to add an optional call.
           </p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- 预约表单：套餐按钮联动 -->
-  <section id="contact" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
-        <div class="flex flex-col md:flex-row">
-          <!-- 左侧说明 -->
-          <div class="md:w-1/2 bg-primary p-10 text-white fade-in">
-            <h2 class="text-2xl font-bold mb-4">Book a feng shui consultation</h2>
-            <p class="mb-4 text-sm md:text-base">
-              Tell us about your home or workspace, your city, and which package you’re interested in.
-            </p>
-            <p class="mb-2"><strong>Email:</strong> youremail@example.com</p>
-            <p class="text-xs text-white/80">
-              Replace this with your real email. You’ll reply manually with available times and payment details.
-            </p>
-            <div class="mt-8 space-y-3 text-sm">
-              <p class="font-semibold mb-1">Helpful details to include:</p>
-              <p>• Where you live (city, country)</p>
-              <p>• Type of space (studio, apartment, house, office, etc.)</p>
-              <p>• How long you plan to stay in this space</p>
-              <p>• What feels off or heavy, and what you’d like to improve</p>
-            </div>
-          </div>
-
-          <!-- 右侧表单 -->
-          <div class="md:w-1/2 p-10 fade-in">
-            <form>
-              <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Name</label>
-                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Email</label>
-                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Space Type</label>
-                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm">
-                  <option>Apartment / Condo</option>
-                  <option>House</option>
-                  <option>Studio (live/work)</option>
-                  <option>Office / Business Space</option>
-                  <option>Other / Not sure</option>
-                </select>
-              </div>
-              <div class="mb-4">
-                <label class="block text-gray-700 mb-2">Package</label>
-                <select
-                  id="packageSelect"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm"
-                >
-                  <option value="Not sure yet">Not sure yet – please recommend</option>
-                  <option value="Quick Home Check (up to 45 min)">Quick Home Check (up to 45 min)</option>
-                  <option value="Full Home / Apartment (60–90 min)">Full Home / Apartment (60–90 min)</option>
-                  <option value="Home + Work Combo (2 × 60 min)">Home + Work Combo (2 × 60 min)</option>
-                </select>
-              </div>
-              <div class="mb-6">
-                <label class="block text-gray-700 mb-2">Message</label>
-                <textarea
-                  id="messageField"
-                  rows="5"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-sm"
-                  placeholder="Please include your city/country, type of space, how long you plan to stay, and what you would like to change or improve."
-                ></textarea>
-              </div>
-              <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-medium text-sm md:text-base">
-                Send consultation request
-              </button>
-            </form>
-          </div>
+      <div class="max-w-2xl mx-auto mt-10 text-center text-sm text-gray-700 fade-in">
+        <h3 class="font-semibold mb-2">Ready to talk about your space?</h3>
+        <p class="mb-3">
+          You can briefly describe your situation and which package you’re considering, and I’ll reply with timing and next steps.
+        </p>
+        <p class="text-sm text-gray-700">
+          <span class="font-semibold">Email:</span> youremail@example.com
+        </p>
+        <p class="text-xs text-gray-500 mt-1">
+          Replace this with your real contact. Or use the contact form on the home page.
+        </p>
+        <div class="mt-4">
+          <a href="index.html#contact"
+             class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white px-7 py-2.5 rounded-full text-sm font-medium">
+            Go to contact form
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 页脚：和其他页面统一 -->
+  <!-- 页脚 -->
   <footer class="bg-dark text-white py-8">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
       <span>© 2025 Your Brand. All rights reserved.</span>
@@ -483,43 +507,13 @@
     </div>
   </footer>
 
-  <!-- 回到顶部按钮 -->
-  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+  <!-- 回到顶部 -->
+  <button id="back-to-top"
+          class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
     <i class="fa fa-chevron-up"></i>
   </button>
 
-  <!-- 全站通用脚本（导航滚动、回到顶部、动画等） -->
-<script src="script.js"></script>
-
-
-  <!-- 本页额外脚本：套餐按钮 → 自动选中套餐 + 滚动到表单 -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var packageSelect = document.getElementById('packageSelect');
-      var messageField = document.getElementById('messageField');
-      var contactSection = document.getElementById('contact');
-
-      document.querySelectorAll('[data-package]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          var pkg = btn.getAttribute('data-package');
-          if (packageSelect && pkg) {
-            packageSelect.value = pkg;
-          }
-          if (messageField && !messageField.value) {
-            messageField.value =
-              'Package: ' + pkg + '\n\n' +
-              'About my space:\n' +
-              '- City / country: \n' +
-              '- Type of space (apartment, house, office, etc.): \n' +
-              '- How long I plan to stay here: \n\n' +
-              'What feels off / what I want to improve:';
-          }
-          if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      });
-    });
-  </script>
+  <!-- 全站脚本 -->
+  <script src="script.js"></script>
 </body>
 </html>
