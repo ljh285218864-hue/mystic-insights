@@ -1,60 +1,88 @@
-// 导航栏滚动效果
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('bg-dark/90', 'bg-blur', 'shadow-lg');
-    navbar.classList.remove('bg-transparent');
-  } else {
-    navbar.classList.add('bg-transparent');
-    navbar.classList.remove('bg-dark/90', 'bg-blur', 'shadow-lg');
-  }
-});
-
-// 移动端菜单
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
-let menuOpen = false;
-
-mobileMenuButton.addEventListener('click', () => {
-  if (menuOpen) {
-    mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'invisible');
-    mobileMenuButton.innerHTML = '<i class="fa fa-bars"></i>';
-  } else {
-    mobileMenu.classList.remove('-translate-y-full', 'opacity-0', 'invisible');
-    mobileMenuButton.innerHTML = '<i class="fa fa-times"></i>';
-  }
-  menuOpen = !menuOpen;
-});
-
-// 滚动动画
-const fadeElements = document.querySelectorAll('.fade-in');
-
-const fadeInObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      fadeInObserver.unobserve(entry.target);
+ document.addEventListener('DOMContentLoaded', function () {
+  // ===== NAVBAR SCROLL EFFECT =====
+  const navbar = document.getElementById('navbar');
+  const toggleNavbar = () => {
+    if (!navbar) return;
+    if (window.scrollY > 40) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
-  });
-}, { threshold: 0.1 });
+  };
+  toggleNavbar();
+  window.addEventListener('scroll', toggleNavbar);
 
-fadeElements.forEach(element => {
-  fadeInObserver.observe(element);
-});
+  // ===== MOBILE MENU =====
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
 
-// 回到顶部按钮
-const backToTopButton = document.getElementById('back-to-top');
+  if (mobileMenuButton && mobileMenu) {
+    const openMenu = () => {
+      mobileMenu.classList.remove('opacity-0', 'invisible', '-translate-y-full');
+      mobileMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
+      menuOpen = true;
+    };
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTopButton.classList.remove('opacity-0', 'invisible');
-    backToTopButton.classList.add('opacity-100', 'visible');
-  } else {
-    backToTopButton.classList.add('opacity-0', 'invisible');
-    backToTopButton.classList.remove('opacity-100', 'visible');
+    const closeMenu = () => {
+      mobileMenu.classList.add('opacity-0', 'invisible', '-translate-y-full');
+      mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+      menuOpen = false;
+    };
+
+    mobileMenuButton.addEventListener('click', () => {
+      if (menuOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (menuOpen) closeMenu();
+      });
+    });
   }
-});
 
-backToTopButton.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // ===== BACK TO TOP BUTTON =====
+  const backToTopButton = document.getElementById('back-to-top');
+  if (backToTopButton) {
+    const toggleBackToTop = () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopButton.classList.add('opacity-0', 'invisible');
+        backToTopButton.classList.remove('opacity-100', 'visible');
+      }
+    };
+    toggleBackToTop();
+    window.addEventListener('scroll', toggleBackToTop);
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ===== FADE-IN ON SCROLL =====
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if (fadeEls.length > 0) {
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      fadeEls.forEach((el) => observer.observe(el));
+    } else {
+      fadeEls.forEach((el) => el.classList.add('visible'));
+    }
+  }
 });
