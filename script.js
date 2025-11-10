@@ -86,7 +86,7 @@
     }
   }
 
-  // ===== TESTIMONIAL SLIDER (首页评价轮播) =====
+  // ===== TESTIMONIAL SLIDER（如果页面上不存在 .testimonial-slider 就不会生效） =====
   const slider = document.querySelector('.testimonial-slider');
   if (slider) {
     const slides = slider.querySelectorAll('.testimonial-slide');
@@ -98,18 +98,10 @@
 
       const showSlide = (index) => {
         slides.forEach((slide, i) => {
-          if (i === index) {
-            slide.classList.add('active');
-          } else {
-            slide.classList.remove('active');
-          }
+          slide.classList.toggle('active', i === index);
         });
         dots.forEach((dot, i) => {
-          if (i === index) {
-            dot.classList.add('active');
-          } else {
-            dot.classList.remove('active');
-          }
+          dot.classList.toggle('active', i === index);
         });
         current = index;
       };
@@ -119,23 +111,32 @@
         showSlide(nextIndex);
       };
 
-      // 自动轮播：每 6 秒切换一条
       const startAutoPlay = () => {
         if (timer) clearInterval(timer);
         timer = setInterval(nextSlide, 6000);
       };
 
-      // 小圆点点击切换
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
           showSlide(index);
-          startAutoPlay(); // 点击之后重新计时
+          startAutoPlay();
         });
       });
 
-      // 初始化
       showSlide(0);
       startAutoPlay();
     }
+  }
+
+  // ===== PACKAGE CARD CLICK (fortune 页面) =====
+  const packageCards = document.querySelectorAll('.package-card[data-package]');
+  if (packageCards.length > 0) {
+    packageCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        const pkg = card.getAttribute('data-package') || 'single';
+        // 跳转到预约页面，并带上 ?package=single/three/full
+        window.location.href = 'fortune-booking.html?package=' + encodeURIComponent(pkg);
+      });
+    });
   }
 });
