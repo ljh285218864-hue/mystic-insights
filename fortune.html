@@ -196,7 +196,7 @@
     </div>
   </section>
 
-  <!-- 套餐区域 -->
+    <!-- 套餐区域 -->
   <section id="packages" class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center mb-12 fade-in">
@@ -205,11 +205,16 @@
           All readings are written only – no live call – so you can read slowly, highlight, and return to them
           when you need to make decisions.
         </p>
+        <p class="text-xs text-gray-500 mt-3">
+          Click anywhere on a card to continue. You’ll fill in your birth details and questions on the next page.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
         <!-- 单个问题 -->
-        <article class="bg-white rounded-2xl shadow-xl p-7 flex flex-col fade-in">
+        <article
+          class="package-card bg-white rounded-2xl shadow-xl p-7 flex flex-col cursor-pointer transition-transform duration-200 hover:-translate-y-1 hover:shadow-2xl fade-in"
+          data-package="single">
           <div class="mb-4">
             <p class="text-xs uppercase tracking-[0.16em] text-secondary mb-2">SIMPLE & FOCUSED</p>
             <h3 class="text-lg font-bold mb-2">Single Question Reading</h3>
@@ -239,15 +244,17 @@
           </div>
           <div class="mt-auto">
             <p class="text-xs text-gray-500 mb-2">No voice or video call. Written only.</p>
-           <a href="fortune-booking.html?package=single"
-   class="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full text-sm font-medium">
-  Start with a single question
-</a>
+            <button type="button"
+                    class="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full text-sm font-medium">
+              Start with this single question
+            </button>
           </div>
         </article>
 
         <!-- 三个问题 -->
-        <article class="bg-white rounded-2xl shadow-2xl p-7 flex flex-col border border-secondary/40 fade-in">
+        <article
+          class="package-card bg-white rounded-2xl shadow-2xl p-7 flex flex-col cursor-pointer transition-transform duration-200 hover:-translate-y-1 hover:shadow-2xl border border-secondary/40 fade-in"
+          data-package="three">
           <div class="mb-4">
             <p class="text-xs uppercase tracking-[0.16em] text-secondary mb-2">MOST POPULAR</p>
             <h3 class="text-lg font-bold mb-2">Three Question Reading</h3>
@@ -273,21 +280,22 @@
               <li>• A structured written reading sent by email</li>
               <li>• Short overview of your chart nature (strengths / challenges)</li>
               <li>• Timing focus: which years are heavier or lighter for your questions</li>
-              <li>• Practical suggestions rooted in traditional Chinese thinking, translated into modern life</li>
+              <li>• Practical suggestions rooted in traditional Chinese thinking, in modern language</li>
             </ul>
           </div>
           <div class="mt-auto">
             <p class="text-xs text-gray-500 mb-2">No live session. You read in your own time.</p>
-          <a href="fortune-booking.html?package=three"
-   class="inline-flex items-center justify-center w-full bg-secondary hover:bg-secondary/90 text-white py-2.5 rounded-full text-sm font-semibold">
-  Choose the three-question reading
-</a>
-            </a>
+            <button type="button"
+                    class="inline-flex items-center justify-center w-full bg-secondary hover:bg-secondary/90 text-white py-2.5 rounded-full text-sm font-semibold">
+              Choose the three-question reading
+            </button>
           </div>
         </article>
 
         <!-- 完整解析 -->
-        <article class="bg-white rounded-2xl shadow-xl p-7 flex flex-col fade-in">
+        <article
+          class="package-card bg-white rounded-2xl shadow-xl p-7 flex flex-col cursor-pointer transition-transform duration-200 hover:-translate-y-1 hover:shadow-2xl fade-in"
+          data-package="full">
           <div class="mb-4">
             <p class="text-xs uppercase tracking-[0.16em] text-secondary mb-2">FULL ANALYSIS</p>
             <h3 class="text-lg font-bold mb-2">Full Life Path Analysis</h3>
@@ -320,16 +328,16 @@
           </div>
           <div class="mt-auto">
             <p class="text-xs text-gray-500 mb-2">Best if this is your first full Chinese-style reading.</p>
-          <a href="fortune-booking.html?package=full"
-   class="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full text-sm font-medium">
-  Request a full life analysis
-</a>
-            </a>
+            <button type="button"
+                    class="inline-flex items-center justify-center w-full bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full text-sm font-medium">
+              Request a full life analysis
+            </button>
           </div>
         </article>
       </div>
     </div>
   </section>
+
 
   <!-- 流程：选择套餐-填写信息-付款-解答 -->
   <section id="how-it-works" class="py-18 bg-white">
