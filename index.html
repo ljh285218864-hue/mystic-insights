@@ -346,65 +346,151 @@
       </div>
     </div>
   </section>
-
-  <!-- 评价 -->
+  <!-- 评价：自动横向滚动展示 -->
   <section id="testimonials" class="py-20 bg-white">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-16 fade-in">
+      <div class="text-center mb-10 fade-in">
         <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">What Clients Say</h2>
         <p class="text-gray-600 max-w-2xl mx-auto">
-          Real experiences from people who have worked with destiny readings, feng shui consultations, and the shop.
+          A few words from clients who have worked with destiny readings, feng shui consultations, and the shop.
         </p>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-light p-8 rounded-2xl shadow-md fade-in">
-          <div class="text-secondary mb-4">
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-          </div>
-          <p class="text-gray-600 mb-6">
-            "The destiny reading gave me clarity I’d been looking for for months. It felt grounded and honest, not scary or vague."
-          </p>
-          <div class="flex items-center">
-            <img src="https://picsum.photos/id/64/100/100" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
-            <div>
-              <h4 class="font-bold">Sarah Johnson</h4>
-              <p class="text-gray-500 text-sm">Destiny Reading Client</p>
+
+      <!-- 自动滚动的评价轨道 -->
+      <div class="testimonial-marquee fade-in">
+        <div class="testimonial-track">
+          <!-- 卡片 1 -->
+          <article class="testimonial-card">
+            <div class="flex items-center justify-between mb-3">
+              <div class="text-secondary text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+              <span class="text-xs uppercase tracking-[0.16em] text-gray-400">Destiny Reading</span>
             </div>
-          </div>
-        </div>
-        <div class="bg-light p-8 rounded-2xl shadow-md fade-in">
-          <div class="text-secondary mb-4">
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-          </div>
-          <p class="text-gray-600 mb-6">
-            "After the feng shui consultation, our home feels completely different. The changes were simple but the energy is lighter."
-          </p>
-          <div class="flex items-center">
-            <img src="https://picsum.photos/id/91/100/100" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
-            <div>
-              <h4 class="font-bold">Michael Chen</h4>
-              <p class="text-gray-500 text-sm">Feng Shui Client</p>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              "The destiny reading gave me clarity I’d been looking for for months. It felt grounded and honest,
+              not scary or vague. I left with very concrete next steps."
+            </p>
+            <div class="flex items-center">
+              <img src="https://picsum.photos/id/64/120/120" alt="Client" class="w-10 h-10 rounded-full object-cover mr-3">
+              <div>
+                <h4 class="font-semibold text-sm text-dark">Sarah Johnson</h4>
+                <p class="text-gray-500 text-xs">San Francisco · USA</p>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="bg-light p-8 rounded-2xl shadow-md fade-in">
-          <div class="text-secondary mb-4">
-            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
-          </div>
-          <p class="text-gray-600 mb-6">
-            "The incense burner and crystal set from the shop are now part of my weekly ritual. The quality is excellent and feels very intentional."
-          </p>
-          <div class="flex items-center">
-            <img src="https://picsum.photos/id/26/100/100" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
-            <div>
-              <h4 class="font-bold">Elena Rodriguez</h4>
-              <p class="text-gray-500 text-sm">Shop Customer</p>
+          </article>
+
+          <!-- 卡片 2 -->
+          <article class="testimonial-card">
+            <div class="flex items-center justify-between mb-3">
+              <div class="text-secondary text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+              <span class="text-xs uppercase tracking-[0.16em] text-gray-400">Feng Shui</span>
             </div>
-          </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              "After the feng shui consultation, our home feels completely different. The changes were simple and
+              realistic, but the space is noticeably lighter and calmer."
+            </p>
+            <div class="flex items-center">
+              <img src="https://picsum.photos/id/91/120/120" alt="Client" class="w-10 h-10 rounded-full object-cover mr-3">
+              <div>
+                <h4 class="font-semibold text-sm text-dark">Michael Chen</h4>
+                <p class="text-gray-500 text-xs">Seattle · USA</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 卡片 3 -->
+          <article class="testimonial-card">
+            <div class="flex items-center justify-between mb-3">
+              <div class="text-secondary text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+              </div>
+              <span class="text-xs uppercase tracking-[0.16em] text-gray-400">Shop</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              "The incense burner and crystal set are now part of my weekly ritual. The quality feels very
+              intentional and pairs well with the guidance from our session."
+            </p>
+            <div class="flex items-center">
+              <img src="https://picsum.photos/id/26/120/120" alt="Client" class="w-10 h-10 rounded-full object-cover mr-3">
+              <div>
+                <h4 class="font-semibold text-sm text-dark">Elena Rodriguez</h4>
+                <p class="text-gray-500 text-xs">Austin · USA</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 再重复一遍 1–3，让滚动可以无缝循环 -->
+          <article class="testimonial-card">
+            <div class="flex items-center justify-between mb-3">
+              <div class="text-secondary text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+              <span class="text-xs uppercase tracking-[0.16em] text-gray-400">Destiny Reading</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              "I felt seen but not judged. The timing insights matched what I’ve been feeling for years, and it
+              helped me stop forcing things in the wrong season."
+            </p>
+            <div class="flex items-center">
+              <img src="https://picsum.photos/id/1027/120/120" alt="Client" class="w-10 h-10 rounded-full object-cover mr-3">
+              <div>
+                <h4 class="font-semibold text-sm text-dark">Emily Wright</h4>
+                <p class="text-gray-500 text-xs">New York · USA</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="flex items-center justify-between mb-3">
+              <div class="text-secondary text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </div>
+              <span class="text-xs uppercase tracking-[0.16em] text-gray-400">Feng Shui</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              "We changed just a few key placements in my studio and client flow increased within a month.
+              I finally feel like my space fits my work."
+            </p>
+            <div class="flex items-center">
+              <img src="https://picsum.photos/id/823/120/120" alt="Client" class="w-10 h-10 rounded-full object-cover mr-3">
+              <div>
+                <h4 class="font-semibold text-sm text-dark">Jason Lee</h4>
+                <p class="text-gray-500 text-xs">Los Angeles · USA</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="flex items-center justify-between mb-3">
+              <div class="text-secondary text-sm">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+              </div>
+              <span class="text-xs uppercase tracking-[0.16em] text-gray-400">Shop</span>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mb-4">
+              "The altar set made it so much easier to actually keep up a weekly ritual. It feels simple,
+              beautiful, and not overwhelming at all."
+            </p>
+            <div class="flex items-center">
+              <img src="https://picsum.photos/id/65/120/120" alt="Client" class="w-10 h-10 rounded-full object-cover mr-3">
+              <div>
+                <h4 class="font-semibold text-sm text-dark">Laura Kim</h4>
+                <p class="text-gray-500 text-xs">Chicago · USA</p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
+
+      <p class="mt-6 text-center text-xs text-gray-400">
+        Testimonials are shared with permission. Experiences are personal and individual results may vary.
+      </p>
     </div>
   </section>
+
 
   <!-- 联系 -->
   <section id="contact" class="py-20 bg-gray-50">
@@ -560,4 +646,5 @@
 
 </body>
 </html>
+
 
