@@ -346,152 +346,258 @@
       </div>
     </div>
   </section>
-   <!-- 评价：弹幕式从右到左滑动 -->
+    <!-- 评价：横向滚动的美式 review ticker -->
   <section id="testimonials" class="py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="text-center mb-10 fade-in">
         <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">What Clients Say</h2>
         <p class="text-gray-600 max-w-2xl mx-auto">
-          Short reflections from clients who have worked with destiny readings, feng shui consultations, and the shop.
+          Short reviews from clients who have worked with destiny readings, feng shui consultations, and the shop.
         </p>
       </div>
 
-      <!-- 弹幕容器：两行，从右往左自动滑动 -->
-      <div class="testimonial-barrage fade-in">
-        <!-- 上面一行：稍微快一点 -->
-        <div class="testimonial-row">
-          <div class="testimonial-track">
-            <!-- 一组评价（稍短的句子，适合弹幕），后面会复制一遍形成无缝循环 -->
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Most grounded destiny reading I’ve ever had."</span>
-              <span class="pill-name">— Sarah J., San Francisco</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"The timing advice matched things I’d felt for years."</span>
-              <span class="pill-name">— Emily W., New York</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Feng shui changes were simple but the house feels lighter."</span>
-              <span class="pill-name">— Michael C., Seattle</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★☆</span>
-              <span class="pill-text">"I finally sleep through the night after we fixed my bedroom layout."</span>
-              <span class="pill-name">— Anna K., Chicago</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Wind chime + coins made my studio feel like a real business."</span>
-              <span class="pill-name">— Jason L., Los Angeles</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Shop items feel intentional, not random decor."</span>
-              <span class="pill-name">— Elena R., Austin</span>
-            </div>
+      <div class="testimonial-ticker-wrapper fade-in">
+        <div class="testimonial-ticker">
+          <div class="testimonial-ticker-track">
+            <!-- 一轮评价卡片（建议保持这种格式，只改文案和头像） -->
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/64/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Sarah Johnson</p>
+                    <p class="text-xs text-gray-500">Destiny Reading · San Francisco, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "The destiny reading was calm, clear, and surprisingly practical. I left with specific timing and
+                next steps instead of vague predictions."
+              </p>
+            </article>
 
-            <!-- 再复制一遍，形成无缝循环（不要改类名，只能改文字） -->
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Most grounded destiny reading I’ve ever had."</span>
-              <span class="pill-name">— Sarah J., San Francisco</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"The timing advice matched things I’d felt for years."</span>
-              <span class="pill-name">— Emily W., New York</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Feng shui changes were simple but the house feels lighter."</span>
-              <span class="pill-name">— Michael C., Seattle</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★☆</span>
-              <span class="pill-text">"I finally sleep through the night after we fixed my bedroom layout."</span>
-              <span class="pill-name">— Anna K., Chicago</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Wind chime + coins made my studio feel like a real business."</span>
-              <span class="pill-name">— Jason L., Los Angeles</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Shop items feel intentional, not random decor."</span>
-              <span class="pill-name">— Elena R., Austin</span>
-            </div>
-          </div>
-        </div>
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/91/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Michael Chen</p>
+                    <p class="text-xs text-gray-500">Feng Shui · Seattle, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "We didn’t rebuild the whole house. Just a few layout changes and the space feels lighter and
+                a lot less chaotic."
+              </p>
+            </article>
 
-        <!-- 下面一行：更慢一点，增加层次感 -->
-        <div class="testimonial-row testimonial-row-slow">
-          <div class="testimonial-track">
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"My home feels like it finally fits the life I want."</span>
-              <span class="pill-name">— Laura K., Portland</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"The reading was honest, calm, and very accurate."</span>
-              <span class="pill-name">— David M., Toronto</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★☆</span>
-              <span class="pill-text">"Small adjustments at my desk changed how I focus at work."</span>
-              <span class="pill-name">— Chris P., Vancouver</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Wealth coins + layout shift helped me feel less stuck with money."</span>
-              <span class="pill-name">— Nina S., Houston</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"I rewatch the recording of my reading every few months."</span>
-              <span class="pill-name">— Grace H., Boston</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Altars and incense made my weekly ritual easy to keep."</span>
-              <span class="pill-name">— Olivia R., Denver</span>
-            </div>
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/26/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Elena Rodriguez</p>
+                    <p class="text-xs text-gray-500">Shop · Austin, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★☆
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "The incense burner and crystal set became part of a Sunday ritual. Everything feels intentional,
+                not like random decor."
+              </p>
+            </article>
 
-            <!-- 再复制一遍，形成无缝循环 -->
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"My home feels like it finally fits the life I want."</span>
-              <span class="pill-name">— Laura K., Portland</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"The reading was honest, calm, and very accurate."</span>
-              <span class="pill-name">— David M., Toronto</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★☆</span>
-              <span class="pill-text">"Small adjustments at my desk changed how I focus at work."</span>
-              <span class="pill-name">— Chris P., Vancouver</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Wealth coins + layout shift helped me feel less stuck with money."</span>
-              <span class="pill-name">— Nina S., Houston</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"I rewatch the recording of my reading every few months."</span>
-              <span class="pill-name">— Grace H., Boston</span>
-            </div>
-            <div class="testimonial-pill">
-              <span class="pill-stars">★★★★★</span>
-              <span class="pill-text">"Altars and incense made my weekly ritual easy to keep."</span>
-              <span class="pill-name">— Olivia R., Denver</span>
-            </div>
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/1027/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Emily Wright</p>
+                    <p class="text-xs text-gray-500">Reading + Feng Shui · New York, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "The timing from my reading and the changes at home lined up. I stopped pushing in the wrong season
+                and things got easier."
+              </p>
+            </article>
+
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/823/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Jason Lee</p>
+                    <p class="text-xs text-gray-500">Feng Shui · Los Angeles, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "After adjusting my studio and adding just two items from the shop, client flow and income both
+                felt more steady."
+              </p>
+            </article>
+
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/65/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Laura Kim</p>
+                    <p class="text-xs text-gray-500">Shop · Chicago, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "The altar set made it easy to actually keep up a weekly practice instead of just thinking about it."
+              </p>
+            </article>
+
+            <!-- 再重复一遍同样的 6 个卡片，用来做无限循环（可以只改文案，不要删掉重复结构） -->
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/64/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Sarah Johnson</p>
+                    <p class="text-xs text-gray-500">Destiny Reading · San Francisco, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "The destiny reading was calm, clear, and surprisingly practical. I left with specific timing and
+                next steps instead of vague predictions."
+              </p>
+            </article>
+
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/91/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Michael Chen</p>
+                    <p class="text-xs text-gray-500">Feng Shui · Seattle, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "We didn’t rebuild the whole house. Just a few layout changes and the space feels lighter and
+                a lot less chaotic."
+              </p>
+            </article>
+
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/26/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Elena Rodriguez</p>
+                    <p class="text-xs text-gray-500">Shop · Austin, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★☆
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "The incense burner and crystal set became part of a Sunday ritual. Everything feels intentional,
+                not like random decor."
+              </p>
+            </article>
+
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/1027/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Emily Wright</p>
+                    <p class="text-xs text-gray-500">Reading + Feng Shui · New York, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "The timing from my reading and the changes at home lined up. I stopped pushing in the wrong season
+                and things got easier."
+              </p>
+            </article>
+
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/823/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Jason Lee</p>
+                    <p class="text-xs text-gray-500">Feng Shui · Los Angeles, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "After adjusting my studio and adding just two items from the shop, client flow and income both
+                felt more steady."
+              </p>
+            </article>
+
+            <article class="testimonial-item">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <img src="https://picsum.photos/id/65/96/96" alt="Client"
+                       class="w-9 h-9 rounded-full object-cover">
+                  <div>
+                    <p class="text-sm font-semibold text-dark">Laura Kim</p>
+                    <p class="text-xs text-gray-500">Shop · Chicago, USA</p>
+                  </div>
+                </div>
+                <div class="text-xs text-amber-400 font-semibold">
+                  ★★★★★
+                </div>
+              </div>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                "The altar set made it easy to actually keep up a weekly practice instead of just thinking about it."
+              </p>
+            </article>
           </div>
         </div>
       </div>
@@ -658,6 +764,7 @@
 
 </body>
 </html>
+
 
 
 
