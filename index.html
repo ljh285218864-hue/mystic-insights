@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+ <!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,6 +14,7 @@
   <!-- 导航栏 -->
   <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <!-- Logo 回到首页顶部 -->
       <a href="#home" class="flex items-center space-x-2">
         <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
           <i class="fa fa-moon-o text-white text-xl"></i>
@@ -21,9 +22,11 @@
         <span class="text-2xl font-bold text-white">Your Brand</span>
       </a>
       <nav class="hidden md:flex items-center space-x-8">
-        <a href="#destiny" class="text-white hover:text-secondary transition-colors font-medium">Destiny Reading</a>
-        <a href="#feng-shui" class="text-white hover:text-secondary transition-colors font-medium">Feng Shui</a>
-        <a href="#shop" class="text-white hover:text-secondary transition-colors font-medium">Shop</a>
+        <!-- 这里改成跳转到独立页面 -->
+        <a href="fortune.html" class="text-white hover:text-secondary transition-colors font-medium">Destiny Reading</a>
+        <a href="feng-shui.html" class="text-white hover:text-secondary transition-colors font-medium">Feng Shui</a>
+        <a href="shop.html" class="text-white hover:text-secondary transition-colors font-medium">Shop</a>
+        <!-- 这两个还是跳转到本页的区块 -->
         <a href="#testimonials" class="text-white hover:text-secondary transition-colors font-medium">Testimonials</a>
         <a href="#contact" class="bg-secondary hover:bg-secondary/90 text-white px-6 py-2 rounded-full transition-all font-medium">Contact</a>
       </nav>
@@ -33,9 +36,10 @@
     </div>
     <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
       <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-        <a href="#destiny" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
-        <a href="#feng-shui" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
-        <a href="#shop" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
+        <!-- 手机菜单同样改成页面跳转 -->
+        <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
+        <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
+        <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
         <a href="#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
         <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">Contact</a>
       </div>
@@ -57,10 +61,12 @@
         Two focused services—destiny reading and feng shui consultation—plus a small shop of spiritual objects to support the energy of your life and home.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
-        <a href="#destiny" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all font-medium text-lg">
+        <!-- 这里改成跳转到算命页面 -->
+        <a href="fortune.html" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all font-medium text-lg">
           View Services
         </a>
-        <a href="#shop" class="bg-transparent border-2 border-white hover:border-secondary hover:text-secondary text-white px-8 py-3 rounded-full transition-all font-medium text-lg">
+        <!-- 跳转到商城页面 -->
+        <a href="shop.html" class="bg-transparent border-2 border-white hover:border-secondary hover:text-secondary text-white px-8 py-3 rounded-full transition-all font-medium text-lg">
           Browse Shop
         </a>
       </div>
@@ -92,7 +98,8 @@
           <p class="text-gray-600 mb-6">
             Chinese-style destiny reading to understand your life cycles, strengths, and timing for important decisions.
           </p>
-          <a href="#destiny" class="text-primary font-medium flex items-center">
+          <!-- 改成跳转到算命页面 -->
+          <a href="fortune.html" class="text-primary font-medium flex items-center">
             Learn More <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -105,7 +112,8 @@
           <p class="text-gray-600 mb-6">
             Practical feng shui guidance for your home or workspace so your environment supports your sleep, focus, and finances.
           </p>
-          <a href="#feng-shui" class="text-primary font-medium flex items-center">
+          <!-- 跳转到风水页面 -->
+          <a href="feng-shui.html" class="text-primary font-medium flex items-center">
             Learn More <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -118,7 +126,8 @@
           <p class="text-gray-600 mb-6">
             A small, curated selection of incense burners, feng shui items, and crystals to support the energy we talk about in sessions.
           </p>
-          <a href="#shop" class="text-primary font-medium flex items-center">
+          <!-- 跳转到商城页面 -->
+          <a href="shop.html" class="text-primary font-medium flex items-center">
             Browse Shop <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
@@ -126,7 +135,7 @@
     </div>
   </section>
 
-  <!-- Destiny Reading 服务（原来的 fortune-telling 区） -->
+  <!-- Destiny Reading 服务（原来的 destiny 区） -->
   <section id="destiny" class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="flex flex-col lg:flex-row items-center gap-12">
@@ -173,7 +182,6 @@
               </div>
             </div>
           </div>
-          <!-- 这里是你收费服务的按钮，href 里的 # 换成你的收款链接就可以 -->
           <div class="mt-10 flex flex-col sm:flex-row gap-4">
             <a href="#" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all font-medium">
               Pay for Destiny Reading
@@ -238,7 +246,6 @@
             </div>
           </div>
           <div class="mt-10 flex flex-col sm:flex-row gap-4">
-            <!-- 换成你的收款链接 -->
             <a href="#" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all font-medium">
               Pay for Feng Shui
             </a>
@@ -333,7 +340,7 @@
       </div>
       <!-- 如果以后有独立商城，可把这个按钮链接到外部商城 -->
       <div class="text-center mt-12 fade-in">
-        <a href="#" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full transition-all font-medium">
+        <a href="shop.html" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full transition-all font-medium">
           View All Products
         </a>
       </div>
@@ -510,16 +517,18 @@
         <div>
           <h3 class="font-bold text-lg mb-6">Services</h3>
           <ul class="space-y-3">
-            <li><a href="#destiny" class="text-gray-400 hover:text-secondary transition-colors">Destiny Reading</a></li>
-            <li><a href="#feng-shui" class="text-gray-400 hover:text-secondary transition-colors">Feng Shui Consultation</a></li>
-            <li><a href="#shop" class="text-gray-400 hover:text-secondary transition-colors">Spiritual Shop</a></li>
+            <!-- 这里也改成页面跳转 -->
+            <li><a href="fortune.html" class="text-gray-400 hover:text-secondary transition-colors">Destiny Reading</a></li>
+            <li><a href="feng-shui.html" class="text-gray-400 hover:text-secondary transition-colors">Feng Shui Consultation</a></li>
+            <li><a href="shop.html" class="text-gray-400 hover:text-secondary transition-colors">Spiritual Shop</a></li>
             <li><a href="#contact" class="text-gray-400 hover:text-secondary transition-colors">Online Sessions</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-bold text-lg mb-6">Quick Links</h3>
           <ul class="space-y-3">
-            <li><a href="#about" class="text-gray-400 hover:text-secondary transition-colors">About</a></li>
+            <!-- 原来 #about 不存在，这里改成首页顶部 -->
+            <li><a href="#home" class="text-gray-400 hover:text-secondary transition-colors">About</a></li>
             <li><a href="#testimonials" class="text-gray-400 hover:text-secondary transition-colors">Testimonials</a></li>
             <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">FAQs</a></li>
           </ul>
