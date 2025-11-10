@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -65,7 +65,7 @@
         </p>
       </div>
 
-      <!-- 4 步骤流程条：选择套餐 - 填信息 - 付款 - 解答 -->
+      <!-- 4 步骤流程条 -->
       <div class="grid md:grid-cols-4 gap-4 text-xs md:text-sm mb-4 fade-in">
         <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3 border border-secondary/70">
           <div class="w-7 h-7 rounded-full bg-secondary text-white flex items-center justify-center text-xs">1</div>
@@ -102,7 +102,7 @@
     </div>
   </section>
 
-  <!-- 主内容：左侧套餐信息 + 右侧表单 -->
+  <!-- 主内容 -->
   <section class="pb-20 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="grid lg:grid-cols-3 gap-10 items-start">
@@ -138,7 +138,7 @@
           </div>
         </aside>
 
-        <!-- 右侧：填写信息表单 -->
+        <!-- 右侧表单 -->
         <div class="lg:col-span-2">
           <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 fade-in">
             <h2 class="text-lg md:text-xl font-bold mb-4">Step 2 – Fill in your details</h2>
@@ -147,7 +147,6 @@
               Chinese fortune-tellers use to see your timing, patterns, and life direction.
             </p>
 
-            <!-- 提交后使用邮箱接收：你可以改成自己的后端或支付系统 -->
             <form action="mailto:youremail@example.com" method="post" enctype="text/plain" class="space-y-6">
               <!-- 隐藏字段：套餐名称 -->
               <input type="hidden" name="Selected package" id="packageInput" value="Destiny Reading Package">
@@ -214,31 +213,39 @@
                 </p>
               </div>
 
-              <!-- 问题部分 -->
-              <div>
+              <!-- 问题区域：根据套餐不同显示不同形式 -->
+              <div id="questionsBlock">
                 <h3 class="font-semibold text-sm mb-3">Your question(s)</h3>
                 <p id="questionHint" class="text-xs text-gray-500 mb-3">
                   If you chose the single-question reading, please use Question 1 and keep it focused.
                 </p>
                 <div class="space-y-3">
-                  <div>
-                    <label class="block text-xs text-gray-700 mb-1">Question 1</label>
-                    <textarea name="Question 1" rows="3"
+                  <!-- 单个 / 三个问题用的三个栏位 -->
+                  <div id="q1Wrap">
+                    <label id="q1Label" class="block text-xs text-gray-700 mb-1">Question 1</label>
+                    <textarea id="q1Field" name="Question 1" rows="3"
                               class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                              placeholder="Example: Is this a good year to change jobs or is it better to wait?"
-                              required></textarea>
+                              placeholder="Example: Is this a good year to change jobs or is it better to wait?"></textarea>
                   </div>
-                  <div>
-                    <label class="block text-xs text-gray-700 mb-1">Question 2 (optional)</label>
-                    <textarea name="Question 2" rows="3"
+                  <div id="q2Wrap">
+                    <label id="q2Label" class="block text-xs text-gray-700 mb-1">Question 2 (optional)</label>
+                    <textarea id="q2Field" name="Question 2" rows="3"
                               class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                              placeholder="If you selected the three-question reading or full analysis, use this space."></textarea>
+                              placeholder="If you selected the three-question reading, use this space."></textarea>
                   </div>
-                  <div>
-                    <label class="block text-xs text-gray-700 mb-1">Question 3 (optional)</label>
-                    <textarea name="Question 3" rows="3"
+                  <div id="q3Wrap">
+                    <label id="q3Label" class="block text-xs text-gray-700 mb-1">Question 3 (optional)</label>
+                    <textarea id="q3Field" name="Question 3" rows="3"
                               class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                               placeholder="For a third question, or leave blank."></textarea>
+                  </div>
+
+                  <!-- 全解析用的整体关注点 -->
+                  <div id="fullWrap" class="hidden">
+                    <label class="block text-xs text-gray-700 mb-1">Main focus / life stage (optional)</label>
+                    <textarea id="fullField" name="Main focus / life stage" rows="4"
+                              class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                              placeholder="You can describe your current life stage, main concerns, or what you hope to understand from a full analysis."></textarea>
                   </div>
                 </div>
               </div>
@@ -248,8 +255,7 @@
                 <h3 class="font-semibold text-sm mb-3">Background / context (optional)</h3>
                 <textarea name="Background / context" rows="4"
                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                          placeholder="Anything you want me to know about your situation, recent changes, or how you’re feeling.">
-                </textarea>
+                          placeholder="Anything you want me to know about your situation, recent changes, or how you’re feeling."></textarea>
                 <p class="mt-2 text-[11px] text-gray-500">
                   You don’t need to write your whole life story – a few clear sentences are enough. The chart will show the rest.
                 </p>
@@ -288,7 +294,7 @@
         </div>
       </div>
 
-      <!-- 小提示：如何提问更适合中国式算命 -->
+      <!-- 提问小提示 -->
       <div class="max-w-3xl mx-auto mt-12 text-sm text-gray-700 fade-in">
         <h2 class="font-semibold mb-3">Tips for asking good questions in a Chinese-style reading</h2>
         <ul class="list-disc list-inside space-y-1">
@@ -317,7 +323,7 @@
   <!-- 全站脚本 -->
   <script src="script.js"></script>
 
-  <!-- 本页小脚本：根据 ?package=single/three/full 自动更新套餐信息 -->
+  <!-- 本页脚本：根据 ?package=xxx 切换套餐信息 + 问题栏数量 -->
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
@@ -330,9 +336,10 @@
           price: '$XX',
           bullets: [
             'You have one main decision or situation and want a clear answer.',
-            'You want to test how a Chinese-style reading feels before doing more.',
+            'You want to experience a Chinese-style reading before booking more.'
           ],
-          hint: 'If you chose the single-question reading, please use Question 1 for your main question. You can add background in the context section below.',
+          mode: 'single',
+          hint: 'For the single-question reading, please use Question 1 for your main question. You can add background in the context section below.'
         },
         three: {
           name: 'Three Question Reading',
@@ -340,9 +347,10 @@
           price: '$XX',
           bullets: [
             'You are looking at a few areas at the same time (work, money, love, moving, etc.).',
-            'You want more detail and timing around your next 1–3 years.',
+            'You want more detail and timing around your next 1–3 years.'
           ],
-          hint: 'If you chose the three-question reading, please use Question 1–3 for your three main questions. They can be separate or related.',
+          mode: 'three',
+          hint: 'For the three-question reading, please use Question 1–3 for your main questions. They can be separate or connected.'
         },
         full: {
           name: 'Full Life Path Analysis',
@@ -350,14 +358,16 @@
           price: '$XX',
           bullets: [
             'This is your first deep Chinese-style reading and you want a full overview.',
-            'You want to understand your nature and life cycles, not just one moment.',
+            'You want to understand your nature and life cycles, not just one moment.'
           ],
-          hint: 'If you chose the full analysis, you can list one or two key questions, or describe your overall focus for this stage of life.',
+          mode: 'full',
+          hint: 'For the full analysis, you may briefly describe your current life stage or focus, or leave it open for a general reading.'
         }
       };
 
       var data = config[key] || config.single;
 
+      // 左边卡片元素
       var nameEl = document.getElementById('packageName');
       var taglineEl = document.getElementById('packageTagline');
       var priceEl = document.getElementById('packagePrice');
@@ -378,6 +388,53 @@
           li.textContent = line;
           bulletsEl.appendChild(li);
         });
+      }
+
+      // 问题区域显示逻辑
+      var q1Wrap = document.getElementById('q1Wrap');
+      var q2Wrap = document.getElementById('q2Wrap');
+      var q3Wrap = document.getElementById('q3Wrap');
+      var fullWrap = document.getElementById('fullWrap');
+
+      var q1Field = document.getElementById('q1Field');
+      var q2Field = document.getElementById('q2Field');
+      var q3Field = document.getElementById('q3Field');
+      var fullField = document.getElementById('fullField');
+
+      function show(el) {
+        if (!el) return;
+        el.classList.remove('hidden');
+      }
+      function hide(el) {
+        if (!el) return;
+        el.classList.add('hidden');
+      }
+
+      // 清除 required
+      if (q1Field) q1Field.required = false;
+      if (q2Field) q2Field.required = false;
+      if (q3Field) q3Field.required = false;
+      if (fullField) fullField.required = false;
+
+      if (data.mode === 'single') {
+        show(q1Wrap);
+        hide(q2Wrap);
+        hide(q3Wrap);
+        hide(fullWrap);
+        if (q1Field) q1Field.required = true;
+      } else if (data.mode === 'three') {
+        show(q1Wrap);
+        show(q2Wrap);
+        show(q3Wrap);
+        hide(fullWrap);
+        if (q1Field) q1Field.required = true;
+      } else if (data.mode === 'full') {
+        hide(q1Wrap);
+        hide(q2Wrap);
+        hide(q3Wrap);
+        show(fullWrap);
+        // full 分析可以不强制提问，视你业务需求也可以改成 required = true
+        if (fullField) fullField.required = false;
       }
     })();
   </script>
