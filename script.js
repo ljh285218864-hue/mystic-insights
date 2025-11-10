@@ -85,4 +85,57 @@
       fadeEls.forEach((el) => el.classList.add('visible'));
     }
   }
+
+  // ===== TESTIMONIAL SLIDER (首页评价轮播) =====
+  const slider = document.querySelector('.testimonial-slider');
+  if (slider) {
+    const slides = slider.querySelectorAll('.testimonial-slide');
+    const dots = slider.querySelectorAll('.testimonial-dot');
+
+    if (slides.length > 0 && dots.length === slides.length) {
+      let current = 0;
+      let timer = null;
+
+      const showSlide = (index) => {
+        slides.forEach((slide, i) => {
+          if (i === index) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+        dots.forEach((dot, i) => {
+          if (i === index) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+        current = index;
+      };
+
+      const nextSlide = () => {
+        const nextIndex = (current + 1) % slides.length;
+        showSlide(nextIndex);
+      };
+
+      // 自动轮播：每 6 秒切换一条
+      const startAutoPlay = () => {
+        if (timer) clearInterval(timer);
+        timer = setInterval(nextSlide, 6000);
+      };
+
+      // 小圆点点击切换
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showSlide(index);
+          startAutoPlay(); // 点击之后重新计时
+        });
+      });
+
+      // 初始化
+      showSlide(0);
+      startAutoPlay();
+    }
+  }
 });
