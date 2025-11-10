@@ -296,5 +296,112 @@ document.addEventListener('DOMContentLoaded', function () {
   width: 20px;
   background-image: linear-gradient(90deg, var(--secondary), var(--primary));
 }
+/* ===== 弹幕式评价（从右往左滑动） ===== */
+
+.testimonial-barrage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+
+/* 每一行弹幕 */
+.testimonial-row {
+  position: relative;
+  overflow: hidden;
+  padding-block: 0.3rem;
+}
+
+/* 左右渐隐，边缘更高级一些 */
+.testimonial-row::before,
+.testimonial-row::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.testimonial-row::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.testimonial-row::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+/* 真正移动的轨道：里面放很多 pill，然后复制一遍，做无限循环 */
+.testimonial-track {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0.75rem;
+  width: max-content;            /* 根据内容自动宽度 */
+  animation: testimonial-marquee 45s linear infinite;
+}
+
+/* 下方那一行稍微慢一点 */
+.testimonial-row-slow .testimonial-track {
+  animation-duration: 60s;
+}
+
+/* 鼠标移上去暂停，方便用户停下来读 */
+.testimonial-row:hover .testimonial-track {
+  animation-play-state: paused;
+}
+
+/* 单个评价 pill 样式 */
+.testimonial-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(209, 213, 219, 0.9);
+  background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.95), #f9fafb);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  white-space: nowrap;
+  font-size: 0.75rem;
+}
+
+/* 星星 */
+.pill-stars {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: #fbbf24; /* 金色星星 */
+}
+
+/* 文案 */
+.pill-text {
+  color: #4b5563;
+}
+
+/* 名字 */
+.pill-name {
+  color: #9ca3af;
+}
+
+/* 小屏幕时 pill 更宽一些，防止太挤 */
+@media (max-width: 640px) {
+  .testimonial-pill {
+    padding-inline: 0.7rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* 无限循环动画：把两套内容从右往左移动 50% 宽度，刚好无缝衔接 */
+@keyframes testimonial-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
 
