@@ -187,3 +187,74 @@ document.addEventListener('DOMContentLoaded', function () {
 #navbar #mobile-menu-button {
   color: #f9fafb !important;
 }
+/* ====== Testimonials marquee (首页评价自动滚动) ====== */
+
+.testimonial-marquee {
+  position: relative;
+  overflow: hidden;
+  padding-block: 0.5rem;
+}
+
+/* 左右淡出遮罩，视觉更高级 */
+.testimonial-marquee::before,
+.testimonial-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3rem;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.testimonial-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.testimonial-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+/* 横向轨道，自动匀速移动 */
+.testimonial-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;              /* 根据内容自动宽度 */
+  animation: testimonial-scroll 42s linear infinite;
+}
+
+/* 鼠标移上去暂停滚动，方便阅读 */
+.testimonial-marquee:hover .testimonial-track {
+  animation-play-state: paused;
+}
+
+/* 单个评价卡片样式 */
+.testimonial-card {
+  min-width: 280px;
+  max-width: 360px;
+  background: #f9fafb;
+  border-radius: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* 小屏幕时卡片稍微占满一点宽度，看起来不拥挤 */
+@media (max-width: 640px) {
+  .testimonial-card {
+    min-width: 85vw;
+  }
+}
+
+/* 无限循环滚动：我们在 HTML 里把评价列表重复了一遍，这里只需要移动自身宽度的一半 */
+@keyframes testimonial-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
