@@ -1,148 +1,93 @@
-.content-auto {
-  content-visibility: auto;
-}
+ // Global site interactions
 
-.text-shadow {
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+document.addEventListener('DOMContentLoaded', function () {
+  // ===== NAVBAR SCROLL EFFECT =====
+  const navbar = document.getElementById('navbar');
+  const toggleNavbar = () => {
+    if (!navbar) return;
+    if (window.scrollY > 40) {
+      // 滚动一点点就加上 .scrolled，交给 CSS 处理样式
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  };
+  toggleNavbar();
+  window.addEventListener('scroll', toggleNavbar);
 
-.card-hover {
-  transition: all 0.3s ease;
-}
+  // ===== MOBILE MENU =====
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
 
-.card-hover:hover {
-  transform: translateY(-8px);
-}
+  if (mobileMenuButton && mobileMenu) {
+    const openMenu = () => {
+      mobileMenu.classList.remove('opacity-0', 'invisible', '-translate-y-full');
+      mobileMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
+      menuOpen = true;
+    };
 
-.bg-blur {
-  backdrop-filter: blur(8px);
-}
+    const closeMenu = () => {
+      mobileMenu.classList.add('opacity-0', 'invisible', '-translate-y-full');
+      mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+      menuOpen = false;
+    };
 
-html {
-  scroll-behavior: smooth;
-}
+    mobileMenuButton.addEventListener('click', () => {
+      if (menuOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
 
-body {
-  font-family: 'Inter', sans-serif;
-}
+    // 点击手机菜单里的任意链接自动关闭菜单
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (menuOpen) closeMenu();
+      });
+    });
+  }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+  // ===== BACK TO TOP BUTTON =====
+  const backToTopButton = document.getElementById('back-to-top');
+  if (backToTopButton) {
+    const toggleBackToTop = () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopButton.classList.add('opacity-0', 'invisible');
+        backToTopButton.classList.remove('opacity-100', 'visible');
+      }
+    };
+    toggleBackToTop();
+    window.addEventListener('scroll', toggleBackToTop);
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #165DFF;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #0f46d1;
-}
-
-:root {
-  --primary: #165DFF;
-  --secondary: #D4AF37;
-  --dark: #1E293B;
-  --light: #F8FAFC;
-}
-
-.fa-crystal-ball {
-  font-size: 1.5rem;
-
-}
-/* ====== High-end Navbar (统一所有页面) ====== */
-
-/* 导航栏背景：深色半透明 + 毛玻璃，保证任何白色背景下都清晰 */
-#navbar {
-  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.88));
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
-  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-/* 稍微压缩一下导航内部的上下间距，看起来更精致 */
-#navbar .container {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-/* 桌面导航链接统一样式（除了最后一个按钮） */
-#navbar nav > a {
-  position: relative;
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* 普通文字链接（不是最后一个 Contact 按钮） */
-#navbar nav > a:not(:last-child) {
-  color: #e5e7eb; /* 很浅的灰白色，比纯白更高级一点 */
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-/* 下划线渐变动画 */
-#navbar nav > a:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.45rem;
-  width: 0;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--secondary), var(--primary));
-  transition: width 0.25s ease;
-}
-
-/* hover 时，下划线由左到右展开 */
-#navbar nav > a:not(:last-child):hover::after {
-  width: 100%;
-}
-
-/* hover 时文字变金色 */
-#navbar nav > a:not(:last-child):hover {
-  color: var(--secondary);
-}
-
-/* 右侧 Contact 按钮（假设是 nav 里的最后一个 <a>） */
-#navbar nav > a:last-child {
-  margin-left: 0.25rem;
-  background: linear-gradient(135deg, var(--secondary), #facc15);
-  color: #111827; /* 深色文字 */
-  border-radius: 999px;
-  padding: 0.55rem 1.6rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-  text-transform: none; /* 按钮文字保持正常大小写 */
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-}
-
-/* 按钮 hover：微微抬起 + 加一点亮度 */
-#navbar nav > a:last-child:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
-}
-
-/* 品牌文字（左上角 logo 字）始终保持亮，配合一点阴影 */
-#navbar a:first-child span {
-  color: #f9fafb;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
+  // ===== FADE-IN ON SCROLL（给 .fade-in 元素加进入动画） =====
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if (fadeEls.length > 0) {
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      fadeEls.forEach((el) => observer.observe(el));
+    } else {
+      // 老浏览器：直接显示
+      fadeEls.forEach((el) => el.classList.add('visible'));
+    }
+  }
+});
