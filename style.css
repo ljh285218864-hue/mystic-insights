@@ -257,4 +257,44 @@ document.addEventListener('DOMContentLoaded', function () {
     transform: translateX(-50%);
   }
 }
+/* ===== Testimonials slider (首页评价轮播) ===== */
+
+.testimonial-slider-box {
+  position: relative;
+  min-height: 230px; /* 保证容器高度稳定，不会因为文字多少抖动 */
+}
+
+.testimonial-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  pointer-events: none;
+}
+
+/* 当前显示的 slide */
+.testimonial-slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.testimonial-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background-color: #e5e7eb;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* 当前 slide 对应的小圆点 */
+.testimonial-dot.active {
+  width: 20px;
+  background-image: linear-gradient(90deg, var(--secondary), var(--primary));
+}
+
 
