@@ -92,21 +92,33 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-/* ====== NAVBAR RE-STYLING (高端可读版本) ====== */
+/* ====== NAVBAR – DARK, HIGH CONTRAST ====== */
 
-/* 顶部默认：透明背景，配合 Hero 深色图；滑动后由 JS 加 .scrolled 变成浅色毛玻璃导航 */
+/* 导航始终是深色毛玻璃条，任何白色背景上都清晰 */
 #navbar {
-  background-color: transparent;
-  border-bottom: 1px solid transparent;
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
+  background-color: rgba(15, 23, 42, 0.97); /* 深蓝灰 */
+  border-bottom: 1px solid rgba(148, 163, 184, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.55);
+  z-index: 50;
   transition:
     background-color 0.25s ease,
     border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    backdrop-filter 0.25s ease,
-    -webkit-backdrop-filter 0.25s ease;
-  z-index: 50;
+    box-shadow 0.25s ease;
+}
+
+/* 滚动以后可以稍微加重一点阴影（可有可无，只是细节） */
+#navbar.scrolled {
+  background-color: rgba(15, 23, 42, 0.97);
+  border-bottom-color: rgba(148, 163, 184, 0.7);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
+}
+
+/* 导航内部上下间距稍微收紧一点，看起来更精致 */
+#navbar .container {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
 }
 
 /* 桌面导航链接基础样式（除最后一个按钮外） */
@@ -118,12 +130,13 @@ document.addEventListener('DOMContentLoaded', function () {
   text-transform: uppercase;
 }
 
-/* 顶部时：链接为浅色，在深色 Hero 上清晰 */
+/* 所有普通链接文字：浅灰白，深色背景上对比度很高 */
 #navbar nav > a:not(:last-child) {
-  color: #f9fafb;
+  color: #e5e7eb;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-/* 悬停下划线动画，增加精致感 */
+/* 下划线 hover 动画 */
 #navbar nav > a:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -144,29 +157,33 @@ document.addEventListener('DOMContentLoaded', function () {
   color: var(--secondary);
 }
 
-/* 滚动后：导航变成浅色毛玻璃条，适配下面的白色版块 */
-#navbar.scrolled {
-  background-color: rgba(248, 250, 252, 0.96); /* 类似 slate-50 */
-  border-bottom-color: rgba(148, 163, 184, 0.5);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
-}
-
-/* 滚动后：普通链接变成深色文字，白底上也清晰可见 */
-#navbar.scrolled nav > a:not(:last-child) {
-  color: #0f172a;
-}
-
-/* 滚动后：最右侧按钮（Contact）变成金色胶囊按钮，视觉焦点 */
-#navbar.scrolled nav > a:last-child {
+/* 右侧 Contact 按钮：金色渐变胶囊，在深色背景上非常明显 */
+#navbar nav > a:last-child {
+  margin-left: 0.25rem;
   background: linear-gradient(135deg, var(--secondary), #facc15);
   color: #111827 !important;
   border-radius: 999px;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.4);
+  padding: 0.55rem 1.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  text-transform: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
-/* 品牌标题加一点阴影，深浅背景都看得清楚 */
+#navbar nav > a:last-child:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
+}
+
+/* 左上角品牌文字永远是亮色 */
 #navbar a:first-child span {
+  color: #f9fafb;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* 手机汉堡菜单图标也强制设为白色，白底内容上不会消失 */
+#navbar #mobile-menu-button {
+  color: #f9fafb !important;
 }
