@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Brand | Book Your Feng Shui Consultation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 统一依赖 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-inter text-dark bg-light antialiased">
+
+  <!-- 导航：Feng Shui 高亮 -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html#home" class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+          <i class="fa fa-moon-o text-white text-xl"></i>
+        </div>
+        <span class="text-2xl font-bold text-white">Your Brand</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="fortune.html">Destiny Reading</a>
+        <a href="feng-shui.html" class="text-secondary font-semibold">Feng Shui</a>
+        <a href="shop.html">Shop</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- 手机菜单 -->
+    <div id="mobile-menu"
+         class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
+        <a href="feng-shui.html" class="text-primary font-medium py-2">Feng Shui</a>
+        <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
+        <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
+        <a href="index.html#contact"
+           class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
+          Contact
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 顶部：步骤 & 说明 -->
+  <section class="pt-32 pb-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto mb-8 fade-in">
+        <p class="uppercase tracking-[0.22em] text-xs text-secondary mb-2">
+          FENG SHUI · BOOKING
+        </p>
+        <h1 class="text-[clamp(1.9rem,3.2vw,2.6rem)] font-bold text-dark mb-3">
+          Confirm your feng shui package and share your space details
+        </h1>
+        <p class="text-gray-600 text-sm md:text-base">
+          This page is for Chinese-style feng shui consultations. We combine classical principles (qi flow, direction, timing)
+          with realistic changes for modern homes and workspaces.
+        </p>
+      </div>
+
+      <!-- 4 步骤流程条：选择套餐 - 填空间信息 - 付款 - 收到方案 -->
+      <div class="grid md:grid-cols-4 gap-4 text-xs md:text-sm mb-4 fade-in">
+        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3 border border-secondary/70">
+          <div class="w-7 h-7 rounded-full bg-secondary text-white flex items-center justify-center text-xs">1</div>
+          <div>
+            <p class="font-semibold text-dark">Choose package</p>
+            <p class="text-gray-500">You’ve just done this.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3 border border-primary/50">
+          <div class="w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center text-xs">2</div>
+          <div>
+            <p class="font-semibold text-dark">Share space details</p>
+            <p class="text-gray-500">Home / room / studio.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3">
+          <div class="w-7 h-7 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-xs">3</div>
+          <div>
+            <p class="font-semibold text-gray-700">Complete payment</p>
+            <p class="text-gray-500">Payment link sent by email.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3">
+          <div class="w-7 h-7 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-xs">4</div>
+          <div>
+            <p class="font-semibold text-gray-700">Receive feng shui plan</p>
+            <p class="text-gray-500">Written, step-by-step guide.</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-gray-500 fade-in">
+        Current process: choose a package → fill in this form → receive an email with payment link and estimated delivery time →
+        receive your written feng shui plan after payment.
+      </p>
+    </div>
+  </section>
+
+  <!-- 主内容：左侧套餐说明 + 右侧表单 -->
+  <section class="pb-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-3 gap-10 items-start">
+        <!-- 左侧：选择的风水套餐信息 -->
+        <aside class="lg:col-span-1">
+          <div class="bg-white rounded-2xl shadow-xl p-6 fade-in">
+            <p class="text-xs uppercase tracking-[0.18em] text-secondary mb-2">YOUR SELECTION</p>
+            <h2 id="fsPackageName" class="text-lg font-bold mb-1">
+              Feng Shui Consultation
+            </h2>
+            <p id="fsPackageTagline" class="text-gray-600 text-sm mb-4">
+              A Chinese-style feng shui consultation for your space.
+            </p>
+            <div class="flex items-baseline gap-2 mb-4">
+              <span id="fsPackagePrice" class="text-2xl font-bold text-primary">$XX</span>
+              <span class="text-xs text-gray-500">USD · remote consultation</span>
+            </div>
+            <div class="text-sm text-gray-600 mb-4">
+              <p class="font-semibold mb-1">This package is suitable when:</p>
+              <ul class="list-disc list-inside space-y-1" id="fsPackageBullets">
+                <li>You want to adjust your space using traditional Chinese principles.</li>
+                <li>You prefer a clear written plan you can follow step by step.</li>
+              </ul>
+            </div>
+            <a href="feng-shui.html#packages"
+               class="inline-flex items-center text-xs text-gray-500 hover:text-primary">
+              <i class="fa fa-angle-left mr-1"></i> Change package
+            </a>
+            <p class="mt-4 text-[11px] text-gray-400">
+              Feng shui is spiritual and energetic guidance based on traditional Chinese methods. It does not replace
+              medical, psychological, financial, or legal advice.
+            </p>
+          </div>
+        </aside>
+
+        <!-- 右侧：表单 -->
+        <div class="lg:col-span-2">
+          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 fade-in">
+            <h2 class="text-lg md:text-xl font-bold mb-4">Step 2 – Share your space details</h2>
+            <p class="text-gray-600 text-sm mb-6">
+              Please answer as best as you can. It’s okay if you don’t know exact measurements or directions —
+              part of my work is translating your photos and description into a feng shui view of your home or workspace.
+            </p>
+
+            <!-- 注意：这里仍然用 mailto，你可以改成自己的后端接口 -->
+            <form action="mailto:youremail@example.com" method="post" enctype="text/plain" class="space-y-6">
+              <!-- 隐藏字段：选择的风水套餐名称 -->
+              <input type="hidden" name="Selected feng shui package" id="fsPackageInput" value="Feng Shui Consultation">
+
+              <!-- 联系信息 -->
+              <div>
+                <h3 class="font-semibold text-sm mb-3">Contact details</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Your full name</label>
+                    <input type="text" name="Name"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           required>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Email address</label>
+                    <input type="email" name="Email"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           required>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Time zone / City</label>
+                    <input type="text" name="Time zone / City"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           placeholder="e.g. PST · Los Angeles" required>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Preferred language</label>
+                    <select name="Preferred language"
+                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                      <option>English</option>
+                      <option>Chinese + English</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 空间基本信息 -->
+              <div>
+                <h3 class="font-semibold text-sm mb-3">Basic information about the space</h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Space location (city, country)</label>
+                    <input type="text" name="Space location"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           placeholder="e.g. Seattle, USA" required>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Do you own or rent?</label>
+                    <select name="Own or rent"
+                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                      <option>Rent</option>
+                      <option>Own</option>
+                      <option>Other / Not sure</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Approx. move-in year</label>
+                    <input type="text" name="Move-in year"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           placeholder="e.g. 2021">
+                  </div>
+                </div>
+                <p class="mt-2 text-[11px] text-gray-500">
+                  Knowing how long you’ve lived or worked in a space is helpful because Chinese feng shui also looks at time cycles.
+                </p>
+              </div>
+
+              <!-- 根据套餐不同显示的专属信息 -->
+              <div id="fsRoomSpecific">
+                <h3 class="font-semibold text-sm mb-3">Single room focus</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Which room is this?</label>
+                    <select name="Room type"
+                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                      <option>Bedroom</option>
+                      <option>Home office</option>
+                      <option>Living room</option>
+                      <option>Studio corner / altar area</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Approximate size</label>
+                    <input type="text" name="Room size"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           placeholder="e.g. 10x12 ft / 12m²">
+                  </div>
+                </div>
+                <p class="mt-2 text-[11px] text-gray-500">
+                  If you’re not sure about exact measurements, a rough guess is fine.
+                </p>
+              </div>
+
+              <div id="fsHomeSpecific" class="hidden">
+                <h3 class="font-semibold text-sm mb-3">Home details</h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Home type</label>
+                    <select name="Home type"
+                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                      <option>Apartment / Condo</option>
+                      <option>Single-family house</option>
+                      <option>Townhouse</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">How many bedrooms?</label>
+                    <input type="number" name="Bedrooms"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           min="0" placeholder="e.g. 2">
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">How many floors / levels?</label>
+                    <input type="number" name="Floors"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           min="1" placeholder="e.g. 1 or 2">
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <label class="block text-xs text-gray-700 mb-1">Who lives in this home?</label>
+                  <textarea name="Who lives here" rows="3"
+                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                            placeholder="e.g. 2 adults, 1 child, 1 dog; relationship status; who uses which room."></textarea>
+                </div>
+              </div>
+
+              <div id="fsBusinessSpecific" class="hidden">
+                <h3 class="font-semibold text-sm mb-3">Business / studio details</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Business type</label>
+                    <input type="text" name="Business type"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           placeholder="e.g. therapy office, yoga studio, salon, coaching, design studio">
+                  </div>
+                  <div>
+                    <label class="block text-xs text-gray-700 mb-1">Approx. size of the space</label>
+                    <input type="text" name="Business space size"
+                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                           placeholder="e.g. 600 sq ft / 55m²">
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <label class="block text-xs text-gray-700 mb-1">How is this space used?</label>
+                  <textarea name="How space is used" rows="3"
+                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                            placeholder="e.g. 1:1 client sessions, group classes, collaborative work, retail, etc."></textarea>
+                </div>
+              </div>
+
+              <!-- 重点区域 & 风水诉求 -->
+              <div>
+                <h3 class="font-semibold text-sm mb-3">Areas and concerns to focus on</h3>
+                <p id="fsFocusHint" class="text-xs text-gray-500 mb-3">
+                  Please describe which area(s) bother you the most and what you would like help with.
+                </p>
+                <textarea name="Focus areas / concerns" rows="5"
+                          class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                          placeholder="Examples: bedroom feels heavy; can’t focus in my home office; money feels unstable; constant tension in the living room; business feels quiet even in a good location."
+                          required></textarea>
+                <p class="mt-2 text-[11px] text-gray-500">
+                  Traditional Chinese feng shui often focuses on sleep, health, family harmony, and money flow. It’s helpful if you
+                  share what has been difficult and for how long.
+                </p>
+              </div>
+
+              <!-- 图片 / 平面图说明（静态提示） -->
+              <div>
+                <h3 class="font-semibold text-sm mb-3">Floor plan & photos</h3>
+                <p class="text-sm text-gray-600 mb-2">
+                  After you submit this form, I’ll reply by email so you can send:
+                </p>
+                <ul class="list-disc list-inside text-xs text-gray-600 space-y-1">
+                  <li>A simple floor plan or sketch of your space (it doesn’t need to be perfect).</li>
+                  <li>Photos of the entrance, bedroom(s), living room, workspace, and any area that feels problematic.</li>
+                  <li>If you know the compass direction of your front door or main window, you can share that too (optional).</li>
+                </ul>
+              </div>
+
+              <!-- 同意事项 -->
+              <div class="space-y-2 text-xs text-gray-600">
+                <label class="flex items-start gap-2">
+                  <input type="checkbox" name="Agreement" value="Yes"
+                         class="mt-0.5 w-3.5 h-3.5 border-gray-300 rounded" required>
+                  <span>
+                    I understand this is a spiritual and environmental guidance service based on traditional Chinese feng shui.
+                    It is not a replacement for medical, psychological, financial, or legal advice.
+                  </span>
+                </label>
+                <p class="text-[11px] text-gray-500">
+                  After you submit this form, you’ll receive an email confirming your package, total price, payment link, and the
+                  estimated time for your written feng shui plan.
+                </p>
+              </div>
+
+              <!-- 提交按钮 -->
+              <div class="pt-2">
+                <button type="submit"
+                        class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg text-sm font-medium flex items-center justify-center gap-2">
+                  <i class="fa fa-paper-plane text-xs"></i>
+                  <span>Send my feng shui request & details</span>
+                </button>
+                <p class="mt-2 text-[11px] text-gray-500">
+                  If the mail app does not open automatically on your device, you can also copy these questions and email them to
+                  <span class="font-semibold">youremail@example.com</span>. (Replace this with your real email.)
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- 小提示：用中国风水思路提需求 -->
+      <div class="max-w-3xl mx-auto mt-12 text-sm text-gray-700 fade-in">
+        <h2 class="font-semibold mb-3">Tips for sharing your situation from a feng shui perspective</h2>
+        <ul class="list-disc list-inside space-y-1">
+          <li>It helps to mention how long you’ve felt this way in the space (months, years).</li>
+          <li>Notice if certain rooms feel better or worse than others – this is important in Chinese feng shui.</li>
+          <li>You don’t have to make the space “perfect” before we start – honest photos are more helpful than staged ones.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-8">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
+      <span>© 2025 Your Brand. All rights reserved.</span>
+      <span>Destiny Reading · Feng Shui · Spiritual Shop</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button id="back-to-top"
+          class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+  <!-- 全站脚本：导航、返回顶部、淡入动画等 -->
+  <script src="script.js"></script>
+
+  <!-- 本页脚本：根据 ?package=room/home/business 自动切换文案和表单块 -->
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var key = params.get('package') || 'room';
+
+      var config = {
+        room: {
+          name: 'Single Room Reset',
+          tagline: 'Feng shui for one key room – usually the bedroom or home office – to support better sleep or focus.',
+          price: '$XX',
+          bullets: [
+            'You mainly struggle with one room (often the bedroom or home office).',
+            'You want to test feng shui on a smaller space before doing the whole home.'
+          ],
+          focusHint: 'Focus on one room: for example, “bedroom feels heavy and restless” or “I can’t focus in my home office”.',
+          mode: 'room'
+        },
+        home: {
+          name: 'Full Home Feng Shui',
+          tagline: 'A complete look at your apartment or house: entrance, bedrooms, living room, work areas, and money areas.',
+          price: '$XX',
+          bullets: [
+            'You want support for sleep, money, and relationships together.',
+            'You’ve recently moved or your home has felt “off” for a while.'
+          ],
+          focusHint: 'Describe how the home feels overall and which areas (bedroom, living room, etc.) feel most difficult.',
+          mode: 'home'
+        },
+        business: {
+          name: 'Studio / Office Feng Shui',
+          tagline: 'Feng shui for small businesses, studios, or offices where client flow and work energy matter.',
+          price: '$XX',
+          bullets: [
+            'You use this space for work, clients, classes, or creative projects.',
+            'You want more flow in clients, income, or team focus.'
+          ],
+          focusHint: 'Describe how the business space feels now and what you’d like to shift (client flow, bookings, team mood, etc.).',
+          mode: 'business'
+        }
+      };
+
+      var data = config[key] || config.room;
+
+      // 左侧卡片
+      var nameEl = document.getElementById('fsPackageName');
+      var taglineEl = document.getElementById('fsPackageTagline');
+      var priceEl = document.getElementById('fsPackagePrice');
+      var bulletsEl = document.getElementById('fsPackageBullets');
+      var pkgInput = document.getElementById('fsPackageInput');
+      var focusHintEl = document.getElementById('fsFocusHint');
+
+      if (nameEl) nameEl.textContent = data.name;
+      if (taglineEl) taglineEl.textContent = data.tagline;
+      if (priceEl) priceEl.textContent = data.price;
+      if (pkgInput) pkgInput.value = data.name;
+      if (focusHintEl) focusHintEl.textContent = data.focusHint;
+
+      if (bulletsEl && data.bullets) {
+        bulletsEl.innerHTML = '';
+        data.bullets.forEach(function (line) {
+          var li = document.createElement('li');
+          li.textContent = line;
+          bulletsEl.appendChild(li);
+        });
+      }
+
+      // 套餐专属显示：room / home / business
+      var roomBlock = document.getElementById('fsRoomSpecific');
+      var homeBlock = document.getElementById('fsHomeSpecific');
+      var businessBlock = document.getElementById('fsBusinessSpecific');
+
+      function show(el) { if (el) el.classList.remove('hidden'); }
+      function hide(el) { if (el) el.classList.add('hidden'); }
+
+      if (data.mode === 'room') {
+        show(roomBlock);
+        hide(homeBlock);
+        hide(businessBlock);
+      } else if (data.mode === 'home') {
+        hide(roomBlock);
+        show(homeBlock);
+        hide(businessBlock);
+      } else if (data.mode === 'business') {
+        hide(roomBlock);
+        hide(homeBlock);
+        show(businessBlock);
+      }
+    })();
+  </script>
+</body>
+</html>
