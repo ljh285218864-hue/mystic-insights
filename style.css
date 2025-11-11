@@ -1,416 +1,158 @@
- // Global site interactions
-
-document.addEventListener('DOMContentLoaded', function () {
-  // ===== NAVBAR SCROLL EFFECT =====
-  const navbar = document.getElementById('navbar');
-  const toggleNavbar = () => {
-    if (!navbar) return;
-    if (window.scrollY > 40) {
-      // 滚动一点点就加上 .scrolled，交给 CSS 处理样式
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  };
-  toggleNavbar();
-  window.addEventListener('scroll', toggleNavbar);
-
-  // ===== MOBILE MENU =====
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  let menuOpen = false;
-
-  if (mobileMenuButton && mobileMenu) {
-    const openMenu = () => {
-      mobileMenu.classList.remove('opacity-0', 'invisible', '-translate-y-full');
-      mobileMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
-      menuOpen = true;
-    };
-
-    const closeMenu = () => {
-      mobileMenu.classList.add('opacity-0', 'invisible', '-translate-y-full');
-      mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
-      menuOpen = false;
-    };
-
-    mobileMenuButton.addEventListener('click', () => {
-      if (menuOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    // 点击手机菜单里的任意链接自动关闭菜单
-    mobileMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        if (menuOpen) closeMenu();
-      });
-    });
-  }
-
-  // ===== BACK TO TOP BUTTON =====
-  const backToTopButton = document.getElementById('back-to-top');
-  if (backToTopButton) {
-    const toggleBackToTop = () => {
-      if (window.scrollY > 300) {
-        backToTopButton.classList.remove('opacity-0', 'invisible');
-        backToTopButton.classList.add('opacity-100', 'visible');
-      } else {
-        backToTopButton.classList.add('opacity-0', 'invisible');
-        backToTopButton.classList.remove('opacity-100', 'visible');
-      }
-    };
-    toggleBackToTop();
-    window.addEventListener('scroll', toggleBackToTop);
-
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // ===== FADE-IN ON SCROLL（给 .fade-in 元素加进入动画） =====
-  const fadeEls = document.querySelectorAll('.fade-in');
-  if (fadeEls.length > 0) {
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        (entries, obs) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              obs.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-      fadeEls.forEach((el) => observer.observe(el));
-    } else {
-      // 老浏览器：直接显示
-      fadeEls.forEach((el) => el.classList.add('visible'));
-    }
-  }
-});
-
-/* ====== NAVBAR – DARK, HIGH CONTRAST ====== */
-
-/* 导航始终是深色毛玻璃条，任何白色背景上都清晰 */
-#navbar {
-  background-color: rgba(15, 23, 42, 0.97); /* 深蓝灰 */
-  border-bottom: 1px solid rgba(148, 163, 184, 0.55);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.55);
-  z-index: 50;
-  transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+ /* 基础小工具 */
+.content-auto {
+  content-visibility: auto;
 }
 
-/* 滚动以后可以稍微加重一点阴影（可有可无，只是细节） */
-#navbar.scrolled {
-  background-color: rgba(15, 23, 42, 0.97);
-  border-bottom-color: rgba(148, 163, 184, 0.7);
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* 导航内部上下间距稍微收紧一点，看起来更精致 */
-#navbar .container {
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
+.card-hover {
+  transition: all 0.3s ease;
 }
 
-/* 桌面导航链接基础样式（除最后一个按钮外） */
-#navbar nav > a {
-  position: relative;
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.card-hover:hover {
+  transform: translateY(-8px);
 }
 
-/* 所有普通链接文字：浅灰白，深色背景上对比度很高 */
-#navbar nav > a:not(:last-child) {
-  color: #e5e7eb;
-  transition: color 0.2s ease, opacity 0.2s ease;
+/* 颜色变量 */
+:root {
+  --primary: #165DFF;   /* 主色：蓝色 */
+  --secondary: #D4AF37; /* 辅色：金色 */
+  --dark: #0F172A;      /* 深色文字 */
+  --light: #F8FAFC;     /* 浅色背景 */
 }
 
-/* 下划线 hover 动画 */
-#navbar nav > a:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.45rem;
-  width: 0;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--secondary), var(--primary));
-  transition: width 0.25s ease;
+/* 让你写的 bg-primary / text-primary 这些类真正生效 */
+.bg-primary { background-color: var(--primary); }
+.text-primary { color: var(--primary); }
+.border-primary { border-color: var(--primary); }
+
+.bg-secondary { background-color: var(--secondary); }
+.text-secondary { color: var(--secondary); }
+.border-secondary { border-color: var(--secondary); }
+
+.bg-dark { background-color: var(--dark); }
+.text-dark { color: var(--dark); }
+
+.bg-light { background-color: var(--light); }
+
+/* 全局滚动平滑 */
+html {
+  scroll-behavior: smooth;
 }
 
-#navbar nav > a:not(:last-child):hover::after {
-  width: 100%;
-}
-
-#navbar nav > a:not(:last-child):hover {
-  color: var(--secondary);
-}
-
-/* 右侧 Contact 按钮：金色渐变胶囊，在深色背景上非常明显 */
-#navbar nav > a:last-child {
-  margin-left: 0.25rem;
-  background: linear-gradient(135deg, var(--secondary), #facc15);
-  color: #111827 !important;
-  border-radius: 999px;
-  padding: 0.55rem 1.6rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-  text-transform: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-}
-
-#navbar nav > a:last-child:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
-}
-
-/* 左上角品牌文字永远是亮色 */
-#navbar a:first-child span {
-  color: #f9fafb;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-}
-
-/* 手机汉堡菜单图标也强制设为白色，白底内容上不会消失 */
-#navbar #mobile-menu-button {
-  color: #f9fafb !important;
-}
-/* ====== Testimonials marquee (首页评价自动滚动) ====== */
-
-.testimonial-marquee {
-  position: relative;
-  overflow: hidden;
-  padding-block: 0.5rem;
-}
-
-/* 左右淡出遮罩，视觉更高级 */
-.testimonial-marquee::before,
-.testimonial-marquee::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 3rem;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.testimonial-marquee::before {
-  left: 0;
-  background: linear-gradient(to right, #ffffff, transparent);
-}
-
-.testimonial-marquee::after {
-  right: 0;
-  background: linear-gradient(to left, #ffffff, transparent);
-}
-
-/* 横向轨道，自动匀速移动 */
-.testimonial-track {
-  display: flex;
-  gap: 1.5rem;
-  width: max-content;              /* 根据内容自动宽度 */
-  animation: testimonial-scroll 42s linear infinite;
-}
-
-/* 鼠标移上去暂停滚动，方便阅读 */
-.testimonial-marquee:hover .testimonial-track {
-  animation-play-state: paused;
-}
-
-/* 单个评价卡片样式 */
-.testimonial-card {
-  min-width: 280px;
-  max-width: 360px;
-  background: #f9fafb;
-  border-radius: 1.25rem;
-  padding: 1.5rem 1.75rem;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-}
-
-/* 小屏幕时卡片稍微占满一点宽度，看起来不拥挤 */
-@media (max-width: 640px) {
-  .testimonial-card {
-    min-width: 85vw;
-  }
-}
-
-/* 无限循环滚动：我们在 HTML 里把评价列表重复了一遍，这里只需要移动自身宽度的一半 */
-@keyframes testimonial-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-/* ===== Testimonials slider (首页评价轮播) ===== */
-
-.testimonial-slider-box {
-  position: relative;
-  min-height: 230px; /* 保证容器高度稳定，不会因为文字多少抖动 */
-}
-
-.testimonial-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
-  pointer-events: none;
-}
-
-/* 当前显示的 slide */
-.testimonial-slide.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.testimonial-dot {
+/* 自定义滚动条（可以保留或自己改） */
+::-webkit-scrollbar {
   width: 8px;
   height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1d4ed8;
   border-radius: 999px;
-  background-color: #e5e7eb;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: all 0.2s ease;
 }
 
-/* 当前 slide 对应的小圆点 */
-.testimonial-dot.active {
-  width: 20px;
-  background-image: linear-gradient(90deg, var(--secondary), var(--primary));
-}
-/* ===== 弹幕式评价（从右往左滑动） ===== */
-
-
-
-/* 星星 */
-.pill-stars {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  color: #fbbf24; /* 金色星星 */
+::-webkit-scrollbar-thumb:hover {
+  background: #0f46d1;
 }
 
-/* 文案 */
-.pill-text {
-  color: #4b5563;
+/* 导航栏滚动样式 */
+#navbar {
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    backdrop-filter 0.3s ease,
+    transform 0.3s ease;
 }
 
-/* 名字 */
-.pill-name {
-  color: #9ca3af;
+/* 毛玻璃效果 */
+.bg-blur {
+  backdrop-filter: blur(16px);
 }
 
-/* 小屏幕时 pill 更宽一些，防止太挤 */
-@media (max-width: 640px) {
-  .testimonial-pill {
-    padding-inline: 0.7rem;
-    font-size: 0.7rem;
-  }
+/* 滚动后给 header 加上 .navbar-scrolled */
+#navbar.navbar-scrolled {
+  background-color: rgba(255,255,255,0.96);
+  box-shadow: 0 10px 30px rgba(15,23,42,0.12);
 }
 
-/* 无限循环动画：把两套内容从右往左移动 50% 宽度，刚好无缝衔接 */
-@keyframes testimonial-marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* 滚动后导航文字变深色（桌面导航） */
+#navbar.navbar-scrolled nav a {
+  color: var(--dark) !important;
 }
 
-/* ===== Testimonials – horizontal review ticker ===== */
+#navbar.navbar-scrolled nav a:hover {
+  color: var(--primary) !important;
+}
 
-.testimonial-ticker-wrapper {
-  margin-top: 1rem;
+/* 滚动后 logo 文本变深色 */
+#navbar.navbar-scrolled .text-2xl.font-bold {
+  color: var(--dark) !important;
+}
+
+/* 滚动后导航里的主按钮（Contact）颜色调整 */
+#navbar.navbar-scrolled nav a.bg-secondary {
+  background-color: var(--primary) !important;
+  color: #ffffff !important;
+}
+
+#navbar.navbar-scrolled nav a.bg-secondary:hover {
+  background-color: #0f46d1 !important;
+}
+
+/* 区块淡入动画 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* 首页客户评价弹幕条 */
+.testimonial-ticker-wrap {
+  overflow: hidden;
+  border-radius: 999px;
 }
 
 .testimonial-ticker {
-  position: relative;
-  overflow: hidden;
-  padding-block: 0.75rem;
-}
-
-/* 左右渐隐遮罩，视觉更干净 */
-.testimonial-ticker::before,
-.testimonial-ticker::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 3rem;
-  z-index: 5;
-  pointer-events: none;
-}
-
-.testimonial-ticker::before {
-  left: 0;
-  background: linear-gradient(to right, #ffffff, transparent);
-}
-
-.testimonial-ticker::after {
-  right: 0;
-  background: linear-gradient(to left, #ffffff, transparent);
-}
-
-/* 轨道：里面放很多卡片，整体从右往左移动 */
-.testimonial-ticker-track {
   display: inline-flex;
-  align-items: stretch;
-  gap: 1.25rem;
-  width: max-content;
-  animation: testimonial-ticker-scroll 55s linear infinite;
+  align-items: center;
+  gap: 2.5rem;
+  white-space: nowrap;
+  animation: testimonial-marquee 40s linear infinite;
+  will-change: transform;
 }
 
-/* 鼠标移上去暂停滚动 */
-.testimonial-ticker:hover .testimonial-ticker-track {
-  animation-play-state: paused;
+.testimonial-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.75);
+  font-size: 0.75rem;
 }
 
-/* 单个评价卡片：美式 review 风格 */
-.testimonial-item {
-  min-width: 320px;
-  max-width: 360px;
-  background: #f9fafb;
-  border-radius: 1.25rem;
-  padding: 1.1rem 1.4rem;
-  border: 1px solid rgba(226, 232, 240, 0.95);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+.testimonial-pill i {
+  color: var(--secondary);
+  font-size: 0.8rem;
 }
 
-/* 小屏幕时让卡片更宽一点，避免内容太挤 */
-@media (max-width: 640px) {
-  .testimonial-item {
-    min-width: 85vw;
-  }
+@keyframes testimonial-marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* 无限循环动画：我们在 HTML 里把 6 条卡片重复了一份，因此移动一半宽度刚好衔接 */
-@keyframes testimonial-ticker-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* 之前你用到过的水晶球图标大小 */
+.fa-crystal-ball {
+  font-size: 1.5rem;
 }
-
-
-
