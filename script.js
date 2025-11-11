@@ -1,19 +1,16 @@
- // 导航栏：滚动时切换样式
+ // ========== 导航栏：下滑时加深阴影 ==========
 const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', () => {
   if (!navbar) return;
-
-  if (window.scrollY > 50) {
-    navbar.classList.add('navbar-scrolled', 'bg-blur');
-    navbar.classList.remove('bg-transparent');
+  if (window.scrollY > 20) {
+    navbar.classList.add('navbar-scrolled');
   } else {
-    navbar.classList.remove('navbar-scrolled', 'bg-blur');
-    navbar.classList.add('bg-transparent');
+    navbar.classList.remove('navbar-scrolled');
   }
 });
 
-// 移动端菜单
+// ========== 移动端菜单 ==========
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -32,7 +29,7 @@ if (mobileMenuButton && mobileMenu) {
     }
   });
 
-  // 点击菜单项后自动收起
+  // 点菜单后自动收起
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       menuOpen = false;
@@ -43,29 +40,7 @@ if (mobileMenuButton && mobileMenu) {
   });
 }
 
-// 区块淡入动画（fade-in）
-const fadeEls = document.querySelectorAll('.fade-in');
-
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  fadeEls.forEach(el => observer.observe(el));
-} else {
-  // 老浏览器直接全部显示
-  fadeEls.forEach(el => el.classList.add('fade-in-visible'));
-}
-
-// 回到顶部按钮
+// ========== 回到顶部按钮 ==========
 const backToTopButton = document.getElementById('back-to-top');
 
 if (backToTopButton) {
@@ -84,7 +59,28 @@ if (backToTopButton) {
   });
 }
 
-// 首页评价弹幕：复制一遍内容，让它无缝滚动
+// ========== 区块淡入动画 ==========
+const fadeEls = document.querySelectorAll('.fade-in');
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  fadeEls.forEach(el => observer.observe(el));
+} else {
+  fadeEls.forEach(el => el.classList.add('fade-in-visible'));
+}
+
+// ========== 首页评价弹幕：复制内容形成无缝滚动 ==========
 const ticker = document.querySelector('.testimonial-ticker');
 if (ticker) {
   const items = Array.from(ticker.children);
