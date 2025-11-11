@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Brand | Spiritual Objects for Destiny & Feng Shui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 统一依赖 -->
+  <title>Spiritual Shop | Your Brand</title>
+  <meta name="description" content="A small, intentional shop of incense burners, Feng Shui cures and crystals that support the destiny and Feng Shui work we do together. Orders by WhatsApp, shipped mainly within the U.S.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,34 +12,35 @@
 </head>
 <body class="font-inter text-dark bg-light antialiased">
 
-  <!-- 顶部导航：Shop 高亮 -->
-  <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
-    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+  <!-- 导航 -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <a href="index.html#home" class="flex items-center space-x-2">
         <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
           <i class="fa fa-moon-o text-white text-xl"></i>
         </div>
-        <span class="text-2xl font-bold text-white">Your Brand</span>
+        <span class="brand-text text-2xl font-bold">Your Brand</span>
       </a>
       <nav class="hidden md:flex items-center space-x-8">
-        <a href="fortune.html">Destiny Reading</a>
-        <a href="feng-shui.html">Feng Shui</a>
-        <a href="shop.html" class="text-secondary font-semibold">Shop</a>
-        <a href="index.html#testimonials">Testimonials</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="fortune.html" class="nav-link">Destiny Reading</a>
+        <a href="feng-shui.html" class="nav-link">Feng Shui</a>
+        <a href="shop.html" class="nav-link nav-link-active">Shop</a>
+        <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+        <a href="index.html#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full transition-all font-medium text-sm">
+          Contact
+        </a>
       </nav>
-      <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
+      <button id="mobile-menu-button" class="md:hidden text-dark text-2xl">
         <i class="fa fa-bars"></i>
       </button>
     </div>
 
-    <!-- 手机菜单 -->
     <div id="mobile-menu"
          class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
       <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
         <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
         <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
-        <a href="shop.html" class="text-primary font-medium py-2">Shop</a>
+        <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
         <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
         <a href="index.html#contact"
            class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
@@ -49,470 +50,237 @@
     </div>
   </header>
 
-  <!-- HERO 顶部：商品总说明 -->
-  <section class="pt-32 pb-16 bg-gradient-to-b from-dark via-dark to-gray-900 text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-20 pointer-events-none">
-      <!-- 可以换成你自己的图案/纹理 -->
-      <img src="https://picsum.photos/id/118/1600/900" class="w-full h-full object-cover" alt="Mystical texture">
-    </div>
-    <div class="relative z-10">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl fade-in">
-          <p class="uppercase tracking-[0.25em] text-xs text-secondary mb-4">OBJECTS · DESTINY & FENG SHUI</p>
-          <h1 class="text-[clamp(2.1rem,4vw,3.2rem)] font-bold mb-4 leading-tight">
-            Spiritual objects designed for Chinese destiny & Feng Shui work
-          </h1>
-          <p class="text-white/85 text-sm md:text-base mb-4">
-            These are not random “lucky items”. Each piece is chosen to match how we actually work together in
-            destiny readings and Feng Shui – calm, grounded, and practical.
-          </p>
-          <p class="text-white/70 text-xs md:text-sm max-w-2xl">
-            Every product has two sides: its physical quality and its symbolic meaning in Chinese tradition.
-            You can simply enjoy it as a beautiful object, or you can use it as a quiet ritual tool that reminds
-            you of the intention you’re holding.
+  <!-- Hero -->
+  <section class="pt-28 pb-16 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl fade-in">
+        <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold mb-4 text-shadow-soft">
+          Objects that support the changes you’re trying to make.
+        </h1>
+        <p class="text-sm md:text-base text-gray-200 mb-3">
+          This shop is not a big marketplace. It’s a small collection of pieces that match the destiny and Feng Shui work
+          we do together: incense burners, Feng Shui cures, crystals and simple tools.
+        </p>
+        <p class="text-sm md:text-base text-gray-300 mb-6">
+          If you see something that fits what you’re working on – love, money, health, protection – you can order by WhatsApp.
+          I confirm stock, shipping and send a payment link.
+        </p>
+        <div class="bg-white/10 border border-white/20 rounded-2xl p-4 text-sm">
+          <h3 class="font-semibold mb-2 text-secondary text-xs uppercase tracking-wide">How to order</h3>
+          <ol class="text-gray-100 text-xs space-y-1">
+            <li>1. On WhatsApp, send the item name and your country / state.</li>
+            <li>2. I confirm stock and shipping cost.</li>
+            <li>3. You receive a secure payment link in USD. After payment, your order is prepared and shipped.</li>
+          </ol>
+          <p class="mt-2 text-[11px] text-gray-300">
+            Main shipping area: U.S. Other countries: case by case depending on item and cost.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 商品列表：沿用卡片排版 + 每个商品都有完整“模板结构” -->
-  <section class="py-16 bg-gray-50">
+  <!-- 商品列表：用“问题 + 解决”方式写 -->
+  <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center mb-10 fade-in">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Objects that support the work we do together</h2>
-        <p class="text-gray-600 text-sm md:text-base">
-          You can use these on their own, or alongside a destiny reading / Feng Shui session.
-          The descriptions below follow a simple structure: what it is, what it symbolizes, who it’s for, and how to use it. [oai_citation:1‡fengshui_items_product_copy_template.docx](sediment://file_0000000065dc722f8da60aa38c30fc6d)
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-2xl font-bold text-dark mb-3">Shop by what you’re trying to change</h2>
+        <p class="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
+          Every item here exists for a reason: to support a specific kind of shift – calmer sleep, more stable money,
+          softer arguments at home, a clearer mind.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-
-        <!-- 商品 1：Red Thread of Intention Bracelet -->
-        <article class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col fade-in">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- 1. Incense burner：安神 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover fade-in">
           <div class="relative">
-            <img src="https://picsum.photos/id/1025/600/400" alt="Red Thread of Intention Bracelet"
-                 class="w-full h-56 object-cover">
-            <span class="absolute top-3 left-3 bg-secondary text-white text-[11px] px-3 py-1 rounded-full uppercase tracking-[0.14em]">
-              Everyday ritual
+            <img src="https://picsum.photos/id/118/400/300" alt="Brass incense burner" class="w-full h-60 object-cover">
+            <span class="absolute top-4 left-4 bg-black/70 text-white text-[11px] px-3 py-1 rounded-full">
+              “I want my mind to slow down.”
             </span>
           </div>
-          <div class="p-6 flex flex-col h-full">
-            <div class="mb-3">
-              <h3 class="text-lg font-bold mb-1">Red Thread of Intention Bracelet</h3>
-              <p class="text-xs uppercase tracking-[0.16em] text-gray-500 mb-1">
-                Carry a quiet intention on your wrist.
-              </p>
-            </div>
-            <div class="flex items-baseline justify-between mb-3">
-              <p class="text-primary font-bold text-xl">$XX</p>
-              <p class="text-[11px] text-gray-500">Adjustable · One size</p>
-            </div>
-            <p class="text-gray-600 text-sm mb-4">
-              A simple red cord bracelet, designed to be worn daily as a reminder of the one intention you choose to stay loyal to.
+          <div class="p-6">
+            <h3 class="font-bold text-base mb-1">Brass Incense Burner</h3>
+            <p class="text-[11px] uppercase tracking-wide text-gray-500 mb-2">Calm · Focus · Clearing</p>
+            <p class="text-gray-600 text-sm mb-3">
+              For people who can’t stop thinking at night or who want a weekly reset ritual.
+              Designed for steady, clean burning, not smoke everywhere.
             </p>
-
-            <!-- 详情折叠：完整模板结构 -->
-            <details class="mt-auto text-sm text-gray-700">
-              <summary class="cursor-pointer text-primary font-semibold text-sm flex items-center justify-between py-2 border-t border-gray-200">
-                <span>View energetic details</span>
-                <i class="fa fa-angle-down text-xs"></i>
-              </summary>
-              <div class="pt-3 space-y-3 text-[13px] leading-relaxed">
-                <div>
-                  <h4 class="font-semibold mb-1">What it is</h4>
-                  <p>
-                    A minimalist red cord bracelet, adjustable to fit most wrists. Light and comfortable enough
-                    for everyday wear, so your intention stays with you through normal life, not only during rituals.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">What it symbolizes</h4>
-                  <p>
-                    In Chinese culture, red is associated with life-force, vitality and gentle protection.
-                    This bracelet does not “guarantee luck”, but it symbolizes courage, warmth and a soft shield
-                    as you move through your day.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">This is for you if…</h4>
-                  <ul class="list-disc list-inside space-y-1">
-                    <li>You want a subtle reminder on your body to stay connected to your goals or healing.</li>
-                    <li>You’re going through a transition (new job, move, breakup, new chapter) and want a small symbol of support.</li>
-                    <li>You feel drawn to Chinese red protection cords, but prefer a calmer, more modern version.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">How to use</h4>
-                  <p class="mb-1">
-                    When you first put on the bracelet, pause and choose one clear intention, such as:
-                    <em>“I allow myself to feel safe as I grow.”</em> or
-                    <em>“I stay loyal to my true path.”</em>
-                  </p>
-                  <p>
-                    Every time you notice the bracelet during the day, quietly repeat your sentence once in your mind.
-                    No one else has to know what it means – it’s a private agreement between you and your future self.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">Notes from Chinese tradition</h4>
-                  <p>
-                    For centuries, people in Chinese communities have worn red cords on the wrist or ankle as a symbol of blessing
-                    and quiet protection. This bracelet is a modern, minimalist interpretation of that tradition – designed for
-                    people who appreciate the meaning without wanting anything overly religious or dramatic.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">Gentle disclaimer</h4>
-                  <p class="text-gray-500">
-                    This bracelet is a symbolic, spiritual support object. It is not a guarantee of specific outcomes and does not
-                    replace professional medical, psychological, legal or financial advice.
-                  </p>
-                </div>
-              </div>
-            </details>
-
-            <div class="mt-4 flex items-center justify-between">
-              <a href="index.html#contact"
-                 class="text-xs font-medium text-primary hover:text-secondary flex items-center gap-1">
-                Ask about size & shipping <i class="fa fa-arrow-right text-[10px]"></i>
+            <ul class="text-xs text-gray-600 space-y-1 mb-4">
+              <li><i class="fa fa-check text-primary mr-1"></i> Works for meditation, prayer or simple “end-of-week reset”</li>
+              <li><i class="fa fa-check text-primary mr-1"></i> Solid brass, easy to clean</li>
+              <li><i class="fa fa-check text-primary mr-1"></i> Matches most modern interiors</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-primary text-base">$39.99</span>
+              <a href="https://wa.me/1234567890?text=I%27d%20like%20to%20order%20the%20Brass%20Incense%20Burner"
+                 class="text-xs bg-primary/10 hover:bg-primary/20 text-primary px-3 py-1.5 rounded-full inline-flex items-center gap-1">
+                <i class="fa fa-whatsapp"></i> Order on WhatsApp
               </a>
             </div>
           </div>
-        </article>
+        </div>
 
-        <!-- 商品 2：Brass Incense Burner for Grounding -->
-        <article class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col fade-in">
+        <!-- 2. Wealth coins：钱 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover fade-in">
           <div class="relative">
-            <img src="https://picsum.photos/id/118/600/400" alt="Brass Incense Burner"
-                 class="w-full h-56 object-cover">
-            <span class="absolute top-3 left-3 bg-primary text-white text-[11px] px-3 py-1 rounded-full uppercase tracking-[0.14em]">
-              Best seller
+            <img src="https://picsum.photos/id/133/400/300" alt="Feng shui coins" class="w-full h-60 object-cover">
+            <span class="absolute top-4 left-4 bg-black/70 text-white text-[11px] px-3 py-1 rounded-full">
+              “I want my money to feel more stable.”
             </span>
           </div>
-          <div class="p-6 flex flex-col h-full">
-            <div class="mb-3">
-              <h3 class="text-lg font-bold mb-1">Brass Incense Burner for Grounding</h3>
-              <p class="text-xs uppercase tracking-[0.16em] text-gray-500 mb-1">
-                Create a stable point of quiet in your home.
-              </p>
-            </div>
-            <div class="flex items-baseline justify-between mb-3">
-              <p class="text-primary font-bold text-xl">$XX</p>
-              <p class="text-[11px] text-gray-500">Solid brass · Weighted base</p>
-            </div>
-            <p class="text-gray-600 text-sm mb-4">
-              A small, weighty brass burner that holds incense or charcoal safely, designed for short grounding rituals and focused work.
+          <div class="p-6">
+            <h3 class="font-bold text-base mb-1">Feng Shui Wealth Coins Set</h3>
+            <p class="text-[11px] uppercase tracking-wide text-gray-500 mb-2">Money · Stability · Flow</p>
+            <p class="text-gray-600 text-sm mb-3">
+              Traditional-style coins used near doors, money corners and important financial spots in your home.
             </p>
-
-            <details class="mt-auto text-sm text-gray-700">
-              <summary class="cursor-pointer text-primary font-semibold text-sm flex items-center justify-between py-2 border-t border-gray-200">
-                <span>View energetic details</span>
-                <i class="fa fa-angle-down text-xs"></i>
-              </summary>
-              <div class="pt-3 space-y-3 text-[13px] leading-relaxed">
-                <div>
-                  <h4 class="font-semibold mb-1">What it is</h4>
-                  <p>
-                    A compact brass incense burner with a stable, weighted base. It can hold stick incense (with holder),
-                    cones, or charcoal disks in a fire-safe setting. The metal surface ages gently over time, taking on a natural patina.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">What it symbolizes</h4>
-                  <p>
-                    In Chinese Five Elements thinking, metal relates to clarity, structure and letting go. A grounded incense burner
-                    represents a “fixed point” of calm in the home – a place where thoughts can settle and scattered energy can collect.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">This is for you if…</h4>
-                  <ul class="list-disc list-inside space-y-1">
-                    <li>Your home feels scattered and you want a consistent spot for quiet rituals.</li>
-                    <li>You use incense or herbs for meditation, focus, or cleaning the space.</li>
-                    <li>You want a piece that looks elegant even when it’s not in use.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">How to use</h4>
-                  <p class="mb-1">
-                    Place the burner in a safe, stable location – often on a small altar, desk corner, or living room side table.
-                    Light incense when you need to ground before work, clear your mind after a heavy day, or mark a transition.
-                  </p>
-                  <p>
-                    As the smoke rises, you can quietly think:
-                    <em>“Whatever is ready to leave, I allow it to leave now.”</em>
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">Notes from Chinese tradition</h4>
-                  <p>
-                    Incense has long been used in Chinese homes and temples as a bridge between the visible and invisible –
-                    marking respect, remembrance, and quiet presence. This burner keeps that lineage in a simple, modern form
-                    that fits into non-religious spaces as well.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">Gentle disclaimer</h4>
-                  <p class="text-gray-500">
-                    Always use fire with caution, keep away from children and flammable materials, and never leave burning incense unattended.
-                    This object offers symbolic and ritual support and does not replace professional advice of any kind.
-                  </p>
-                </div>
-              </div>
-            </details>
-
-            <div class="mt-4 flex items-center justify-between">
-              <a href="index.html#contact"
-                 class="text-xs font-medium text-primary hover:text-secondary flex items-center gap-1">
-                Ask about stock & shipping <i class="fa fa-arrow-right text-[10px]"></i>
+            <ul class="text-xs text-gray-600 space-y-1 mb-4">
+              <li><i class="fa fa-check text-primary mr-1"></i> For entrances, money drawers, or business areas</li>
+              <li><i class="fa fa-check text-primary mr-1"></i> Comes with a short placement guide</li>
+              <li><i class="fa fa-check text-primary mr-1"></i> Can be combined with your Feng Shui plan</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-primary text-base">$19.99</span>
+              <a href="https://wa.me/1234567890?text=I%27d%20like%20to%20order%20the%20Feng%20Shui%20Wealth%20Coins%20Set"
+                 class="text-xs bg-primary/10 hover:bg-primary/20 text-primary px-3 py-1.5 rounded-full inline-flex items-center gap-1">
+                <i class="fa fa-whatsapp"></i> Order on WhatsApp
               </a>
             </div>
           </div>
-        </article>
+        </div>
 
-        <!-- 商品 3：Feng Shui Wealth Coins -->
-        <article class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col fade-in">
+        <!-- 3. Crystal set：心态清明 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover fade-in">
           <div class="relative">
-            <img src="https://picsum.photos/id/133/600/400" alt="Feng Shui Wealth Coins"
-                 class="w-full h-56 object-cover">
-            <span class="absolute top-3 left-3 bg-secondary text-white text-[11px] px-3 py-1 rounded-full uppercase tracking-[0.14em]">
-              Money corner
+            <img src="https://picsum.photos/id/175/400/300" alt="Crystal set" class="w-full h-60 object-cover">
+            <span class="absolute top-4 left-4 bg-black/70 text-white text-[11px] px-3 py-1 rounded-full">
+              “I want to feel clearer and less emotional noise.”
             </span>
           </div>
-          <div class="p-6 flex flex-col h-full">
-            <div class="mb-3">
-              <h3 class="text-lg font-bold mb-1">Feng Shui Wealth Coins Set</h3>
-              <p class="text-xs uppercase tracking-[0.16em] text-gray-500 mb-1">
-                A quiet reminder to treat money as a guest, not a threat.
-              </p>
-            </div>
-            <div class="flex items-baseline justify-between mb-3">
-              <p class="text-primary font-bold text-xl">$XX</p>
-              <p class="text-[11px] text-gray-500">Set of 3 · Traditional style</p>
-            </div>
-            <p class="text-gray-600 text-sm mb-4">
-              A small bundle of traditional-style Chinese coins, tied with red cord, for use in money-related corners, wallets, or business areas.
+          <div class="p-6">
+            <h3 class="font-bold text-base mb-1">Clarity Crystal Set</h3>
+            <p class="text-[11px] uppercase tracking-wide text-gray-500 mb-2">Clarity · Grounding · Reflection</p>
+            <p class="text-gray-600 text-sm mb-3">
+              A small set chosen to support mental clarity and emotional grounding, especially after heavy seasons.
             </p>
-
-            <details class="mt-auto text-sm text-gray-700">
-              <summary class="cursor-pointer text-primary font-semibold text-sm flex items-center justify-between py-2 border-t border-gray-200">
-                <span>View energetic details</span>
-                <i class="fa fa-angle-down text-xs"></i>
-              </summary>
-              <div class="pt-3 space-y-3 text-[13px] leading-relaxed">
-                <div>
-                  <h4 class="font-semibold mb-1">What it is</h4>
-                  <p>
-                    A set of three replica Chinese coins in metal, tied together with a red cord. They can be placed in a wallet,
-                    cash drawer, near your work desk, or in a Feng Shui “wealth corner” as part of your practice.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">What it symbolizes</h4>
-                  <p>
-                    In Feng Shui, coins represent movement and exchange – money arriving, circulating, and being put to good use.
-                    The red cord links the coins to life-force and intention. Together, they symbolize a respectful relationship
-                    with money, instead of fear or obsession.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">This is for you if…</h4>
-                  <ul class="list-disc list-inside space-y-1">
-                    <li>Your income is unstable and you want to build a calmer relationship with money.</li>
-                    <li>You’re starting a business or new role and want to mark this shift symbolically.</li>
-                    <li>You’re doing deeper money work (therapy, coaching, or strategy) and want your space to match that intention.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">How to use</h4>
-                  <p class="mb-1">
-                    Place the coins where money enters or is managed in your life – near your main work area, cash drawer,
-                    or in a carefully chosen “wealth corner” if you’re working with Feng Shui.
-                  </p>
-                  <p>
-                    When you touch or see them, you can think:
-                    <em>“I welcome money that is aligned, steady, and ethical.”</em>
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">Notes from Chinese tradition</h4>
-                  <p>
-                    Coin bundles like this have been used in Chinese tradition for centuries – placed in ledgers, cash boxes,
-                    or important drawers as a symbol of stable resources. This set is a gentle continuation of that habit,
-                    offered in a modern, minimal style.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">Gentle disclaimer</h4>
-                  <p class="text-gray-500">
-                    These coins are a symbolic support tool and cannot guarantee specific financial results. They do not replace
-                    professional financial, legal, or business advice.
-                  </p>
-                </div>
-              </div>
-            </details>
-
-            <div class="mt-4 flex items-center justify-between">
-              <a href="index.html#contact"
-                 class="text-xs font-medium text-primary hover:text-secondary flex items-center gap-1">
-                Ask where to place them <i class="fa fa-arrow-right text-[10px]"></i>
+            <ul class="text-xs text-gray-600 space-y-1 mb-4">
+              <li><i class="fa fa-check text-primary mr-1"></i> For desks, altars or bedside tables</li>
+              <li><i class="fa fa-check text-primary mr-1"></i> Works well with journaling or weekly check-ins</li>
+              <li><i class="fa fa-check text-primary mr-1"></i> Includes a simple usage note</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-primary text-base">$45.99</span>
+              <a href="https://wa.me/1234567890?text=I%27d%20like%20to%20order%20the%20Clarity%20Crystal%20Set"
+                 class="text-xs bg-primary/10 hover:bg-primary/20 text-primary px-3 py-1.5 rounded-full inline-flex items-center gap-1">
+                <i class="fa fa-whatsapp"></i> Order on WhatsApp
               </a>
             </div>
           </div>
-        </article>
+        </div>
 
-        <!-- 商品 4：Clarity Crystal Set -->
-        <article class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col fade-in">
+        <!-- 4. Wind chime：气场流动 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover fade-in">
           <div class="relative">
-            <img src="https://picsum.photos/id/175/600/400" alt="Clarity Crystal Set"
-                 class="w-full h-56 object-cover">
-            <span class="absolute top-3 left-3 bg-primary text-white text-[11px] px-3 py-1 rounded-full uppercase tracking-[0.14em]">
-              Focus & calm
+            <img src="https://picsum.photos/id/237/400/300" alt="Feng shui wind chime" class="w-full h-60 object-cover">
+            <span class="absolute top-4 left-4 bg-black/70 text-white text-[11px] px-3 py-1 rounded-full">
+              “I want my home to feel lighter and more alive.”
             </span>
+            <span class="absolute top-4 right-4 bg-primary text-white text-[11px] px-3 py-1 rounded-full">New</span>
           </div>
-          <div class="p-6 flex flex-col h-full">
-            <div class="mb-3">
-              <h3 class="text-lg font-bold mb-1">Clarity Crystal Set for Focused Action</h3>
-              <p class="text-xs uppercase tracking-[0.16em] text-gray-500 mb-1">
-                A small cluster to anchor your mind when life feels loud.
-              </p>
-            </div>
-            <div class="flex items-baseline justify-between mb-3">
-              <p class="text-primary font-bold text-xl">$XX</p>
-              <p class="text-[11px] text-gray-500">Curated set · 3–4 stones</p>
-            </div>
-            <p class="text-gray-600 text-sm mb-4">
-              A handpicked mix of crystals chosen to support focus, emotional grounding, and clear thinking while you make real-world decisions.
+          <div class="p-6">
+            <h3 class="font-bold text-base mb-1">Feng Shui Metal Wind Chime</h3>
+            <p class="text-[11px] uppercase tracking-wide text-gray-500 mb-2">Qi · Lightness · Movement</p>
+            <p class="text-gray-600 text-sm mb-3">
+              Used in specific spots to soften heavy corners and invite movement where the energy is stuck.
             </p>
-
-            <details class="mt-auto text-sm text-gray-700">
-              <summary class="cursor-pointer text-primary font-semibold text-sm flex items-center justify-between py-2 border-t border-gray-200">
-                <span>View energetic details</span>
-                <i class="fa fa-angle-down text-xs"></i>
-              </summary>
-              <div class="pt-3 space-y-3 text-[13px] leading-relaxed">
-                <div>
-                  <h4 class="font-semibold mb-1">What it is</h4>
-                  <p>
-                    A small set of crystals (for example: clear quartz, smoky quartz, and one grounding stone),
-                    selected to work together as a tiny “focus island” on your desk or bedside table.
-                    Exact stones may vary slightly by batch, but the intention stays the same.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">What it symbolizes</h4>
-                  <p>
-                    In many traditions, clear stones relate to clarity and truthful seeing, while darker stones relate to grounding
-                    and protection. Together, this set represents a calm, honest look at your life – without panic, without denial.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">This is for you if…</h4>
-                  <ul class="list-disc list-inside space-y-1">
-                    <li>You feel mentally scattered and want a simple physical anchor.</li>
-                    <li>You’re making important decisions and want to approach them from a steadier place.</li>
-                    <li>You want one small, intentional crystal set instead of collecting many pieces.</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">How to use</h4>
-                  <p class="mb-1">
-                    Place the set where you often think, plan, or journal – on a work desk, bedside table, or a quiet corner.
-                    When you sit down to focus, take a breath and rest your hand lightly over the stones for a moment.
-                  </p>
-                  <p>
-                    You can think:
-                    <em>“I’m willing to see my situation clearly, and I trust myself to act in my best interest.”</em>
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">Notes from Chinese tradition</h4>
-                  <p>
-                    While crystals themselves are not traditionally Chinese, the idea of using physical objects to anchor intention
-                    is very old. In Chinese homes, people have long placed certain objects in specific locations to support focus,
-                    study, or calm. This set continues that habit in a modern, global way.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold mb-1">Gentle disclaimer</h4>
-                  <p class="text-gray-500">
-                    Crystals are spiritual and symbolic support tools. They are not medical treatments and do not replace professional
-                    psychological, medical, or financial care.
-                  </p>
-                </div>
-              </div>
-            </details>
-
-            <div class="mt-4 flex items-center justify-between">
-              <a href="index.html#contact"
-                 class="text-xs font-medium text-primary hover:text-secondary flex items-center gap-1">
-                Ask which set fits you <i class="fa fa-arrow-right text-[10px]"></i>
+            <ul class="text-xs text-gray-600 space-y-1 mb-4">
+              <li><i class="fa fa-check text-primary mr-1"></i> For selected balconies, corridors or entry spots</li>
+              <li><i class="fa fa-check text-primary mr-1"></i> Best when placed according to your Feng Shui plan</li>
+              <li><i class="fa fa-check text-primary mr-1"></i> Gentle, not overwhelming sound</li>
+            </ul>
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-primary text-base">$29.99</span>
+              <a href="https://wa.me/1234567890?text=I%27d%20like%20to%20order%20the%20Feng%20Shui%20Metal%20Wind%20Chime"
+                 class="text-xs bg-primary/10 hover:bg-primary/20 text-primary px-3 py-1.5 rounded-full inline-flex items-center gap-1">
+                <i class="fa fa-whatsapp"></i> Order on WhatsApp
               </a>
             </div>
           </div>
-        </article>
+        </div>
+      </div>
 
-        <!-- 你以后可以继续按同样结构添加更多商品卡片 -->
-
+      <!-- 提示：可以和服务结合使用 -->
+      <div class="mt-12 grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl shadow-md p-6 fade-in">
+          <h3 class="font-bold text-base mb-2">Use items together with your reading or Feng Shui plan</h3>
+          <p class="text-gray-600 text-sm mb-2">
+            These objects work best when they are part of a bigger picture – your destiny reading and Feng Shui consultation.
+          </p>
+          <p class="text-gray-600 text-sm">
+            If you’re not sure what to choose, you can ask during your session and I’ll tell you what actually helps, and
+            what you don’t need.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-md p-6 fade-in">
+          <h3 class="font-bold text-base mb-2">If you only want the shop</h3>
+          <p class="text-gray-600 text-sm mb-2">
+            You can still order without booking a reading. Just tell me briefly what you’re working on:
+            “money feels unstable”, “I want calmer sleep”, “we keep fighting at home”.
+          </p>
+          <p class="text-gray-600 text-sm">
+            I’ll tell you which item is a good fit – or if what you really need first is a destiny reading or Feng Shui session.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 购物说明 & 免责声明（总的） -->
-  <section class="pb-16 bg-white">
+  <!-- FAQ 简短 -->
+  <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-sm text-gray-700 fade-in">
-        <h2 class="text-xl md:text-2xl font-bold mb-3">How ordering works</h2>
-        <ul class="list-disc list-inside space-y-1 mb-4">
-          <li>You send an inquiry through the contact form or email with the item(s) you’re interested in.</li>
-          <li>I confirm availability, shipping options, and total price.</li>
-          <li>You receive a secure payment link and tracking information once the order is confirmed.</li>
-        </ul>
-        <p class="text-[11px] text-gray-500">
-          All objects in this shop are offered as symbolic, spiritual support items. They do not guarantee specific outcomes
-          and are not a replacement for professional medical, psychological, financial, or legal guidance.
-        </p>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-dark mb-6 text-center fade-in">Shop questions</h2>
+        <div class="space-y-5 text-sm md:text-base">
+          <div class="fade-in">
+            <h3 class="font-semibold text-dark mb-1">Do I have to buy from the shop to get results?</h3>
+            <p class="text-gray-600">
+              No. A lot of change comes just from layout, timing and practical steps. Items are for support, not “if
+              you don’t buy this, nothing works”.
+            </p>
+          </div>
+          <div class="fade-in">
+            <h3 class="font-semibold text-dark mb-1">Can you ship outside the U.S.?</h3>
+            <p class="text-gray-600">
+              Sometimes. It depends on the item and shipping cost. Send your country and item name on WhatsApp and I’ll confirm.
+            </p>
+          </div>
+          <div class="fade-in">
+            <h3 class="font-semibold text-dark mb-1">What if something arrives damaged?</h3>
+            <p class="text-gray-600">
+              Take clear photos as soon as you open the package and send them to me on WhatsApp. We’ll sort out a replacement
+              or another solution depending on what happened.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 页脚 -->
   <footer class="bg-dark text-white py-8">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
-      <span>© 2025 Your Brand. All rights reserved.</span>
-      <span>Destiny Reading · Feng Shui · Spiritual Shop</span>
+    <div class="container mx-auto px-4 text-center text-xs text-gray-400">
+      <p>&copy; 2025 Your Brand. Spiritual shop, destiny readings & Feng Shui.</p>
+      <p class="disclaimer-text mt-2">
+        Items are offered as spiritual and decorative tools and are not medical devices or guaranteed results.
+      </p>
     </div>
   </footer>
 
-  <!-- 回到顶部 -->
-  <button id="back-to-top"
-          class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
     <i class="fa fa-chevron-up"></i>
   </button>
 
-  <!-- 全站脚本（导航滚动、回到顶部、fade-in 等） -->
   <script src="script.js"></script>
 </body>
 </html>
