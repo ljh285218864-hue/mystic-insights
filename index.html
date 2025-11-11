@@ -11,44 +11,44 @@
 </head>
 <body class="font-inter text-dark bg-light antialiased">
 
-  <!-- 导航栏：始终白底深色字 -->
-  <header id="navbar" class="fixed top-0 left-0 w-full z-50">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#home" class="flex items-center space-x-2">
-        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-          <i class="fa fa-moon-o text-white text-xl"></i>
-        </div>
-        <span class="brand-text text-2xl font-bold">Your Brand</span>
-      </a>
-      <nav class="hidden md:flex items-center space-x-8">
-        <a href="fortune.html" class="nav-link">Destiny Reading</a>
-        <a href="feng-shui.html" class="nav-link">Feng Shui</a>
-        <a href="#shop" class="nav-link">Shop</a>
-        <a href="#testimonials" class="nav-link">Testimonials</a>
-        <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full transition-all font-medium text-sm">
-          Contact
-        </a>
-      </nav>
-      <button id="mobile-menu-button" class="md:hidden text-dark text-2xl">
-        <i class="fa fa-bars"></i>
-      </button>
-    </div>
-
-    <!-- 移动端菜单 -->
-    <div id="mobile-menu"
-         class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
-      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-        <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
-        <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
-        <a href="#shop" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
-        <a href="#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
-        <a href="#contact"
-           class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
-          Contact
-        </a>
+ <header id="navbar" class="fixed top-0 left-0 w-full z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html#home" class="flex items-center space-x-2">
+      <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+        <i class="fa fa-moon-o text-white text-xl"></i>
       </div>
+      <span class="brand-text text-2xl font-bold">Your Brand</span>
+    </a>
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="fortune.html" class="nav-link">Destiny Reading</a>
+      <a href="feng-shui.html" class="nav-link">Feng Shui</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+      <a href="index.html#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full transition-all font-medium text-sm">
+        Contact
+      </a>
+    </nav>
+    <button id="mobile-menu-button" class="md:hidden text-dark text-2xl">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- 手机菜单 -->
+  <div id="mobile-menu"
+       class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
+    <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+      <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
+      <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
+      <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
+      <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
+      <a href="index.html#contact"
+         class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
+        Contact
+      </a>
     </div>
-  </header>
+  </div>
+</header>
+
 
   <!-- 首屏 -->
   <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
@@ -677,3 +677,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
