@@ -1,142 +1,95 @@
- document.addEventListener('DOMContentLoaded', function () {
-  // ===== NAVBAR SCROLL EFFECT =====
-  const navbar = document.getElementById('navbar');
-  const toggleNavbar = () => {
-    if (!navbar) return;
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  };
-  toggleNavbar();
-  window.addEventListener('scroll', toggleNavbar);
+ // 导航栏：滚动时切换样式
+const navbar = document.getElementById('navbar');
 
-  // ===== MOBILE MENU =====
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  let menuOpen = false;
+window.addEventListener('scroll', () => {
+  if (!navbar) return;
 
-  if (mobileMenuButton && mobileMenu) {
-    const openMenu = () => {
-      mobileMenu.classList.remove('opacity-0', 'invisible', '-translate-y-full');
-      mobileMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
-      menuOpen = true;
-    };
-
-    const closeMenu = () => {
-      mobileMenu.classList.add('opacity-0', 'invisible', '-translate-y-full');
-      mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
-      menuOpen = false;
-    };
-
-    mobileMenuButton.addEventListener('click', () => {
-      if (menuOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    mobileMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        if (menuOpen) closeMenu();
-      });
-    });
-  }
-
-  // ===== BACK TO TOP BUTTON =====
-  const backToTopButton = document.getElementById('back-to-top');
-  if (backToTopButton) {
-    const toggleBackToTop = () => {
-      if (window.scrollY > 300) {
-        backToTopButton.classList.remove('opacity-0', 'invisible');
-        backToTopButton.classList.add('opacity-100', 'visible');
-      } else {
-        backToTopButton.classList.add('opacity-0', 'invisible');
-        backToTopButton.classList.remove('opacity-100', 'visible');
-      }
-    };
-    toggleBackToTop();
-    window.addEventListener('scroll', toggleBackToTop);
-
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // ===== FADE-IN ON SCROLL =====
-  const fadeEls = document.querySelectorAll('.fade-in');
-  if (fadeEls.length > 0) {
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        (entries, obs) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              obs.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-      fadeEls.forEach((el) => observer.observe(el));
-    } else {
-      fadeEls.forEach((el) => el.classList.add('visible'));
-    }
-  }
-
-  // ===== TESTIMONIAL SLIDER（如果页面上不存在 .testimonial-slider 就不会生效） =====
-  const slider = document.querySelector('.testimonial-slider');
-  if (slider) {
-    const slides = slider.querySelectorAll('.testimonial-slide');
-    const dots = slider.querySelectorAll('.testimonial-dot');
-
-    if (slides.length > 0 && dots.length === slides.length) {
-      let current = 0;
-      let timer = null;
-
-      const showSlide = (index) => {
-        slides.forEach((slide, i) => {
-          slide.classList.toggle('active', i === index);
-        });
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === index);
-        });
-        current = index;
-      };
-
-      const nextSlide = () => {
-        const nextIndex = (current + 1) % slides.length;
-        showSlide(nextIndex);
-      };
-
-      const startAutoPlay = () => {
-        if (timer) clearInterval(timer);
-        timer = setInterval(nextSlide, 6000);
-      };
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          showSlide(index);
-          startAutoPlay();
-        });
-      });
-
-      showSlide(0);
-      startAutoPlay();
-    }
-  }
-
-  // ===== PACKAGE CARD CLICK (fortune 页面) =====
-  const packageCards = document.querySelectorAll('.package-card[data-package]');
-  if (packageCards.length > 0) {
-    packageCards.forEach((card) => {
-      card.addEventListener('click', () => {
-        const pkg = card.getAttribute('data-package') || 'single';
-        // 跳转到预约页面，并带上 ?package=single/three/full
-        window.location.href = 'fortune-booking.html?package=' + encodeURIComponent(pkg);
-      });
-    });
+  if (window.scrollY > 50) {
+    navbar.classList.add('navbar-scrolled', 'bg-blur');
+    navbar.classList.remove('bg-transparent');
+  } else {
+    navbar.classList.remove('navbar-scrolled', 'bg-blur');
+    navbar.classList.add('bg-transparent');
   }
 });
+
+// 移动端菜单
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuButton && mobileMenu) {
+  let menuOpen = false;
+
+  mobileMenuButton.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      mobileMenu.classList.remove('invisible', '-translate-y-full', 'opacity-0');
+      mobileMenu.classList.add('translate-y-0', 'opacity-100');
+    } else {
+      mobileMenu.classList.add('-translate-y-full', 'opacity-0');
+      mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+      setTimeout(() => mobileMenu.classList.add('invisible'), 300);
+    }
+  });
+
+  // 点击菜单项后自动收起
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuOpen = false;
+      mobileMenu.classList.add('-translate-y-full', 'opacity-0');
+      mobileMenu.classList.remove('translate-y-0', 'opacity-100');
+      setTimeout(() => mobileMenu.classList.add('invisible'), 300);
+    });
+  });
+}
+
+// 区块淡入动画（fade-in）
+const fadeEls = document.querySelectorAll('.fade-in');
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  fadeEls.forEach(el => observer.observe(el));
+} else {
+  // 老浏览器直接全部显示
+  fadeEls.forEach(el => el.classList.add('fade-in-visible'));
+}
+
+// 回到顶部按钮
+const backToTopButton = document.getElementById('back-to-top');
+
+if (backToTopButton) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopButton.classList.remove('opacity-0', 'invisible');
+      backToTopButton.classList.add('opacity-100', 'visible');
+    } else {
+      backToTopButton.classList.add('opacity-0', 'invisible');
+      backToTopButton.classList.remove('opacity-100', 'visible');
+    }
+  });
+
+  backToTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// 首页评价弹幕：复制一遍内容，让它无缝滚动
+const ticker = document.querySelector('.testimonial-ticker');
+if (ticker) {
+  const items = Array.from(ticker.children);
+  items.forEach(item => {
+    const clone = item.cloneNode(true);
+    ticker.appendChild(clone);
+  });
+}
