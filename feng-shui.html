@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Feng Shui Consultation | Your Brand</title>
+  <meta name="description" content="Practical Feng Shui consultations for people who want to fix marriage, improve sleep, feel less exhausted, and create more stable money. Remote sessions with photo and video review, plans delivered by WhatsApp.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,45 +12,46 @@
 </head>
 <body class="font-inter text-dark bg-light antialiased">
 
- <header id="navbar" class="fixed top-0 left-0 w-full z-50">
-  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="index.html#home" class="flex items-center space-x-2">
-      <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-        <i class="fa fa-moon-o text-white text-xl"></i>
-      </div>
-      <span class="brand-text text-2xl font-bold">Your Brand</span>
-    </a>
-    <nav class="hidden md:flex items-center space-x-8">
-      <a href="fortune.html" class="nav-link">Destiny Reading</a>
-      <a href="feng-shui.html" class="nav-link">Feng Shui</a>
-      <a href="shop.html" class="nav-link">Shop</a>
-      <a href="index.html#testimonials" class="nav-link">Testimonials</a>
-      <a href="index.html#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full transition-all font-medium text-sm">
-        Contact
+  <!-- 顶部导航 -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html#home" class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+          <i class="fa fa-moon-o text-white text-xl"></i>
+        </div>
+        <span class="brand-text text-2xl font-bold">Your Brand</span>
       </a>
-    </nav>
-    <button id="mobile-menu-button" class="md:hidden text-dark text-2xl">
-      <i class="fa fa-bars"></i>
-    </button>
-  </div>
-
-  <!-- 手机菜单 -->
-  <div id="mobile-menu"
-       class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
-    <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-      <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
-      <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
-      <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
-      <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
-      <a href="index.html#contact"
-         class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
-        Contact
-      </a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="fortune.html" class="nav-link">Destiny Reading</a>
+        <a href="feng-shui.html" class="nav-link nav-link-active">Feng Shui</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+        <a href="index.html#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full transition-all font-medium text-sm">
+          Contact
+        </a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-dark text-2xl">
+        <i class="fa fa-bars"></i>
+      </button>
     </div>
-  </div>
-</header>
 
-  <!-- Hero：风水介绍，直接戳痛点 -->
+    <!-- 移动端菜单 -->
+    <div id="mobile-menu"
+         class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
+        <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
+        <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
+        <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
+        <a href="index.html#contact"
+           class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
+          Contact
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
   <section class="pt-28 pb-16 bg-gray-900 text-white">
     <div class="container mx-auto px-4">
       <div class="flex flex-col lg:flex-row items-center gap-10">
@@ -58,7 +60,7 @@
             Your life feels wrong.  
             Your home is not helping. Let’s fix that.
           </h1>
-          <p class="text-gray-200 text-sm md:text-base mb-4">
+          <p class="text-gray-200 text-sm md:text-base mb-3">
             You want to fix your marriage. Sleep through the night. Stop feeling broke and scared about money.  
             But the place you live in feels heavy, chaotic, or just wrong.
           </p>
@@ -86,7 +88,7 @@
     </div>
   </section>
 
-  <!-- 说明可以解决哪些问题：婚姻、健康、金钱 -->
+  <!-- 三个痛点：婚姻 / 健康 / 金钱 -->
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="grid lg:grid-cols-3 gap-8">
@@ -127,7 +129,7 @@
     </div>
   </section>
 
-  <!-- 套餐设计：住宅 / 办公 / 全面 -->
+  <!-- 套餐 -->
   <section id="packages" class="py-18 pb-20 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12 fade-in">
@@ -139,7 +141,7 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- 婚姻/卧室侧重 -->
+        <!-- 婚姻/卧室 -->
         <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col card-hover fade-in">
           <div class="flex items-center justify-between mb-4">
             <h3 class="text-lg font-bold">Marriage & Bedroom Reset</h3>
@@ -201,7 +203,7 @@
           </div>
         </div>
 
-        <!-- 金钱/事业+办公 -->
+        <!-- 金钱/事业 -->
         <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col card-hover fade-in">
           <div class="flex items-center justify-between mb-4">
             <h3 class="text-lg font-bold">Money & Career Space Upgrade</h3>
@@ -234,7 +236,7 @@
     </div>
   </section>
 
-  <!-- 流程说明 -->
+  <!-- 流程 -->
   <section id="how-it-works" class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="text-center mb-10 fade-in">
@@ -285,7 +287,7 @@
     </div>
   </section>
 
-  <!-- FAQ 简短 -->
+  <!-- FAQ -->
   <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
@@ -320,6 +322,9 @@
   <footer class="bg-dark text-white py-8">
     <div class="container mx-auto px-4 text-center text-xs text-gray-400">
       <p>&copy; 2025 Your Brand. Feng Shui consultations & destiny readings.</p>
+      <p class="disclaimer-text mt-2">
+        This work is for reflection and education only and does not replace medical, psychological, legal or financial advice.
+      </p>
     </div>
   </footer>
 
