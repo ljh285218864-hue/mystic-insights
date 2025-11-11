@@ -3,32 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Brand | Destiny Reading & Feng Shui</title>
+  <title>Your Brand | Destiny Reading · Feng Shui · Spiritual Shop</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- 注意：保持这个路径，确保 assets/css/style.css 存在 -->
-  <link rel="stylesheet" href="style.css">
+  <!-- 保持你原来的路径，如果你的 CSS 在别的地方，请对应调整 -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="font-inter text-dark bg-light antialiased">
   <!-- 导航栏 -->
   <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-      <!-- Logo 回到首页顶部 -->
-      <a href="#home" class="flex items-center space-x-2">
+      <a href="index.html#home" class="flex items-center space-x-2">
         <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
           <i class="fa fa-moon-o text-white text-xl"></i>
         </div>
         <span class="text-2xl font-bold text-white">Your Brand</span>
       </a>
       <nav class="hidden md:flex items-center space-x-8">
-        <!-- 这里改成跳转到独立页面 -->
+        <!-- 这里改成跳到独立页面 -->
         <a href="fortune.html" class="text-white hover:text-secondary transition-colors font-medium">Destiny Reading</a>
         <a href="feng-shui.html" class="text-white hover:text-secondary transition-colors font-medium">Feng Shui</a>
-        <a href="shop.html" class="text-white hover:text-secondary transition-colors font-medium">Shop</a>
-        <!-- 这两个还是跳转到本页的区块 -->
-        <a href="#testimonials" class="text-white hover:text-secondary transition-colors font-medium">Testimonials</a>
-        <a href="#contact" class="bg-secondary hover:bg-secondary/90 text-white px-6 py-2 rounded-full transition-all font-medium">Contact</a>
+        <a href="index.html#shop" class="text-white hover:text-secondary transition-colors font-medium">Shop</a>
+        <a href="index.html#testimonials" class="text-white hover:text-secondary transition-colors font-medium">Testimonials</a>
+        <a href="index.html#contact" class="bg-secondary hover:bg-secondary/90 text-white px-6 py-2 rounded-full transition-all font-medium">Contact</a>
       </nav>
       <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
         <i class="fa fa-bars"></i>
@@ -36,12 +34,11 @@
     </div>
     <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
       <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-        <!-- 手机菜单同样改成页面跳转 -->
         <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
         <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
-        <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
-        <a href="#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
-        <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">Contact</a>
+        <a href="index.html#shop" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
+        <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
+        <a href="index.html#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">Contact</a>
       </div>
     </div>
   </header>
@@ -49,27 +46,30 @@
   <!-- 首屏 -->
   <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <!-- 背景大图：以后可以换成你自己的命理/风水风格照片 -->
+      <!-- 背景大图 -->
       <img src="https://picsum.photos/id/1050/1920/1080" alt="Mystical background" class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-dark/60"></div>
     </div>
     <div class="container mx-auto px-4 z-10 text-center">
       <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white leading-tight mb-6 fade-in">
-        Clear <span class="text-secondary">Destiny Reading</span>, Practical <span class="text-secondary">Feng Shui</span>
+        Chinese destiny reading and Feng Shui<br>
+        for people who are tired of guessing.
       </h1>
-      <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 max-w-2xl mx-auto mb-10 fade-in">
-        Two focused services—destiny reading and feng shui consultation—plus a small shop of spiritual objects to support the energy of your life and home.
+      <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 max-w-2xl mx-auto mb-8 fade-in">
+        Ask real questions about love, money, timing and home.  
+        Get clear written answers and Feng Shui plans in English, delivered by WhatsApp.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
-        <!-- 这里改成跳转到算命页面 -->
         <a href="fortune.html" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all font-medium text-lg">
-          View Services
+          3-question destiny reading
         </a>
-        <!-- 跳转到商城页面 -->
-        <a href="shop.html" class="bg-transparent border-2 border-white hover:border-secondary hover:text-secondary text-white px-8 py-3 rounded-full transition-all font-medium text-lg">
-          Browse Shop
+        <a href="feng-shui.html" class="bg-transparent border-2 border-white hover:border-secondary hover:text-secondary text-white px-8 py-3 rounded-full transition-all font-medium text-lg">
+          Feng Shui for your home or office
         </a>
       </div>
+      <p class="mt-4 text-xs text-white/70 fade-in">
+        All services are delivered in written English via WhatsApp. No video calls unless specially arranged.
+      </p>
     </div>
     <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
       <a href="#services" class="flex flex-col items-center">
@@ -83,9 +83,10 @@
   <section id="services" class="py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16 fade-in">
-        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">Our Core Offerings</h2>
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">Three things I actually do</h2>
         <p class="text-gray-600 max-w-2xl mx-auto">
-          This site is focused on just three things: one-on-one destiny readings, feng shui consultations, and a small shop of spiritual objects you can use at home.
+          No giant marketplace. Just destiny readings, Feng Shui for homes and offices, and a small shop of objects that
+          match the work we do together.
         </p>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
@@ -95,12 +96,15 @@
             <i class="fa fa-moon-o text-primary text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold mb-3">Destiny Reading</h3>
-          <p class="text-gray-600 mb-6">
-            Chinese-style destiny reading to understand your life cycles, strengths, and timing for important decisions.
+          <p class="text-gray-600 mb-4 text-sm">
+            Chinese destiny reading for real questions about relationships, career, money and timing.  
+            Mostly people book the 3-question written reading.
           </p>
-          <!-- 改成跳转到算命页面 -->
-          <a href="fortune.html" class="text-primary font-medium flex items-center">
-            Learn More <i class="fa fa-arrow-right ml-2"></i>
+          <p class="text-gray-500 text-xs mb-6">
+            You send your birth data and questions. I answer in clear written English on WhatsApp, usually within about an hour.
+          </p>
+          <a href="fortune.html" class="text-primary font-medium flex items-center text-sm">
+            View destiny reading packages <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
         <!-- Feng Shui 概述 -->
@@ -108,13 +112,15 @@
           <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
             <i class="fa fa-home text-primary text-2xl"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3">Feng Shui Consultation</h3>
-          <p class="text-gray-600 mb-6">
-            Practical feng shui guidance for your home or workspace so your environment supports your sleep, focus, and finances.
+          <h3 class="text-xl font-bold mb-3">Feng Shui Consultations</h3>
+          <p class="text-gray-600 mb-4 text-sm">
+            For when your life feels wrong and your home or office is not helping: marriage, health, money, energy.
           </p>
-          <!-- 跳转到风水页面 -->
-          <a href="feng-shui.html" class="text-primary font-medium flex items-center">
-            Learn More <i class="fa fa-arrow-right ml-2"></i>
+          <p class="text-gray-500 text-xs mb-6">
+            You send photos or short videos of your space. I send back a written Feng Shui plan by WhatsApp in about 1 day.
+          </p>
+          <a href="feng-shui.html" class="text-primary font-medium flex items-center text-sm">
+            See Feng Shui programs <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
         <!-- Shop 概述 -->
@@ -123,19 +129,22 @@
             <i class="fa fa-shopping-bag text-primary text-2xl"></i>
           </div>
           <h3 class="text-xl font-bold mb-3">Spiritual Shop</h3>
-          <p class="text-gray-600 mb-6">
-            A small, curated selection of incense burners, feng shui items, and crystals to support the energy we talk about in sessions.
+          <p class="text-gray-600 mb-4 text-sm">
+            A small, curated selection of incense burners, Feng Shui cures and crystals.  
+            Things people actually use after readings and consultations.
           </p>
-          <!-- 跳转到商城页面 -->
-          <a href="shop.html" class="text-primary font-medium flex items-center">
-            Browse Shop <i class="fa fa-arrow-right ml-2"></i>
+          <p class="text-gray-500 text-xs mb-6">
+            Orders are placed by WhatsApp. Shipping mainly within the U.S., other countries by case.
+          </p>
+          <a href="#shop" class="text-primary font-medium flex items-center text-sm">
+            Browse shop items <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Destiny Reading 服务（原来的 destiny 区） -->
+  <!-- Destiny Reading 服务（首页预览区） -->
   <section id="destiny" class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
       <div class="flex flex-col lg:flex-row items-center gap-12">
@@ -143,62 +152,68 @@
           <img src="https://picsum.photos/id/1074/800/600" alt="Destiny reading session" class="rounded-2xl shadow-xl w-full">
         </div>
         <div class="lg:w-1/2 fade-in">
-          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-6">Destiny Reading Session</h2>
-          <p class="text-gray-600 mb-8">
-            A one-on-one online session to understand your timing, patterns, and life direction, so you can move forward with more confidence.
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">Ask the hard question properly.</h2>
+          <p class="text-gray-700 mb-4 text-sm md:text-base">
+            “Should I stay or leave?”  
+            “Is this job worth it?”  
+            “Why do I keep repeating the same pattern?”
           </p>
-          <div class="space-y-6">
+          <p class="text-gray-600 mb-6 text-sm md:text-base">
+            I read your Chinese destiny chart and answer in clear written English on WhatsApp.  
+            No vague “you will be lucky soon”, no scare language – just honest insight you can actually use.
+          </p>
+          <div class="space-y-4">
             <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                <i class="fa fa-clock-o text-secondary"></i>
+              <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <i class="fa fa-clock-o text-secondary text-sm"></i>
               </div>
               <div>
-                <h3 class="font-bold text-lg mb-1">Life cycles & timing</h3>
-                <p class="text-gray-600">
-                  See which periods are supportive or challenging for work, money, and relationships, instead of guessing blindly.
+                <h3 class="font-bold text-base mb-1">Timing and life cycles</h3>
+                <p class="text-gray-600 text-sm">
+                  Understand which periods are supportive or heavy for love, work and money, instead of guessing and pushing at the wrong time.
                 </p>
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                <i class="fa fa-briefcase text-secondary"></i>
+              <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <i class="fa fa-briefcase text-secondary text-sm"></i>
               </div>
               <div>
-                <h3 class="font-bold text-lg mb-1">Career & money decisions</h3>
-                <p class="text-gray-600">
-                  Understand your natural strengths and blind spots, and when it's better to push forward or hold back.
+                <h3 class="font-bold text-base mb-1">Work and money decisions</h3>
+                <p class="text-gray-600 text-sm">
+                  See what kind of work fits you, where your money patterns are strong or fragile, and what this chapter is actually about.
                 </p>
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                <i class="fa fa-heart-o text-secondary"></i>
+              <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <i class="fa fa-heart-o text-secondary text-sm"></i>
               </div>
               <div>
-                <h3 class="font-bold text-lg mb-1">Relationships & personal patterns</h3>
-                <p class="text-gray-600">
-                  See why some patterns keep repeating, and how to work with your own nature instead of fighting it.
+                <h3 class="font-bold text-base mb-1">Relationships and patterns</h3>
+                <p class="text-gray-600 text-sm">
+                  Understand why certain kinds of relationships keep repeating, and how to work with your nature instead of fighting it.
                 </p>
               </div>
             </div>
           </div>
-          <div class="mt-10 flex flex-col sm:flex-row gap-4">
-            <a href="#" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all font-medium">
-              Pay for Destiny Reading
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="fortune.html" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all font-medium text-sm">
+              View destiny reading packages
             </a>
-            <a href="#contact" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full transition-all font-medium">
-              Ask a question first
+            <a href="fortune-booking.html?package=three" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full transition-all font-medium text-sm">
+              Book the 3-question reading
             </a>
           </div>
-          <p class="text-gray-500 text-sm mt-4">
-            Approx. 60 minutes · Online · English only. Payment link can be sent by email if you prefer.
+          <p class="text-gray-500 text-xs mt-4">
+            Readings are delivered in written English by WhatsApp, usually within about 1 hour during working hours.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 风水服务 -->
+  <!-- 风水服务（首页预览区） -->
   <section id="feng-shui" class="py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
@@ -206,55 +221,64 @@
           <img src="https://picsum.photos/id/164/800/600" alt="Feng shui consultation" class="rounded-2xl shadow-xl w-full">
         </div>
         <div class="lg:w-1/2 fade-in">
-          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-6">Feng Shui Consultation</h2>
-          <p class="text-gray-600 mb-8">
-            An online feng shui consultation to review your home or office, and suggest realistic changes that support your sleep, focus, and finances.
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
+            Something in your life feels wrong.  
+            Your home is not helping. Let’s change that.
+          </h2>
+          <p class="text-gray-700 mb-4 text-sm md:text-base">
+            “I want to fix my marriage.”  
+            “I want my body to feel better.”  
+            “I want more money and less fear.”
           </p>
-          <div class="space-y-6">
+          <p class="text-gray-600 mb-6 text-sm md:text-base">
+            You show me your real home or office with photos or short videos.  
+            I look at the layout, directions, bedroom, entrance and workspace, then send you a written Feng Shui plan in English by WhatsApp.
+          </p>
+          <div class="space-y-4">
             <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                <i class="fa fa-home text-secondary"></i>
+              <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <i class="fa fa-home text-secondary text-sm"></i>
               </div>
               <div>
-                <h3 class="font-bold text-lg mb-1">Home consultations</h3>
-                <p class="text-gray-600">
-                  We look at your layout, entrance, bedroom, and key areas to see how the space is supporting or draining you.
+                <h3 class="font-bold text-base mb-1">Marriage & relationships</h3>
+                <p class="text-gray-600 text-sm">
+                  Rebuild your bedroom and shared spaces so they stop feeling like a cold battlefield and start supporting repair.
                 </p>
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                <i class="fa fa-building text-secondary"></i>
+              <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <i class="fa fa-leaf text-secondary text-sm"></i>
               </div>
               <div>
-                <h3 class="font-bold text-lg mb-1">Workspace optimization</h3>
-                <p class="text-gray-600">
-                  Adjust your desk, seating, and environment to support focus, stability, and career growth.
+                <h3 class="font-bold text-base mb-1">Health & energy</h3>
+                <p class="text-gray-600 text-sm">
+                  Turn your home from a place that drains you into a place where your nervous system can finally exhale.
                 </p>
               </div>
             </div>
             <div class="flex gap-4">
-              <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                <i class="fa fa-leaf text-secondary"></i>
+              <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <i class="fa fa-building text-secondary text-sm"></i>
               </div>
               <div>
-                <h3 class="font-bold text-lg mb-1">Simple, realistic changes</h3>
-                <p class="text-gray-600">
-                  No need to rebuild everything. We focus on changes you can actually do in your current home or office.
+                <h3 class="font-bold text-base mb-1">Career & money</h3>
+                <p class="text-gray-600 text-sm">
+                  Make your workspace and money areas stop screaming “small and temporary” and start matching the level you want.
                 </p>
               </div>
             </div>
           </div>
-          <div class="mt-10 flex flex-col sm:flex-row gap-4">
-            <a href="#" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all font-medium">
-              Pay for Feng Shui
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="feng-shui.html" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all font-medium text-sm">
+              See Feng Shui packages
             </a>
-            <a href="#contact" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full transition-all font-medium">
-              Schedule by email
+            <a href="feng-shui-booking.html?package=marriage" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full transition-all font-medium text-sm">
+              Start with “fix my marriage”
             </a>
           </div>
-          <p class="text-gray-500 text-sm mt-4">
-            Approx. 60–90 minutes · Online. Before the session, we may ask for photos or a simple sketch of your space.
+          <p class="text-gray-500 text-xs mt-4">
+            Online consultations only. Plans delivered in written English by WhatsApp, usually within about 1 day after payment and materials.
           </p>
         </div>
       </div>
@@ -266,24 +290,32 @@
     <div class="container mx-auto px-4">
       <div class="text-center mb-16 fade-in">
         <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">Spiritual Shop</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Physical items that match the energy work: incense burners, feng shui cures, and crystals you can actually use in your space.
+        <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+          Physical objects that match this work: incense burners, Feng Shui cures and crystals that people actually use
+          after readings and consultations.  
+          <br class="hidden sm:block">
+          To order, message me on WhatsApp with the item name and your shipping country. Shipping mainly within the U.S.
         </p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- 商品 1：换成你的产品即可 -->
+        <!-- 商品 1 -->
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover fade-in">
           <div class="relative">
             <img src="https://picsum.photos/id/118/400/300" alt="Brass incense burner" class="w-full h-60 object-cover">
-            <span class="absolute top-4 right-4 bg-secondary text-white text-sm px-3 py-1 rounded-full">Best Seller</span>
+            <span class="absolute top-4 right-4 bg-secondary text-white text-xs px-3 py-1 rounded-full">Best Seller</span>
           </div>
           <div class="p-6">
             <h3 class="font-bold text-lg mb-2">Brass Incense Burner</h3>
-            <p class="text-gray-600 text-sm mb-4">Designed for calm, steady burning during meditation or work.</p>
+            <p class="text-gray-600 text-sm mb-4">
+              A stable, heavy incense burner for weekly rituals and quiet evenings.  
+              Good for people who need a small, solid ritual to mark “work is over”.
+            </p>
             <div class="flex justify-between items-center">
-              <span class="font-bold text-primary">$39.99</span>
-              <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-2 rounded-full transition-colors">
-                <i class="fa fa-shopping-cart"></i>
+              <span class="font-bold text-primary text-sm">$39.99</span>
+              <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=I%20would%20like%20to%20order%20the%20Brass%20Incense%20Burner%20from%20your%20shop."
+                 target="_blank"
+                 class="bg-primary/10 hover:bg-primary/20 text-primary px-3 py-2 rounded-full transition-colors text-xs flex items-center gap-1">
+                <i class="fa fa-whatsapp"></i><span>Order</span>
               </a>
             </div>
           </div>
@@ -295,11 +327,16 @@
           </div>
           <div class="p-6">
             <h3 class="font-bold text-lg mb-2">Feng Shui Wealth Coins</h3>
-            <p class="text-gray-600 text-sm mb-4">Traditional-style coins to place in money-related corners of your home.</p>
+            <p class="text-gray-600 text-sm mb-4">
+              Traditional-style coins for money areas, desks and cash boxes.  
+              Used together with Feng Shui changes, not instead of them.
+            </p>
             <div class="flex justify-between items-center">
-              <span class="font-bold text-primary">$19.99</span>
-              <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-2 rounded-full transition-colors">
-                <i class="fa fa-shopping-cart"></i>
+              <span class="font-bold text-primary text-sm">$19.99</span>
+              <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=I%20would%20like%20to%20order%20the%20Feng%20Shui%20Wealth%20Coins%20from%20your%20shop."
+                 target="_blank"
+                 class="bg-primary/10 hover:bg-primary/20 text-primary px-3 py-2 rounded-full transition-colors text-xs flex items-center gap-1">
+                <i class="fa fa-whatsapp"></i><span>Order</span>
               </a>
             </div>
           </div>
@@ -311,11 +348,16 @@
           </div>
           <div class="p-6">
             <h3 class="font-bold text-lg mb-2">Clarity Crystal Set</h3>
-            <p class="text-gray-600 text-sm mb-4">Crystals chosen to support mental clarity and emotional grounding.</p>
+            <p class="text-gray-600 text-sm mb-4">
+              A small set of crystals chosen for mental clarity and emotional grounding.  
+              Often used by clients while reading their destiny notes or Feng Shui plan.
+            </p>
             <div class="flex justify-between items-center">
-              <span class="font-bold text-primary">$45.99</span>
-              <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-2 rounded-full transition-colors">
-                <i class="fa fa-shopping-cart"></i>
+              <span class="font-bold text-primary text-sm">$45.99</span>
+              <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=I%20would%20like%20to%20order%20the%20Clarity%20Crystal%20Set%20from%20your%20shop."
+                 target="_blank"
+                 class="bg-primary/10 hover:bg-primary/20 text-primary px-3 py-2 rounded-full transition-colors text-xs flex items-center gap-1">
+                <i class="fa fa-whatsapp"></i><span>Order</span>
               </a>
             </div>
           </div>
@@ -324,291 +366,97 @@
         <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover fade-in">
           <div class="relative">
             <img src="https://picsum.photos/id/237/400/300" alt="Feng shui wind chime" class="w-full h-60 object-cover">
-            <span class="absolute top-4 right-4 bg-primary text-white text-sm px-3 py-1 rounded-full">New</span>
+            <span class="absolute top-4 right-4 bg-primary text-white text-xs px-3 py-1 rounded-full">New</span>
           </div>
           <div class="p-6">
             <h3 class="font-bold text-lg mb-2">Feng Shui Wind Chime</h3>
-            <p class="text-gray-600 text-sm mb-4">Placed at the right spot, it gently supports positive qi flow.</p>
+            <p class="text-gray-600 text-sm mb-4">
+              Used at specific doors or corners to gently move stuck energy.  
+              Best used after a consultation, not randomly hung anywhere.
+            </p>
             <div class="flex justify-between items-center">
-              <span class="font-bold text-primary">$29.99</span>
-              <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-2 rounded-full transition-colors">
-                <i class="fa fa-shopping-cart"></i>
+              <span class="font-bold text-primary text-sm">$29.99</span>
+              <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=I%20would%20like%20to%20order%20the%20Feng%20Shui%20Wind%20Chime%20from%20your%20shop."
+                 target="_blank"
+                 class="bg-primary/10 hover:bg-primary/20 text-primary px-3 py-2 rounded-full transition-colors text-xs flex items-center gap-1">
+                <i class="fa fa-whatsapp"></i><span>Order</span>
               </a>
             </div>
           </div>
         </div>
       </div>
-      <!-- 如果以后有独立商城，可把这个按钮链接到外部商城 -->
       <div class="text-center mt-12 fade-in">
-        <a href="shop.html" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full transition-all font-medium">
-          View All Products
+        <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=I%20would%20like%20to%20ask%20about%20your%20shop%20items%20and%20shipping."
+           target="_blank"
+           class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full transition-all font-medium text-sm">
+          Ask about stock & shipping
         </a>
       </div>
     </div>
   </section>
-    <!-- 评价：横向滚动的美式 review ticker -->
+
+  <!-- 评价（先保持原来的静态卡片，之后可以再做弹幕效果） -->
   <section id="testimonials" class="py-20 bg-white">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-10 fade-in">
-        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">What Clients Say</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Short reviews from clients who have worked with destiny readings, feng shui consultations, and the shop.
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">What clients actually say</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+          No fake “everything is perfect now” stories. Just real people describing how the readings and Feng Shui
+          sessions felt for them.
         </p>
       </div>
-
-      <div class="testimonial-ticker-wrapper fade-in">
-        <div class="testimonial-ticker">
-          <div class="testimonial-ticker-track">
-            <!-- 一轮评价卡片（建议保持这种格式，只改文案和头像） -->
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/64/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Sarah Johnson</p>
-                    <p class="text-xs text-gray-500">Destiny Reading · San Francisco, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★★
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "The destiny reading was calm, clear, and surprisingly practical. I left with specific timing and
-                next steps instead of vague predictions."
-              </p>
-            </article>
-
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/91/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Michael Chen</p>
-                    <p class="text-xs text-gray-500">Feng Shui · Seattle, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★★
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "We didn’t rebuild the whole house. Just a few layout changes and the space feels lighter and
-                a lot less chaotic."
-              </p>
-            </article>
-
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/26/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Elena Rodriguez</p>
-                    <p class="text-xs text-gray-500">Shop · Austin, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★☆
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "The incense burner and crystal set became part of a Sunday ritual. Everything feels intentional,
-                not like random decor."
-              </p>
-            </article>
-
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/1027/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Emily Wright</p>
-                    <p class="text-xs text-gray-500">Reading + Feng Shui · New York, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★★
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "The timing from my reading and the changes at home lined up. I stopped pushing in the wrong season
-                and things got easier."
-              </p>
-            </article>
-
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/823/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Jason Lee</p>
-                    <p class="text-xs text-gray-500">Feng Shui · Los Angeles, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★★
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "After adjusting my studio and adding just two items from the shop, client flow and income both
-                felt more steady."
-              </p>
-            </article>
-
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/65/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Laura Kim</p>
-                    <p class="text-xs text-gray-500">Shop · Chicago, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★★
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "The altar set made it easy to actually keep up a weekly practice instead of just thinking about it."
-              </p>
-            </article>
-
-            <!-- 再重复一遍同样的 6 个卡片，用来做无限循环（可以只改文案，不要删掉重复结构） -->
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/64/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Sarah Johnson</p>
-                    <p class="text-xs text-gray-500">Destiny Reading · San Francisco, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★★
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "The destiny reading was calm, clear, and surprisingly practical. I left with specific timing and
-                next steps instead of vague predictions."
-              </p>
-            </article>
-
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/91/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Michael Chen</p>
-                    <p class="text-xs text-gray-500">Feng Shui · Seattle, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★★
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "We didn’t rebuild the whole house. Just a few layout changes and the space feels lighter and
-                a lot less chaotic."
-              </p>
-            </article>
-
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/26/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Elena Rodriguez</p>
-                    <p class="text-xs text-gray-500">Shop · Austin, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★☆
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "The incense burner and crystal set became part of a Sunday ritual. Everything feels intentional,
-                not like random decor."
-              </p>
-            </article>
-
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/1027/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Emily Wright</p>
-                    <p class="text-xs text-gray-500">Reading + Feng Shui · New York, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★★
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "The timing from my reading and the changes at home lined up. I stopped pushing in the wrong season
-                and things got easier."
-              </p>
-            </article>
-
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/823/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Jason Lee</p>
-                    <p class="text-xs text-gray-500">Feng Shui · Los Angeles, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★★
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "After adjusting my studio and adding just two items from the shop, client flow and income both
-                felt more steady."
-              </p>
-            </article>
-
-            <article class="testimonial-item">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center gap-3">
-                  <img src="https://picsum.photos/id/65/96/96" alt="Client"
-                       class="w-9 h-9 rounded-full object-cover">
-                  <div>
-                    <p class="text-sm font-semibold text-dark">Laura Kim</p>
-                    <p class="text-xs text-gray-500">Shop · Chicago, USA</p>
-                  </div>
-                </div>
-                <div class="text-xs text-amber-400 font-semibold">
-                  ★★★★★
-                </div>
-              </div>
-              <p class="text-gray-700 text-sm leading-relaxed">
-                "The altar set made it easy to actually keep up a weekly practice instead of just thinking about it."
-              </p>
-            </article>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-light p-8 rounded-2xl shadow-md fade-in">
+          <div class="text-secondary mb-4 text-xs">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+          </div>
+          <p class="text-gray-600 mb-6 text-sm">
+            “I asked one hard question about my relationship and got a very direct answer, with reasons from my chart.
+            It wasn’t sugarcoated, but it was kind. I finally stopped looping in my head.”
+          </p>
+          <div class="flex items-center">
+            <img src="https://picsum.photos/id/64/100/100" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+            <div>
+              <h4 class="font-bold text-sm">Sarah J.</h4>
+              <p class="text-gray-500 text-xs">Destiny reading client</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-light p-8 rounded-2xl shadow-md fade-in">
+          <div class="text-secondary mb-4 text-xs">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+          </div>
+          <p class="text-gray-600 mb-6 text-sm">
+            “Our bedroom felt like a cold hotel. After the Feng Shui session and changes, it actually feels like our room
+            again. We still have work to do as people, but the house finally isn’t working against us.”
+          </p>
+          <div class="flex items-center">
+            <img src="https://picsum.photos/id/91/100/100" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+            <div>
+              <h4 class="font-bold text-sm">Michael & Ana</h4>
+              <p class="text-gray-500 text-xs">Feng Shui clients</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-light p-8 rounded-2xl shadow-md fade-in">
+          <div class="text-secondary mb-4 text-xs">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+          </div>
+          <p class="text-gray-600 mb-6 text-sm">
+            “The shop items feel very intentional, not random decor. The incense burner and crystals are part of my Sunday
+            ‘reset’ now. It matches the reading and Feng Shui work we did.”
+          </p>
+          <div class="flex items-center">
+            <img src="https://picsum.photos/id/26/100/100" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+            <div>
+              <h4 class="font-bold text-sm">Elena R.</h4>
+              <p class="text-gray-500 text-xs">Shop & reading client</p>
+            </div>
           </div>
         </div>
       </div>
-
-      <p class="mt-6 text-center text-xs text-gray-400">
-        Testimonials are shared with permission. Experiences are personal and individual results may vary.
-      </p>
     </div>
   </section>
-
-
 
   <!-- 联系 -->
   <section id="contact" class="py-20 bg-gray-50">
@@ -616,35 +464,36 @@
       <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
         <div class="flex flex-col md:flex-row">
           <div class="md:w-1/2 bg-primary p-12 text-white fade-in">
-            <h2 class="text-2xl font-bold mb-6">Get In Touch</h2>
-            <p class="mb-8">
-              Have questions about destiny reading, feng shui, or a product in the shop? Send a message and I’ll reply as soon as I can.
+            <h2 class="text-2xl font-bold mb-6">Not sure which option is right for you?</h2>
+            <p class="mb-8 text-sm">
+              If you’re torn between a destiny reading and a Feng Shui session, or you just want to explain your situation
+              before booking, send a message here.
             </p>
-            <div class="space-y-6">
+            <div class="space-y-6 text-sm">
               <div class="flex items-start gap-4">
                 <i class="fa fa-map-marker text-secondary text-xl mt-1"></i>
                 <div>
-                  <h3 class="font-bold mb-1">Location</h3>
-                  <p>Online sessions · U.S. based</p>
+                  <h3 class="font-bold mb-1 text-sm">Location</h3>
+                  <p>Online sessions · U.S.-based, working with clients worldwide.</p>
                 </div>
               </div>
               <div class="flex items-start gap-4">
                 <i class="fa fa-envelope text-secondary text-xl mt-1"></i>
                 <div>
-                  <h3 class="font-bold mb-1">Email</h3>
+                  <h3 class="font-bold mb-1 text-sm">Email</h3>
                   <p>youremail@example.com</p>
                 </div>
               </div>
               <div class="flex items-start gap-4">
                 <i class="fa fa-clock-o text-secondary text-xl mt-1"></i>
                 <div>
-                  <h3 class="font-bold mb-1">Typical reply time</h3>
+                  <h3 class="font-bold mb-1 text-sm">Typical reply time</h3>
                   <p>Within 24–48 hours on weekdays.</p>
                 </div>
               </div>
             </div>
             <div class="mt-10">
-              <h3 class="font-bold mb-4">Follow</h3>
+              <h3 class="font-bold mb-4 text-sm">Follow</h3>
               <div class="flex gap-4">
                 <a href="#" class="w-10 h-10 rounded-full bg-white/20 hover:bg-secondary flex items-center justify-center transition-colors">
                   <i class="fa fa-facebook"></i>
@@ -659,30 +508,31 @@
             </div>
           </div>
           <div class="md:w-1/2 p-12 fade-in">
-            <h2 class="text-2xl font-bold mb-6">Send a Booking Request</h2>
+            <h2 class="text-2xl font-bold mb-6">Send a message</h2>
             <form>
               <div class="mb-4">
-                <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                <label for="name" class="block text-gray-700 mb-2 text-sm">Your Name</label>
                 <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
               </div>
               <div class="mb-4">
-                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                <label for="email" class="block text-gray-700 mb-2 text-sm">Email Address</label>
                 <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
               </div>
               <div class="mb-4">
-                <label for="service" class="block text-gray-700 mb-2">Interested In</label>
+                <label for="service" class="block text-gray-700 mb-2 text-sm">What are you thinking about?</label>
                 <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option>Destiny Reading</option>
-                  <option>Feng Shui Consultation</option>
-                  <option>Shop Products</option>
-                  <option>Other Inquiry</option>
+                  <option>Destiny reading questions</option>
+                  <option>Feng Shui for my home</option>
+                  <option>Feng Shui for my office / studio</option>
+                  <option>Shop products</option>
+                  <option>Other</option>
                 </select>
               </div>
               <div class="mb-6">
-                <label for="message" class="block text-gray-700 mb-2">Your Message</label>
-                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="You can include your time zone and a short description of your situation."></textarea>
+                <label for="message" class="block text-gray-700 mb-2 text-sm">Your Message</label>
+                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="You can say one honest sentence like: ‘I want to fix my marriage.’ ‘I’m tired of feeling this exhausted.’ ‘I want more money and less fear.’"></textarea>
               </div>
-              <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg transition-colors font-medium">
+              <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg transition-colors font-medium text-sm">
                 Send Message
               </button>
             </form>
@@ -703,10 +553,10 @@
             </div>
             <span class="text-2xl font-bold">Your Brand</span>
           </div>
-          <p class="text-gray-400 mb-6">
-            Destiny reading, feng shui, and spiritual objects for real life—not a huge marketplace, just a focused practice.
+          <p class="text-gray-400 mb-6 text-sm">
+            Destiny readings, Feng Shui and spiritual objects for real life – not a huge marketplace, just a focused practice.
           </p>
-          <div class="flex gap-4">
+          <div class="flex gap-4 text-sm">
             <a href="#" class="text-gray-400 hover:text-secondary transition-colors">
               <i class="fa fa-facebook"></i>
             </a>
@@ -720,35 +570,33 @@
         </div>
         <div>
           <h3 class="font-bold text-lg mb-6">Services</h3>
-          <ul class="space-y-3">
-            <!-- 这里也改成页面跳转 -->
+          <ul class="space-y-3 text-sm">
             <li><a href="fortune.html" class="text-gray-400 hover:text-secondary transition-colors">Destiny Reading</a></li>
             <li><a href="feng-shui.html" class="text-gray-400 hover:text-secondary transition-colors">Feng Shui Consultation</a></li>
-            <li><a href="shop.html" class="text-gray-400 hover:text-secondary transition-colors">Spiritual Shop</a></li>
-            <li><a href="#contact" class="text-gray-400 hover:text-secondary transition-colors">Online Sessions</a></li>
+            <li><a href="index.html#shop" class="text-gray-400 hover:text-secondary transition-colors">Spiritual Shop</a></li>
+            <li><a href="index.html#contact" class="text-gray-400 hover:text-secondary transition-colors">Online Sessions</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-bold text-lg mb-6">Quick Links</h3>
-          <ul class="space-y-3">
-            <!-- 原来 #about 不存在，这里改成首页顶部 -->
-            <li><a href="#home" class="text-gray-400 hover:text-secondary transition-colors">About</a></li>
-            <li><a href="#testimonials" class="text-gray-400 hover:text-secondary transition-colors">Testimonials</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-secondary transition-colors">FAQs</a></li>
+          <ul class="space-y-3 text-sm">
+            <li><a href="fortune.html" class="text-gray-400 hover:text-secondary transition-colors">Destiny packages</a></li>
+            <li><a href="feng-shui.html" class="text-gray-400 hover:text-secondary transition-colors">Feng Shui programs</a></li>
+            <li><a href="index.html#testimonials" class="text-gray-400 hover:text-secondary transition-colors">Testimonials</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-bold text-lg mb-6">Newsletter</h3>
-          <p class="text-gray-400 mb-4">Subscribe for occasional insights and updates.</p>
+          <p class="text-gray-400 mb-4 text-sm">Occasional emails with timing notes, home tips and new offers.</p>
           <form class="flex">
-            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-dark">
+            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-dark text-sm">
             <button type="submit" class="bg-secondary hover:bg-secondary/90 px-4 py-2 rounded-r-lg transition-colors">
               <i class="fa fa-paper-plane"></i>
             </button>
           </form>
         </div>
       </div>
-      <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-xs">
         <p>&copy; 2025 Your Brand. All rights reserved.</p>
       </div>
     </div>
@@ -759,13 +607,7 @@
     <i class="fa fa-chevron-up"></i>
   </button>
 
-  <!-- 保持这个路径，确保 assets/js/script.js 存在 -->
- <script src="script.js"></script>
-
+  <!-- 保持你原来的 JS 路径 -->
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
-
-
-
-
-
