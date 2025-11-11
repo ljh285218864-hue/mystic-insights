@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Brand | Book Your Destiny Reading</title>
+  <title>Book a Destiny Reading | Your Brand</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 统一依赖 -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,7 +11,7 @@
 </head>
 <body class="font-inter text-dark bg-light antialiased">
 
-  <!-- 导航：Destiny Reading 高亮 -->
+  <!-- 顶部导航 -->
   <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <a href="index.html#home" class="flex items-center space-x-2">
@@ -49,270 +48,92 @@
     </div>
   </header>
 
-  <!-- 顶部：步骤 & 说明 -->
-  <section class="pt-32 pb-12 bg-gray-50">
+  <!-- 内容 -->
+  <main class="pt-32 pb-20 bg-gray-50 min-h-screen">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto mb-8 fade-in">
-        <p class="uppercase tracking-[0.22em] text-xs text-secondary mb-2">
-          DESTINY READING · BOOKING
+      <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-10">
+        <h1 class="text-2xl md:text-3xl font-bold mb-2">Book your destiny reading</h1>
+        <p class="text-gray-600 text-sm mb-6">
+          You’re one step away. Fill this in, then tap the button to send everything to me on WhatsApp.
+          I’ll confirm and send you a payment link. After payment, I’ll start your reading.
         </p>
-        <h1 class="text-[clamp(1.9rem,3.2vw,2.6rem)] font-bold text-dark mb-3">
-          Confirm your package and share your details
-        </h1>
-        <p class="text-gray-600 text-sm md:text-base">
-          This page is for Chinese-style destiny readings (BaZi / Four Pillars). All readings are written only – no voice or video –
-          so you can reread them whenever you need clarity.
+
+        <!-- 已选套餐显示 -->
+        <div class="mb-6 bg-light border border-gray-200 rounded-xl p-4">
+          <p class="text-xs uppercase tracking-[0.18em] text-secondary mb-1">SELECTED PACKAGE</p>
+          <h2 id="selected-package-name" class="text-lg font-bold mb-1">
+            Three Questions Deep Dive
+          </h2>
+          <p id="selected-package-desc" class="text-gray-600 text-sm">
+            Ask three focused questions about love, work, money, timing or patterns.
+          </p>
+        </div>
+
+        <!-- 表单 -->
+        <form id="fortune-booking-form" class="space-y-5">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Your full name</label>
+              <input type="text" id="name" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email (optional)</label>
+              <input type="email" id="email" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="If you want a copy by email">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">WhatsApp number (with country code)</label>
+              <input type="text" id="whatsapp" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. +1 415 555 1234" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Your time zone</label>
+              <input type="text" id="timezone" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. PST, EST, GMT+1" required>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Date of birth</label>
+              <input type="text" id="dob" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="YYYY-MM-DD" required>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Time of birth</label>
+              <input type="text" id="tob" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Exact time or 'unknown'">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Place of birth</label>
+              <input type="text" id="pob" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary" placeholder="City, Country" required>
+            </div>
+          </div>
+
+          <!-- 问题区域：根据套餐动态生成 -->
+          <div id="question-fields" class="space-y-3">
+            <!-- JS 填充：一个问题 / 三个问题 / 完整解析 -->
+          </div>
+
+          <p class="text-xs text-gray-500">
+            Please be as honest and specific as you can. For this reading I only work in English.
+          </p>
+
+          <div class="pt-4">
+            <button id="whatsapp-submit"
+                    class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-full font-medium text-sm flex items-center justify-center gap-2">
+              <i class="fa fa-whatsapp text-lg"></i>
+              <span>Send my details by WhatsApp</span>
+            </button>
+          </div>
+        </form>
+
+        <p class="mt-4 text-[11px] text-gray-500">
+          After you send your details, I’ll confirm I can take your case and send a secure payment link (USD, PayPal or card).
+          If I haven’t started your reading yet, you can request a refund within 24 hours of payment.
+          Once I begin working on your chart, there are no refunds.
         </p>
       </div>
-
-      <!-- 4 步骤流程条 -->
-      <div class="grid md:grid-cols-4 gap-4 text-xs md:text-sm mb-4 fade-in">
-        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3 border border-secondary/70">
-          <div class="w-7 h-7 rounded-full bg-secondary text-white flex items-center justify-center text-xs">1</div>
-          <div>
-            <p class="font-semibold text-dark">Choose package</p>
-            <p class="text-gray-500">You’ve just done this.</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3 border border-primary/50">
-          <div class="w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center text-xs">2</div>
-          <div>
-            <p class="font-semibold text-dark">Fill in details</p>
-            <p class="text-gray-500">Birth data & your questions.</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3">
-          <div class="w-7 h-7 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-xs">3</div>
-          <div>
-            <p class="font-semibold text-gray-700">Complete payment</p>
-            <p class="text-gray-500">Payment link sent by email.</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-xl shadow-sm px-4 py-3 flex items-center gap-3">
-          <div class="w-7 h-7 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-xs">4</div>
-          <div>
-            <p class="font-semibold text-gray-700">Receive reading</p>
-            <p class="text-gray-500">Written destiny reading.</p>
-          </div>
-        </div>
-      </div>
-      <p class="text-xs text-gray-500 fade-in">
-        Current process: choose a package → fill in this form → receive an email with payment link and estimated delivery time → receive your written reading after payment.
-      </p>
     </div>
-  </section>
-
-  <!-- 主内容 -->
-  <section class="pb-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-3 gap-10 items-start">
-        <!-- 左侧：套餐信息 -->
-        <aside class="lg:col-span-1">
-          <div class="bg-white rounded-2xl shadow-xl p-6 fade-in">
-            <p class="text-xs uppercase tracking-[0.18em] text-secondary mb-2">YOUR SELECTION</p>
-            <h2 id="packageName" class="text-lg font-bold mb-1">
-              Destiny Reading Package
-            </h2>
-            <p id="packageTagline" class="text-gray-600 text-sm mb-4">
-              A Chinese-style written destiny reading.
-            </p>
-            <div class="flex items-baseline gap-2 mb-4">
-              <span id="packagePrice" class="text-2xl font-bold text-primary">$XX</span>
-              <span class="text-xs text-gray-500">USD · written only</span>
-            </div>
-            <div class="text-sm text-gray-600 mb-4">
-              <p class="font-semibold mb-1">This package is suitable when:</p>
-              <ul class="list-disc list-inside space-y-1" id="packageBullets">
-                <li>You want a Chinese-style reading focused on real-life decisions.</li>
-                <li>You prefer a written answer you can reread.</li>
-              </ul>
-            </div>
-            <a href="fortune.html#packages"
-               class="inline-flex items-center text-xs text-gray-500 hover:text-primary">
-              <i class="fa fa-angle-left mr-1"></i> Change package
-            </a>
-            <p class="mt-4 text-[11px] text-gray-400">
-              Note: Readings are spiritual guidance based on traditional Chinese destiny methods (BaZi / Four Pillars).
-              They do not replace medical, financial, or legal advice.
-            </p>
-          </div>
-        </aside>
-
-        <!-- 右侧表单 -->
-        <div class="lg:col-span-2">
-          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 fade-in">
-            <h2 class="text-lg md:text-xl font-bold mb-4">Step 2 – Fill in your details</h2>
-            <p class="text-gray-600 text-sm mb-6">
-              Please fill in your birth information and questions in clear English. This is what traditional
-              Chinese fortune-tellers use to see your timing, patterns, and life direction.
-            </p>
-
-            <form action="mailto:youremail@example.com" method="post" enctype="text/plain" class="space-y-6">
-              <!-- 隐藏字段：套餐名称 -->
-              <input type="hidden" name="Selected package" id="packageInput" value="Destiny Reading Package">
-
-              <!-- 联系信息 -->
-              <div>
-                <h3 class="font-semibold text-sm mb-3">Contact details</h3>
-                <div class="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label class="block text-xs text-gray-700 mb-1">Your full name</label>
-                    <input type="text" name="Name"
-                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                           required>
-                  </div>
-                  <div>
-                    <label class="block text-xs text-gray-700 mb-1">Email address</label>
-                    <input type="email" name="Email"
-                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                           required>
-                  </div>
-                  <div>
-                    <label class="block text-xs text-gray-700 mb-1">Time zone / City</label>
-                    <input type="text" name="Time zone / City"
-                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                           placeholder="e.g. PST · Los Angeles" required>
-                  </div>
-                  <div>
-                    <label class="block text-xs text-gray-700 mb-1">Preferred language</label>
-                    <select name="Preferred language"
-                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
-                      <option>English</option>
-                      <option>Chinese + English</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 出生信息 -->
-              <div>
-                <h3 class="font-semibold text-sm mb-3">Birth information (for Chinese destiny chart)</h3>
-                <div class="grid md:grid-cols-3 gap-4">
-                  <div>
-                    <label class="block text-xs text-gray-700 mb-1">Birth date</label>
-                    <input type="text" name="Birth date"
-                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                           placeholder="YYYY-MM-DD" required>
-                  </div>
-                  <div>
-                    <label class="block text-xs text-gray-700 mb-1">Birth time</label>
-                    <input type="text" name="Birth time"
-                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                           placeholder="Exact or approx., e.g. 14:30">
-                  </div>
-                  <div>
-                    <label class="block text-xs text-gray-700 mb-1">Birth place</label>
-                    <input type="text" name="Birth place"
-                           class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                           placeholder="City, Country" required>
-                  </div>
-                </div>
-                <p class="mt-2 text-[11px] text-gray-500">
-                  If you don’t know your exact birth time, please say “unknown” or “around (morning/afternoon/evening)”.
-                  I will take this into account when reading your chart.
-                </p>
-              </div>
-
-              <!-- 问题区域：根据套餐不同显示不同形式 -->
-              <div id="questionsBlock">
-                <h3 class="font-semibold text-sm mb-3">Your question(s)</h3>
-                <p id="questionHint" class="text-xs text-gray-500 mb-3">
-                  If you chose the single-question reading, please use Question 1 and keep it focused.
-                </p>
-                <div class="space-y-3">
-                  <!-- 单个 / 三个问题用的三个栏位 -->
-                  <div id="q1Wrap">
-                    <label id="q1Label" class="block text-xs text-gray-700 mb-1">Question 1</label>
-                    <textarea id="q1Field" name="Question 1" rows="3"
-                              class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                              placeholder="Example: Is this a good year to change jobs or is it better to wait?"></textarea>
-                  </div>
-                  <div id="q2Wrap">
-                    <label id="q2Label" class="block text-xs text-gray-700 mb-1">Question 2 (optional)</label>
-                    <textarea id="q2Field" name="Question 2" rows="3"
-                              class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                              placeholder="If you selected the three-question reading, use this space."></textarea>
-                  </div>
-                  <div id="q3Wrap">
-                    <label id="q3Label" class="block text-xs text-gray-700 mb-1">Question 3 (optional)</label>
-                    <textarea id="q3Field" name="Question 3" rows="3"
-                              class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                              placeholder="For a third question, or leave blank."></textarea>
-                  </div>
-
-                  <!-- 全解析用的整体关注点 -->
-                  <div id="fullWrap" class="hidden">
-                    <label class="block text-xs text-gray-700 mb-1">Main focus / life stage (optional)</label>
-                    <textarea id="fullField" name="Main focus / life stage" rows="4"
-                              class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                              placeholder="You can describe your current life stage, main concerns, or what you hope to understand from a full analysis."></textarea>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 背景描述 -->
-              <div>
-                <h3 class="font-semibold text-sm mb-3">Background / context (optional)</h3>
-                <textarea name="Background / context" rows="4"
-                          class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                          placeholder="Anything you want me to know about your situation, recent changes, or how you’re feeling."></textarea>
-                <p class="mt-2 text-[11px] text-gray-500">
-                  You don’t need to write your whole life story – a few clear sentences are enough. The chart will show the rest.
-                </p>
-              </div>
-
-              <!-- 同意事项 -->
-              <div class="space-y-2 text-xs text-gray-600">
-                <label class="flex items-start gap-2">
-                  <input type="checkbox" name="Agreement" value="Yes"
-                         class="mt-0.5 w-3.5 h-3.5 border-gray-300 rounded" required>
-                  <span>
-                    I understand this is a spiritual guidance service based on traditional Chinese destiny methods.
-                    It is not a replacement for medical, psychological, financial, or legal advice.
-                  </span>
-                </label>
-                <p class="text-[11px] text-gray-500">
-                  After you submit this form, you’ll receive an email confirming your package, total price, payment link, and the
-                  estimated delivery time for your written reading.
-                </p>
-              </div>
-
-              <!-- 提交按钮 -->
-              <div class="pt-2">
-                <button type="submit"
-                        class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg text-sm font-medium flex items-center justify-center gap-2">
-                  <i class="fa fa-paper-plane text-xs"></i>
-                  <span>Send my details & request payment link</span>
-                </button>
-                <p class="mt-2 text-[11px] text-gray-500">
-                  If the mail app does not open automatically on your device, you can also copy these questions and email them to
-                  <span class="font-semibold">youremail@example.com</span>. (Replace this with your real email.)
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- 提问小提示 -->
-      <div class="max-w-3xl mx-auto mt-12 text-sm text-gray-700 fade-in">
-        <h2 class="font-semibold mb-3">Tips for asking good questions in a Chinese-style reading</h2>
-        <ul class="list-disc list-inside space-y-1">
-          <li>Focus on timing (“when”) and direction (“which way”) more than yes/no.</li>
-          <li>It’s okay to mention what you’ve already tried or how long something has been difficult.</li>
-          <li>Try to keep each question about one main topic: work, money, relationship, moving, health, etc.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 页脚 -->
-  <footer class="bg-dark text-white py-8">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
-      <span>© 2025 Your Brand. All rights reserved.</span>
-      <span>Destiny Reading · Feng Shui · Spiritual Shop</span>
-    </div>
-  </footer>
+  </main>
 
   <!-- 回到顶部 -->
   <button id="back-to-top"
@@ -320,123 +141,128 @@
     <i class="fa fa-chevron-up"></i>
   </button>
 
-  <!-- 全站脚本 -->
   <script src="script.js"></script>
 
-  <!-- 本页脚本：根据 ?package=xxx 切换套餐信息 + 问题栏数量 -->
+  <!-- 本页专用脚本：根据套餐生成问题 + 拼接WhatsApp链接 -->
   <script>
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var key = params.get('package') || 'single';
+    document.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      const pkg = params.get('package') || 'three';
 
-      var config = {
-        single: {
-          name: 'Single Question Reading',
-          tagline: 'One clear question, one focused written answer based on your Chinese destiny chart.',
-          price: '$XX',
-          bullets: [
-            'You have one main decision or situation and want a clear answer.',
-            'You want to experience a Chinese-style reading before booking more.'
-          ],
-          mode: 'single',
-          hint: 'For the single-question reading, please use Question 1 for your main question. You can add background in the context section below.'
-        },
-        three: {
-          name: 'Three Question Reading',
-          tagline: 'Up to three questions on career, money, relationships, family, health, or timing.',
-          price: '$XX',
-          bullets: [
-            'You are looking at a few areas at the same time (work, money, love, moving, etc.).',
-            'You want more detail and timing around your next 1–3 years.'
-          ],
-          mode: 'three',
-          hint: 'For the three-question reading, please use Question 1–3 for your main questions. They can be separate or connected.'
-        },
-        full: {
-          name: 'Full Life Path Analysis',
-          tagline: 'A broader look at your whole chart – personality, work, relationships, health tendencies, and major cycles.',
-          price: '$XX',
-          bullets: [
-            'This is your first deep Chinese-style reading and you want a full overview.',
-            'You want to understand your nature and life cycles, not just one moment.'
-          ],
-          mode: 'full',
-          hint: 'For the full analysis, you may briefly describe your current life stage or focus, or leave it open for a general reading.'
+      const nameEl = document.getElementById('selected-package-name');
+      const descEl = document.getElementById('selected-package-desc');
+      const qWrap = document.getElementById('question-fields');
+
+      function createTextarea(id, label, placeholder) {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <label class="block text-sm font-medium text-gray-700 mb-1">${label}</label>
+          <textarea id="${id}" rows="3"
+            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            placeholder="${placeholder}"></textarea>
+        `;
+        return div;
+      }
+
+      qWrap.innerHTML = '';
+
+      if (pkg === 'single') {
+        nameEl.textContent = 'One Clear Question Reading';
+        descEl.textContent = 'Ask one focused question. You receive a written answer on WhatsApp, plus one short follow-up message about the same issue.';
+        qWrap.appendChild(
+          createTextarea(
+            'q1',
+            'Your question',
+            'Example: “Should I stay in this relationship or leave?”'
+          )
+        );
+      } else if (pkg === 'full') {
+        nameEl.textContent = 'Full Destiny Chart Reading';
+        descEl.textContent = 'A full reading of your chart – personality, timing, love, money – plus a written answer on WhatsApp and follow-up space for questions.';
+        qWrap.appendChild(
+          createTextarea(
+            'q1',
+            'What is happening in your life right now?',
+            'Describe the main areas you are struggling with or curious about. Be as honest and detailed as you like.'
+          )
+        );
+        qWrap.appendChild(
+          createTextarea(
+            'q2',
+            'What do you most want to understand or change?',
+            'For example: relationships, work, money, timing decisions, repeating patterns...'
+          )
+        );
+      } else {
+        // 默认 three
+        nameEl.textContent = 'Three Questions Deep Dive';
+        descEl.textContent = 'Ask three focused questions about love, work, money, timing or repeating patterns. You receive written answers on WhatsApp.';
+        qWrap.appendChild(
+          createTextarea(
+            'q1',
+            'Question 1',
+            'Example: “Can this relationship be repaired? If yes, what should I do?”'
+          )
+        );
+        qWrap.appendChild(
+          createTextarea(
+            'q2',
+            'Question 2',
+            'Example: “What kind of work actually fits me? Is now the time to change?”'
+          )
+        );
+        qWrap.appendChild(
+          createTextarea(
+            'q3',
+            'Question 3',
+            'Example: “Why do I keep repeating this pattern, and how can I work with it?”'
+          )
+        );
+      }
+
+      const submitBtn = document.getElementById('whatsapp-submit');
+      submitBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const whatsapp = document.getElementById('whatsapp').value.trim();
+        const timezone = document.getElementById('timezone').value.trim();
+        const dob = document.getElementById('dob').value.trim();
+        const tob = document.getElementById('tob').value.trim() || 'unknown';
+        const pob = document.getElementById('pob').value.trim();
+
+        if (!name || !whatsapp || !timezone || !dob || !pob) {
+          alert('Please fill in your name, WhatsApp, time zone, date and place of birth.');
+          return;
         }
-      };
 
-      var data = config[key] || config.single;
+        const q1 = (document.getElementById('q1')?.value || '').trim();
+        const q2 = (document.getElementById('q2')?.value || '').trim();
+        const q3 = (document.getElementById('q3')?.value || '').trim();
 
-      // 左边卡片元素
-      var nameEl = document.getElementById('packageName');
-      var taglineEl = document.getElementById('packageTagline');
-      var priceEl = document.getElementById('packagePrice');
-      var bulletsEl = document.getElementById('packageBullets');
-      var pkgInput = document.getElementById('packageInput');
-      var questionHintEl = document.getElementById('questionHint');
+        let pkgLabel = '';
+        if (pkg === 'single') pkgLabel = 'One Clear Question Reading';
+        else if (pkg === 'full') pkgLabel = 'Full Destiny Chart Reading';
+        else pkgLabel = 'Three Questions Deep Dive';
 
-      if (nameEl) nameEl.textContent = data.name;
-      if (taglineEl) taglineEl.textContent = data.tagline;
-      if (priceEl) priceEl.textContent = data.price;
-      if (pkgInput) pkgInput.value = data.name;
-      if (questionHintEl) questionHintEl.textContent = data.hint;
+        let text = `Destiny reading booking\n\nPackage: ${pkgLabel}\n\nName: ${name}\nEmail: ${email || '(not provided)'}\nWhatsApp: ${whatsapp}\nTime zone: ${timezone}\n\nDate of birth: ${dob}\nTime of birth: ${tob}\nPlace of birth: ${pob}\n\n`;
 
-      if (bulletsEl && data.bullets) {
-        bulletsEl.innerHTML = '';
-        data.bullets.forEach(function (line) {
-          var li = document.createElement('li');
-          li.textContent = line;
-          bulletsEl.appendChild(li);
-        });
-      }
+        if (pkg === 'single') {
+          text += `Question:\n${q1 || '(not written yet)'}\n`;
+        } else if (pkg === 'full') {
+          text += `What is happening:\n${q1 || '(not written yet)'}\n\nWhat I want to understand/change:\n${q2 || '(not written yet)'}\n`;
+        } else {
+          text += `Question 1:\n${q1 || '(not written yet)'}\n\nQuestion 2:\n${q2 || '(not written yet)'}\n\nQuestion 3:\n${q3 || '(not written yet)'}\n`;
+        }
 
-      // 问题区域显示逻辑
-      var q1Wrap = document.getElementById('q1Wrap');
-      var q2Wrap = document.getElementById('q2Wrap');
-      var q3Wrap = document.getElementById('q3Wrap');
-      var fullWrap = document.getElementById('fullWrap');
+        text += `\nI understand the reading will be delivered in written English on WhatsApp and that refunds are only possible before you start working on my chart.`;
 
-      var q1Field = document.getElementById('q1Field');
-      var q2Field = document.getElementById('q2Field');
-      var q3Field = document.getElementById('q3Field');
-      var fullField = document.getElementById('fullField');
-
-      function show(el) {
-        if (!el) return;
-        el.classList.remove('hidden');
-      }
-      function hide(el) {
-        if (!el) return;
-        el.classList.add('hidden');
-      }
-
-      // 清除 required
-      if (q1Field) q1Field.required = false;
-      if (q2Field) q2Field.required = false;
-      if (q3Field) q3Field.required = false;
-      if (fullField) fullField.required = false;
-
-      if (data.mode === 'single') {
-        show(q1Wrap);
-        hide(q2Wrap);
-        hide(q3Wrap);
-        hide(fullWrap);
-        if (q1Field) q1Field.required = true;
-      } else if (data.mode === 'three') {
-        show(q1Wrap);
-        show(q2Wrap);
-        show(q3Wrap);
-        hide(fullWrap);
-        if (q1Field) q1Field.required = true;
-      } else if (data.mode === 'full') {
-        hide(q1Wrap);
-        hide(q2Wrap);
-        hide(q3Wrap);
-        show(fullWrap);
-        // full 分析可以不强制提问，视你业务需求也可以改成 required = true
-        if (fullField) fullField.required = false;
-      }
-    })();
+        const WA_NUMBER = 'YOUR_WHATSAPP_NUMBER'; // ← 换成你的号码（不要加 +，只写数字和国家区号）
+        const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank');
+      });
+    });
   </script>
 </body>
 </html>
