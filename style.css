@@ -1,21 +1,4 @@
- /* 基础小工具 */
-.content-auto {
-  content-visibility: auto;
-}
-
-.text-shadow {
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.card-hover {
-  transition: all 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-8px);
-}
-
-/* 颜色变量 */
+ /* ========== 颜色变量 ========== */
 :root {
   --primary: #165DFF;   /* 主色：蓝色 */
   --secondary: #D4AF37; /* 辅色：金色 */
@@ -23,7 +6,7 @@
   --light: #F8FAFC;     /* 浅色背景 */
 }
 
-/* 让你写的 bg-primary / text-primary 这些类真正生效 */
+/* 自定义颜色类，配合 Tailwind 使用 */
 .bg-primary { background-color: var(--primary); }
 .text-primary { color: var(--primary); }
 .border-primary { border-color: var(--primary); }
@@ -42,7 +25,68 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 自定义滚动条（可以保留或自己改） */
+/* 卡片 hover 效果 */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+/* ========== 导航栏：始终白底深色字 ========== */
+#navbar {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    padding 0.3s ease;
+}
+
+/* 下滑一点时加深阴影，显得更稳 */
+#navbar.navbar-scrolled {
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+}
+
+/* 导航链接统一样式 */
+.nav-link {
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+/* 品牌文字 */
+.brand-text {
+  color: var(--dark);
+}
+
+/* 英雄区标题加柔和阴影，避免白底看不清 */
+.text-shadow-soft {
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* 区块淡入动画 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* 自定义滚动条（可选） */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -61,63 +105,7 @@ html {
   background: #0f46d1;
 }
 
-/* 导航栏滚动样式 */
-#navbar {
-  transition:
-    background-color 0.3s ease,
-    box-shadow 0.3s ease,
-    backdrop-filter 0.3s ease,
-    transform 0.3s ease;
-}
-
-/* 毛玻璃效果 */
-.bg-blur {
-  backdrop-filter: blur(16px);
-}
-
-/* 滚动后给 header 加上 .navbar-scrolled */
-#navbar.navbar-scrolled {
-  background-color: rgba(255,255,255,0.96);
-  box-shadow: 0 10px 30px rgba(15,23,42,0.12);
-}
-
-/* 滚动后导航文字变深色（桌面导航） */
-#navbar.navbar-scrolled nav a {
-  color: var(--dark) !important;
-}
-
-#navbar.navbar-scrolled nav a:hover {
-  color: var(--primary) !important;
-}
-
-/* 滚动后 logo 文本变深色 */
-#navbar.navbar-scrolled .text-2xl.font-bold {
-  color: var(--dark) !important;
-}
-
-/* 滚动后导航里的主按钮（Contact）颜色调整 */
-#navbar.navbar-scrolled nav a.bg-secondary {
-  background-color: var(--primary) !important;
-  color: #ffffff !important;
-}
-
-#navbar.navbar-scrolled nav a.bg-secondary:hover {
-  background-color: #0f46d1 !important;
-}
-
-/* 区块淡入动画 */
-.fade-in {
-  opacity: 0;
-  transform: translateY(18px);
-}
-
-.fade-in-visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* 首页客户评价弹幕条 */
+/* ========== 首页评价“弹幕条” ========== */
 .testimonial-ticker-wrap {
   overflow: hidden;
   border-radius: 999px;
@@ -138,7 +126,7 @@ html {
   gap: 0.5rem;
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(15, 23, 42, 0.85);
   font-size: 0.75rem;
 }
 
@@ -150,9 +138,4 @@ html {
 @keyframes testimonial-marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
-
-/* 之前你用到过的水晶球图标大小 */
-.fa-crystal-ball {
-  font-size: 1.5rem;
 }
