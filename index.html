@@ -389,64 +389,91 @@
   </section>
 
   <!-- 客户评价：弹幕式 / 横向滚动 -->
-  <section id="testimonials" class="py-16 bg-white">
+  <!-- About / 关于你 -->
+  <section id="about" class="py-16 bg-slate-900 text-white">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-8 fade-in">
-        <h2 class="text-[clamp(1.5rem,3vw,2.3rem)] font-bold text-dark mb-3">What people say</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto text-sm">
-          Real sentences from real people, moving across the screen like a quiet stream of experiences.
-        </p>
-      </div>
+      <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
+        <!-- 文案区 -->
+        <div class="fade-in">
+          <p class="text-xs tracking-[0.2em] uppercase text-secondary mb-3">About this work</p>
+          <h2 class="text-[clamp(1.5rem,3vw,2.3rem)] font-bold mb-4">
+            Chinese destiny & Feng Shui, done in a clear and grounded way.
+          </h2>
+          <p class="text-sm text-slate-200 mb-3">
+            I’ve worked with Chinese destiny reading and Feng Shui for more than 30 years. I grew up with this system, and over time I learned how to translate it into language that busy, modern people can actually use.
+          </p>
+          <p class="text-sm text-slate-200 mb-3">
+            My clients are mostly in the U.S., but the questions are the same everywhere: 
+            <span class="italic">“Will this relationship last?” “Should I stay at this job?” “Why does my home feel so heavy?”</span>
+          </p>
+          <p class="text-sm text-slate-200 mb-5">
+            I don’t do dramatic scare tactics or tell you that you are “cursed” unless you buy something. I read your chart and space as honestly as I can, then give you practical next steps so you can feel calmer and more in control.
+          </p>
+          <p class="text-[11px] text-slate-400">
+            All readings and consults are written replies in English, usually by WhatsApp. You can take your time to read, save the messages, and come back to them when you need.
+          </p>
+        </div>
 
-      <div class="testimonial-marquee-wrapper">
-        <div class="testimonial-marquee">
-          <!-- 每条评价像一条“弹幕” -->
-          <div class="testimonial-pill">
-            “I finally stopped guessing about my marriage and had a clear plan.”
-            <span>— Destiny reading client</span>
-          </div>
-          <div class="testimonial-pill">
-            “After the Feng Shui reset, our home feels lighter and we argue less.”
-            <span>— Feng Shui client</span>
-          </div>
-          <div class="testimonial-pill">
-            “I used the 3-question reading to make one hard work decision. I don’t regret it.”
-            <span>— Destiny reading client</span>
-          </div>
-          <div class="testimonial-pill">
-            “My bedroom used to feel heavy and restless. Now I actually sleep.”
-            <span>— Feng Shui client</span>
-          </div>
-          <div class="testimonial-pill">
-            “The shop items feel intentional, not random spiritual stuff.”
-            <span>— Shop customer</span>
-          </div>
+        <!-- 侧边信息卡片 -->
+        <div class="fade-in">
+          <div class="bg-slate-800/70 border border-slate-700 rounded-2xl p-6 shadow-xl">
+            <h3 class="text-sm font-semibold mb-4 uppercase tracking-[0.18em] text-slate-300">
+              What you can expect
+            </h3>
+            <ul class="space-y-3 text-sm">
+              <li class="flex gap-3">
+                <span class="mt-1 text-secondary"><i class="fa fa-check-circle"></i></span>
+                <div>
+                  <p class="font-semibold text-slate-50 text-[13px] mb-1">30+ years of practice</p>
+                  <p class="text-[11px] text-slate-300">
+                    Long-term work with Chinese destiny and Feng Shui, blended with a realistic view of modern life.
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 text-secondary"><i class="fa fa-check-circle"></i></span>
+                <div>
+                  <p class="font-semibold text-slate-50 text-[13px] mb-1">Direct, honest answers</p>
+                  <p class="text-[11px] text-slate-300">
+                    If a time is challenging, I will say so. If it’s supportive, I’ll show you how to use it. No vague “maybe” talk.
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 text-secondary"><i class="fa fa-check-circle"></i></span>
+                <div>
+                  <p class="font-semibold text-slate-50 text-[13px] mb-1">Respect for your beliefs</p>
+                  <p class="text-[11px] text-slate-300">
+                    You can be spiritual, skeptical, or somewhere in between. My job is not to convert you, only to read clearly.
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 text-secondary"><i class="fa fa-check-circle"></i></span>
+                <div>
+                  <p class="font-semibold text-slate-50 text-[13px] mb-1">Clear boundaries</p>
+                  <p class="text-[11px] text-slate-300">
+                    I don’t replace doctors, therapists or lawyers. If you are in crisis, I will always advise you to seek local professional help first.
+                  </p>
+                </div>
+              </li>
+            </ul>
 
-          <!-- 复制一轮，形成无缝滚动 -->
-          <div class="testimonial-pill">
-            “I finally stopped guessing about my marriage and had a clear plan.”
-            <span>— Destiny reading client</span>
-          </div>
-          <div class="testimonial-pill">
-            “After the Feng Shui reset, our home feels lighter and we argue less.”
-            <span>— Feng Shui client</span>
-          </div>
-          <div class="testimonial-pill">
-            “I used the 3-question reading to make one hard work decision. I don’t regret it.”
-            <span>— Destiny reading client</span>
-          </div>
-          <div class="testimonial-pill">
-            “My bedroom used to feel heavy and restless. Now I actually sleep.”
-            <span>— Feng Shui client</span>
-          </div>
-          <div class="testimonial-pill">
-            “The shop items feel intentional, not random spiritual stuff.”
-            <span>— Shop customer</span>
+            <div class="mt-6 border-t border-slate-700 pt-4 text-[11px] text-slate-300">
+              <p class="mb-1">
+                <span class="font-semibold text-slate-100">How sessions work:</span>
+                you choose a package, pay on the website, then send your details through a WhatsApp button. I sit with your chart or photos and send you written replies within the stated time.
+              </p>
+              <p>
+                If you’re not sure which service fits you, you can always send a short message first and mention “I’m not sure which option to choose”.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- 联系 -->
   <section id="contact" class="py-20 bg-gray-50">
