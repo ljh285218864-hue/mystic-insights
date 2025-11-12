@@ -1,9 +1,14 @@
-/* 基础色定义（和 Tailwind 保持一致的感觉） */
+ /* Color tokens */
 :root {
   --color-primary: #4f46e5;
   --color-secondary: #f97316;
   --color-dark: #020617;
   --color-light: #f9fafb;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -12,50 +17,83 @@ body {
   color: var(--color-dark);
 }
 
-/* 导航栏：顶部透明 + 白字，滚动后白底+深色字 */
+/* Navbar: transparent over hero, solid on scroll */
 #navbar {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.55), transparent);
+  background: linear-gradient(to bottom, rgba(15,23,42,0.92), rgba(15,23,42,0.6));
+  border-bottom: 1px solid rgba(148,163,184,0.25);
+  backdrop-filter: blur(18px);
 }
 
-#navbar .brand-text,
-#navbar .nav-link {
-  color: #ffffff;
-  transition: color 0.25s ease;
+.brand-text {
+  color: #f9fafb;
 }
 
-#navbar .nav-link {
-  font-size: 0.875rem;
-  font-weight: 500;
+.nav-link,
+.nav-cta,
+#mobile-menu-button {
+  color: #f9fafb;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  font-size: 0.9rem;
 }
 
-#navbar .nav-link:hover {
+.nav-link {
+  position: relative;
+  padding-bottom: 0.15rem;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
   color: var(--color-secondary);
 }
 
-#navbar .nav-cta {
+.nav-link.nav-link-active {
+  color: var(--color-secondary);
+}
+
+.nav-link.nav-link-active::after {
+  width: 100%;
+}
+
+.nav-cta {
   background-color: var(--color-secondary);
-  color: #ffffff;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0.5rem 1.5rem;
-  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 999px;
+  padding-inline: 1.4rem;
+  padding-block: 0.55rem;
+  font-weight: 600;
+  font-size: 0.85rem;
 }
 
-#navbar .nav-cta:hover {
+.nav-cta:hover {
   background-color: #ea580c;
-  box-shadow: 0 10px 25px rgba(249,115,22,0.3);
 }
 
-/* 向下滚动后导航样式 */
+/* Scrolled state: white background + dark text */
 #navbar.navbar-scrolled {
-  background: rgba(255,255,255,0.97);
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid rgba(226,232,240,1);
   box-shadow: 0 10px 30px rgba(15,23,42,0.08);
-  backdrop-filter: blur(10px);
 }
 
-#navbar.navbar-scrolled .brand-text,
-#navbar.navbar-scrolled .nav-link {
+#navbar.navbar-scrolled .brand-text {
+  color: #0f172a;
+}
+
+#navbar.navbar-scrolled .nav-link,
+#navbar.navbar-scrolled #mobile-menu-button {
   color: #0f172a;
 }
 
@@ -65,16 +103,11 @@ body {
 
 #navbar.navbar-scrolled .nav-cta {
   background-color: var(--color-primary);
-  color: #ffffff;
 }
 
-#navbar.navbar-scrolled .nav-cta:hover {
-  background-color: #4338ca;
-}
-
-/* 卡片 hover 效果 */
+/* Cards hover */
 .card-hover {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .card-hover:hover {
@@ -82,55 +115,60 @@ body {
   box-shadow: 0 18px 40px rgba(15,23,42,0.12);
 }
 
-/* 渐入动画 */
+/* Fade-in animation */
 .fade-in {
-  animation: fadeInUp 0.7s ease forwards;
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(18px);
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* 首页 Testimonials 弹幕式横向滚动 */
+/* Testimonial marquee (弹幕式) */
 .testimonial-marquee-wrapper {
   position: relative;
   overflow: hidden;
-  border-radius: 9999px;
-  background: #f1f5f9;
-  padding: 0.75rem 0;
+  border-radius: 999px;
+  background: radial-gradient(circle at top left, rgba(79,70,229,0.12), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(249,115,22,0.12), transparent 55%);
+  padding-block: 0.9rem;
+  padding-inline: 0;
 }
 
 .testimonial-marquee {
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  min-width: max-content;
   animation: testimonial-scroll 40s linear infinite;
+}
+
+.testimonial-marquee:hover {
+  animation-play-state: paused;
 }
 
 .testimonial-pill {
   display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
-  border-radius: 9999px;
-  background: #ffffff;
-  box-shadow: 0 8px 20px rgba(15,23,42,0.08);
-  font-size: 0.8rem;
-  color: #0f172a;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background-color: rgba(15,23,42,0.92);
+  color: #e5e7eb;
+  font-size: 0.74rem;
+  box-shadow: 0 10px 25px rgba(15,23,42,0.25);
 }
 
 .testimonial-pill span {
+  color: #9ca3af;
   font-size: 0.7rem;
-  color: #64748b;
-  margin-top: 0.1rem;
 }
 
+/* 动画关键帧 */
 @keyframes testimonial-scroll {
   0% {
     transform: translateX(0);
@@ -140,7 +178,7 @@ body {
   }
 }
 
-/* 回到顶部按钮的小动画 */
+/* Back to top button */
 #back-to-top {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
