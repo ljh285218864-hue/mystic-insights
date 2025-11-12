@@ -1,353 +1,115 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book a Feng Shui Consultation | Your Brand</title>
-  <meta name="description" content="Book a practical Chinese Feng Shui consultation for your home or workspace. Choose a focused program, tell me what feels wrong, pay in USD, then add my WhatsApp to receive video and photo based guidance.">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Feng Shui Program | Your Brand</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body class="font-inter text-dark bg-light antialiased" data-page="fengshui-booking">
+<body class="font-inter bg-gray-50">
 
-  <header id="navbar" class="fixed top-0 left-0 w-full z-50">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="index.html#home" class="flex items-center space-x-2">
-        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-          <i class="fa fa-moon-o text-white text-xl"></i>
+<header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="index.html#home" class="flex items-center space-x-2">
+      <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center"><i class="fa fa-moon-o text-white text-xl"></i></div>
+      <span class="brand-text text-2xl font-bold">Your Brand</span>
+    </a>
+    <nav class="hidden md:flex items-center space-x-8">
+      <a href="fortune.html" class="nav-link font-medium">Destiny Reading</a>
+      <a href="feng-shui.html" class="nav-link font-medium">Feng Shui</a>
+      <a href="shop.html" class="nav-link font-medium">Shop</a>
+      <a href="index.html#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button id="mobile-menu-button" class="md:hidden text-white text-2xl"><i class="fa fa-bars"></i></button>
+  </div>
+</header>
+
+<main id="fengshui-booking" class="pt-28 pb-16">
+  <div class="max-w-3xl mx-auto px-4">
+    <h1 class="text-2xl md:text-3xl font-bold mb-2">Feng Shui – booking</h1>
+    <p class="text-gray-600 mb-8">Step 1: Fill your details. Step 2: Space & goals. Step 3: Pay. Step 4: Tap WhatsApp to send everything.</p>
+
+    <!-- Step 1 基本信息（新增 Gender） -->
+    <div class="card mb-6">
+      <h2 class="card-title">Step 1 · Your details</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="form-label">Full name</label>
+          <input id="fs_name" type="text" class="form-input" placeholder="Your full name">
         </div>
-        <span class="brand-text text-2xl font-bold">Your Brand</span>
-      </a>
-      <nav class="hidden md:flex items-center space-x-8">
-        <a href="fortune.html" class="nav-link">Destiny Reading</a>
-        <a href="feng-shui.html" class="nav-link nav-link-active">Feng Shui</a>
-        <a href="shop.html" class="nav-link">Shop</a>
-        <a href="index.html#testimonials" class="nav-link">Testimonials</a>
-        <a href="index.html#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full transition-all font-medium text-sm">
-          Contact
-        </a>
-      </nav>
-      <button id="mobile-menu-button" class="md:hidden text-dark text-2xl">
-        <i class="fa fa-bars"></i>
-      </button>
-    </div>
-
-    <div id="mobile-menu"
-         class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
-      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-        <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
-        <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
-        <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
-        <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
-        <a href="index.html#contact"
-           class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
-          Contact
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <section class="pt-28 pb-10 bg-gray-900 text-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl fade-in">
-        <h1 class="text-[clamp(1.9rem,3.5vw,2.6rem)] font-bold mb-3 text-shadow-soft">
-          Book your Feng Shui reset
-        </h1>
-        <p class="text-sm md:text-base text-gray-200 mb-2">
-          4 steps: choose the program, show me your home or workspace, pay on the website, then add my WhatsApp to receive your plan.
-        </p>
-        <p class="text-xs text-gray-300">
-          We do this fully online using your photos, short videos and a simple sketch of the layout.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-10 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-8 fade-in">
-        <h2 class="text-xl font-bold text-dark mb-2">Step 1 · Choose your Feng Shui focus</h2>
-        <p class="text-gray-600 text-sm max-w-2xl mx-auto">
-          Click on the program that matches what you want to change most. If you came from a button, one option is already selected.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl shadow-md p-5 cursor-pointer card-hover fade-in"
-             data-fs-package-card="marriage">
-          <h3 class="text-base font-bold mb-1">Marriage & Bedroom Reset</h3>
-          <p class="text-primary font-semibold text-lg mb-1">$XX</p>
-          <p class="text-xs text-gray-600 mb-3">
-            For people who feel their relationship is stuck, cold or always fighting and want their bedroom to support love again.
-          </p>
-          <ul class="text-xs text-gray-600 space-y-1 mb-3">
-            <li><i class="fa fa-check text-primary mr-1"></i> Bedroom & entrance review</li>
-            <li><i class="fa fa-check text-primary mr-1"></i> Clear “this helps / this hurts” list</li>
-            <li><i class="fa fa-check text-primary mr-1"></i> Practical fixes most people can do</li>
-          </ul>
-          <button class="mt-1 text-[11px] text-primary underline" data-select-btn>
-            Select this program
-          </button>
+        <div>
+          <label class="form-label">Email</label>
+          <input id="fs_email" type="email" class="form-input" placeholder="you@example.com">
         </div>
-
-        <div class="bg-white rounded-2xl shadow-md p-5 cursor-pointer card-hover fade-in"
-             data-fs-package-card="health">
-          <h3 class="text-base font-bold mb-1">Health & Energy Home Reset</h3>
-          <p class="text-primary font-semibold text-lg mb-1">$XX</p>
-          <p class="text-xs text-gray-600 mb-3">
-            For people who sleep badly, wake up tired or feel heavy and stuck at home and want their space to support their body again.
-          </p>
-          <ul class="text-xs text-gray-600 space-y-1 mb-3">
-            <li><i class="fa fa-check text-primary mr-1"></i> Bedroom, kitchen & key areas review</li>
-            <li><i class="fa fa-check text-primary mr-1"></i> Simple layout and clutter changes</li>
-            <li><i class="fa fa-check text-primary mr-1"></i> Specific spots to protect or support</li>
-          </ul>
-          <button class="mt-1 text-[11px] text-primary underline" data-select-btn>
-            Select this program (recommended)
-          </button>
+        <div>
+          <label class="form-label">Gender</label>
+          <select id="fs_gender" class="form-input">
+            <option>Female</option>
+            <option>Male</option>
+            <option>Prefer not to say</option>
+            <option>Other</option>
+          </select>
         </div>
-
-        <div class="bg-white rounded-2xl shadow-md p-5 cursor-pointer card-hover fade-in"
-             data-fs-package-card="money">
-          <h3 class="text-base font-bold mb-1">Money & Career Space Upgrade</h3>
-          <p class="text-primary font-semibold text-lg mb-1">$XX</p>
-          <p class="text-xs text-gray-600 mb-3">
-            For people whose income feels stuck or unstable and want their desk, office or home to stop blocking money flow.
-          </p>
-          <ul class="text-xs text-gray-600 space-y-1 mb-3">
-            <li><i class="fa fa-check text-primary mr-1"></i> Desk, office and “money corners” review</li>
-            <li><i class="fa fa-check text-primary mr-1"></i> Clear do / don’t list for your layout</li>
-            <li><i class="fa fa-check text-primary mr-1"></i> Focus on stability and growth timing</li>
-          </ul>
-          <button class="mt-1 text-[11px] text-primary underline" data-select-btn>
-            Select this program
-          </button>
+        <div>
+          <label class="form-label">City / Time zone</label>
+          <input id="fs_tz" type="text" class="form-input" placeholder="e.g. Los Angeles · PST">
         </div>
       </div>
     </div>
-  </section>
 
-  <section id="booking-form-section" class="py-12 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto grid lg:grid-cols-3 gap-8">
-        <aside class="lg:col-span-1 bg-gray-50 rounded-2xl p-6 shadow-sm fade-in">
-          <h3 class="text-sm font-semibold text-gray-700 mb-3">Selected program</h3>
-          <p id="fs-selected-package-name" class="text-base font-bold mb-1">Health & Energy Home Reset</p>
-          <p id="fs-selected-package-price" class="text-primary font-semibold mb-2">$XX</p>
-          <p id="fs-selected-package-desc" class="text-xs text-gray-600 mb-4">
-            For people who sleep badly, wake up tired or feel heavy and stuck at home and want their space to support their body again.
-          </p>
-          <div class="border-t border-gray-200 pt-4 mt-2">
-            <p class="text-[11px] text-gray-500 mb-1">
-              I will send your Feng Shui notes and plan by WhatsApp, usually within 1 day after payment and receiving your photos/videos.
-            </p>
-            <p class="text-[11px] text-gray-500">
-              We focus on changes you can do in your current home or office – no rebuilding needed.
-            </p>
-          </div>
-        </aside>
-
-        <div class="lg:col-span-2 bg-gray-50 rounded-2xl p-6 shadow-sm fade-in">
-          <form onsubmit="return false;">
-            <input type="hidden" id="fs-selected-package" name="package" value="health">
-
-            <h2 class="text-lg font-bold mb-4">Step 2 · Tell me about your space and the main problem</h2>
-
-            <div class="grid md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label class="block text-xs font-semibold text-gray-700 mb-1">Your full name</label>
-                <input id="fs-name" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-700 mb-1">Email address</label>
-                <input id="fs-email" type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
-              </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label class="block text-xs font-semibold text-gray-700 mb-1">Your WhatsApp number (with country code)</label>
-                <input id="fs-whatsapp" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="+1 ... / +44 ... / +86 ...">
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-700 mb-1">City & time zone</label>
-                <input id="fs-timezone" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. Los Angeles, Pacific Time">
-              </div>
-            </div>
-
-            <h3 class="text-sm font-semibold text-gray-800 mt-4 mb-2">About the space</h3>
-
-            <div class="grid md:grid-cols-3 gap-4 mb-4">
-              <div>
-                <label class="block text-xs font-semibold text-gray-700 mb-1">Space type</label>
-                <select id="fs-space-type" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option value="apartment">Apartment</option>
-                  <option value="house">House</option>
-                  <option value="room">Single room</option>
-                  <option value="office">Office / studio</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-700 mb-1">How long have you lived / worked here?</label>
-                <input id="fs-duration" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. 6 months, 3 years">
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-700 mb-1">Rent or own?</label>
-                <select id="fs-own" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
-                  <option value="rent">Rent</option>
-                  <option value="own">Own</option>
-                  <option value="family">Family home</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="mb-4">
-              <label class="block text-xs font-semibold text-gray-700 mb-1">What feels wrong right now?</label>
-              <p class="text-[11px] text-gray-500 mb-2">
-                Be honest and direct. For example: “We argue every night”, “I can’t sleep deeply”, “Money keeps leaving as soon as it comes in”.
-              </p>
-              <textarea id="main-issue" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="Tell me briefly what is happening right now that you want to change."></textarea>
-            </div>
-
-            <div class="mb-4">
-              <label class="block text-xs font-semibold text-gray-700 mb-1">Layout & rooms I should focus on</label>
-              <p class="text-[11px] text-gray-500 mb-2">
-                You can describe the entrance, bedroom, living area, office or desk. If you already know “this corner feels heavy”, mention it.
-              </p>
-              <textarea id="fs-layout" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="Example: Small apartment, entrance opens into kitchen/living room, bedroom on the left, desk in the bedroom facing the wall."></textarea>
-            </div>
-
-            <div class="mb-4">
-              <label class="block text-xs font-semibold text-gray-700 mb-1">Anything else I should know?</label>
-              <textarea id="fs-notes" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-                        placeholder="Optional. For example: upcoming move, health conditions I should be gentle with, children in the home."></textarea>
-            </div>
-
-            <div class="bg-white border border-gray-200 rounded-xl p-4 mb-4">
-              <h3 class="text-xs font-semibold text-gray-800 mb-1">Step 3 & 4 · Pay, then add WhatsApp</h3>
-              <p class="text-[11px] text-gray-600 mb-1">
-                First, pay for your selected Feng Shui program on the payment page. Then, click the WhatsApp button – your details and description of the space
-                will be pre-filled in a message.
-              </p>
-              <p class="text-[11px] text-gray-600">
-                After payment and your WhatsApp message, I’ll reply with how to send photos/video and when you can expect your notes.
-              </p>
-            </div>
-
-            <div class="space-y-3">
-              <a id="fs-pay-btn"
-                 href="https://your-payment-link-health.com"
-                 target="_blank"
-                 class="w-full block text-center bg-primary hover:bg-primary/90 text-white py-3 rounded-lg transition-colors font-medium text-sm">
-                Step 3 · Pay now for your Feng Shui program
-              </a>
-
-              <button type="button" id="fs-wa-btn"
-                      class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg transition-colors font-medium text-sm inline-flex items-center justify-center gap-2">
-                <i class="fa fa-whatsapp"></i>
-                Step 4 · After payment, send everything by WhatsApp
-              </button>
-
-              <p class="text-[11px] text-gray-500">
-                When you tap WhatsApp, a draft message with your info will open. You can review it, attach photos/videos later and then tap send.
-              </p>
-            </div>
-
-            <p class="text-[11px] text-gray-500 mt-3">
-              Feng Shui guidance is for reflection and education only and does not replace medical, psychological, legal or financial advice.
-            </p>
-          </form>
+    <!-- Step 2 空间与目标 -->
+    <div class="card mb-6">
+      <h2 class="card-title">Step 2 · Your space & goal</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="form-label">Space type</label>
+          <select id="fs_space" class="form-input">
+            <option>Home</option>
+            <option>Office</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label">Program</label>
+          <select id="fs_program" class="form-input">
+            <option value="marriage">Marriage & Bedroom Reset</option>
+            <option value="health">Health & Energy Home Reset</option>
+            <option value="money">Money & Career Space Upgrade</option>
+          </select>
+        </div>
+        <div class="md:col-span-2">
+          <label class="form-label">What feels wrong / what you want to change</label>
+          <textarea id="fs_desc" rows="4" class="form-input" placeholder="Short description (you can send photos/video after payment by WhatsApp)"></textarea>
         </div>
       </div>
     </div>
-  </section>
-  <!-- FAQ: Feng Shui consultation -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-6 text-center fade-in">
-          Feng Shui consult – common questions
-        </h2>
-        <div class="space-y-4 text-sm fade-in">
-          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
-            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
-              Do you need to visit my home in person?
-            </summary>
-            <p class="mt-2 text-gray-600 text-xs">
-              No. All consults are done online. You send clear photos, a short video and a simple sketch of your layout,
-              and I work from there. Many clients are outside my city or country.
-            </p>
-          </details>
 
-          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
-            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
-              Will I need to rebuild my house or buy a lot of objects?
-            </summary>
-            <p class="mt-2 text-gray-600 text-xs">
-              No. I focus on realistic changes: repositioning furniture, removing or moving certain items,
-              and adding a few key pieces only when needed. You don’t need to start over or spend thousands.
-            </p>
-          </details>
-
-          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
-            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
-              How long does it take to receive my Feng Shui plan?
-            </summary>
-            <p class="mt-2 text-gray-600 text-xs">
-              Most home plans are delivered within 2–4 days after payment and after receiving your photos, video
-              and layout on WhatsApp, excluding weekends and public holidays.
-            </p>
-          </details>
-
-          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
-            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
-              Is this safe if I am renting and cannot change much?
-            </summary>
-            <p class="mt-2 text-gray-600 text-xs">
-              Yes. Many clients rent. We focus on what you can change: bed position, desk position, clutter,
-              symbolic objects and how you use different parts of the home.
-            </p>
-          </details>
-
-          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
-            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
-              Will you keep my photos and information private?
-            </summary>
-            <p class="mt-2 text-gray-600 text-xs">
-              I use your photos, video and layout only for your consult. I don’t post your space online
-              or share your details without permission.
-            </p>
-          </details>
-
-          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
-            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
-              Can you guarantee that my marriage, money or health will change?
-            </summary>
-            <p class="mt-2 text-gray-600 text-xs">
-              No one can guarantee exact outcomes. Feng Shui can support you by removing pressure and improving flow
-              in your environment, but it works together with your own actions, timing and life circumstances.
-            </p>
-          </details>
-        </div>
+    <!-- Step 3 & 4 支付 + WhatsApp -->
+    <div class="card mb-6">
+      <h2 class="card-title">Step 3 · Pay for your Feng Shui program</h2>
+      <div class="grid md:grid-cols-3 gap-4 text-sm">
+        <a id="pay_marriage" href="#" class="pay-btn hidden">$249 · Marriage reset</a>
+        <a id="pay_health" href="#" class="pay-btn hidden">$279 · Health reset</a>
+        <a id="pay_money" href="#" class="pay-btn hidden">$299 · Money upgrade</a>
+      </div>
+      <div class="note mt-4">
+        <b>Step 3 & 4 · Pay, then add WhatsApp</b>
+        <p>First, pay for your program. Then tap the WhatsApp button—your details will be pre-filled in a message. You can attach photos/video later.</p>
       </div>
     </div>
-  </section>
 
-  <footer class="bg-dark text-white py-6">
-    <div class="container mx-auto px-4 text-center text-[11px] text-gray-400">
-      <p>&copy; 2025 Your Brand. Destiny readings & Feng Shui.</p>
-    </div>
-  </footer>
+    <a id="fs_whatsapp" href="#" target="_blank" class="wa-btn block"><i class="fa fa-whatsapp mr-2"></i>Step 4 · After payment, send everything by WhatsApp</a>
+    <p class="text-[11px] text-gray-500 mt-3">A draft message opens with your details and goals. Review and tap send.</p>
+  </div>
+</main>
 
-  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible translate-y-4">
-    <i class="fa fa-chevron-up"></i>
-  </button>
+<footer class="bg-slate-950 text-white py-10">
+  <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-400">
+    &copy; 2025 Your Brand. All rights reserved.
+  </div>
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
