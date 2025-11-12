@@ -1,444 +1,210 @@
- // Global front-end logic for navbar, mobile menu, back-to-top, fade-in animations and booking pages
-document.addEventListener('DOMContentLoaded', function () {
+ /* ========== Nav basic mobile toggle ========== */
+(function () {
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      const open = !menu.classList.contains('invisible');
+      if (open) {
+        menu.classList.add('-translate-y-full', 'opacity-0', 'invisible');
+      } else {
+        menu.classList.remove('-translate-y-full', 'opacity-0', 'invisible');
+      }
+    });
+  }
+
+  // 背景是浅色时，导航自动加白底和深色文字（简单判断滚动）
   const navbar = document.getElementById('navbar');
-  const backToTop = document.getElementById('back-to-top');
-
-  // ====== 导航栏 & 回到顶部 ======
-  function handleScroll() {
-    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    if (navbar) {
-      if (scrollY > 20) {
-        navbar.classList.add('navbar-scrolled');
-      } else {
-        navbar.classList.remove('navbar-scrolled');
-      }
-    }
-    if (backToTop) {
-      if (scrollY > 300) {
-        backToTop.classList.remove('opacity-0', 'invisible', 'translate-y-4');
-      } else {
-        backToTop.classList.add('opacity-0', 'invisible', 'translate-y-4');
-      }
-    }
-  }
-
-  window.addEventListener('scroll', handleScroll);
-  handleScroll();
-
-  const mobileBtn = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (mobileBtn && mobileMenu) {
-    mobileBtn.addEventListener('click', () => {
-      const isHidden = mobileMenu.classList.contains('invisible');
-      if (isHidden) {
-        mobileMenu.classList.remove('invisible', 'opacity-0', '-translate-y-full');
-        mobileMenu.classList.add('opacity-100', 'translate-y-0');
-      } else {
-        mobileMenu.classList.add('opacity-0', '-translate-y-full');
-        mobileMenu.classList.remove('opacity-100', 'translate-y-0');
-        setTimeout(() => {
-          mobileMenu.classList.add('invisible');
-        }, 250);
-      }
-    });
-  }
-
-  if (backToTop) {
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // ====== fade-in 动画：让带 .fade-in 的元素真正显示出来 ======
-  const fadeEls = document.querySelectorAll('.fade-in');
-  if (fadeEls.length) {
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.15
-      });
-
-      fadeEls.forEach(el => observer.observe(el));
+  const brandText = document.querySelector('.brand-text');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const navCta = document.querySelector('.nav-cta');
+  function restyleNav(solid) {
+    if (!navbar) return;
+    if (solid) {
+      navbar.classList.remove('bg-transparent');
+      navbar.classList.add('bg-white/95', 'backdrop-blur');
+      brandText && (brandText.style.color = '#0f172a');
+      navLinks.forEach(a => a.classList.add('!text-slate-800'));
+      navCta && navCta.classList.add('!text-white', '!bg-secondary');
     } else {
-      // 老浏览器：直接全部显示
-      fadeEls.forEach(el => el.classList.add('fade-in-visible'));
+      navbar.classList.add('bg-transparent');
+      navbar.classList.remove('bg-white/95', 'backdrop-blur');
+      brandText && (brandText.style.color = '#fff');
+      navLinks.forEach(a => a.classList.remove('!text-slate-800'));
+      navCta && navCta.classList.remove('!bg-secondary');
     }
   }
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    restyleNav(y > 40);
+    lastY = y;
+  });
+  // 初始
+  restyleNav(window.scrollY > 40);
+})();
 
-  // ====== 首页 contact 表单：简单必填校验 ======
-  const contactSection = document.getElementById('contact');
-  if (contactSection) {
-    const contactForm = contactSection.querySelector('form');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const nameInput = contactForm.querySelector('#name');
-        const emailInput = contactForm.querySelector('#email');
-        const msgInput = contactForm.querySelector('#message');
-
-        const name = nameInput ? nameInput.value.trim() : '';
-        const email = emailInput ? emailInput.value.trim() : '';
-        const message = msgInput ? msgInput.value.trim() : '';
-
-        if (!name || !email || !message) {
-          alert('Please fill in your name, email and a short message so I know how to help.');
-          return;
-        }
-
-        const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        if (!emailOk) {
-          alert('Please enter a valid email address.');
-          return;
-        }
-
-        alert('Thank you for your message. This form is a preview – until online forms are fully connected, please also contact me directly by WhatsApp or email.');
-      });
-    }
-  }
-
-  // ====== CONFIG：在这里改成你自己的 WhatsApp 和付款链接 ======
-  const CONFIG = {
-    // 把 1234567890 换成你的 WhatsApp 手机号（只数字，带国家代码，不要加 +）
-    // 例如：+1 234 567 8901  写成 "12345678901"
-    whatsappNumber: '1234567890',
-
-    // 命理三个套餐的付款链接（用户会在网页点击付款）
-    fortunePayments: {
-      single: 'https://your-payment-link-single.com',  // 单个问题
-      three:  'https://your-payment-link-three.com',   // 三个问题（推荐）
-      full:   'https://your-payment-link-full.com'     // 完整解析
-    },
-
-    // 风水三个套餐的付款链接
-    fengshuiPayments: {
-      marriage: 'https://your-payment-link-marriage.com',
-      health:   'https://your-payment-link-health.com',
-      money:    'https://your-payment-link-money.com'
-    }
-  };
-  // ====== CONFIG 结束 ======
-
-  const pageType = document.body.dataset.page || '';
-
-  // ----------------- 命理：预定页面逻辑 -----------------
-  if (pageType === 'fortune-booking') {
-    const cards = document.querySelectorAll('[data-package-card]');
-    const hiddenInput = document.getElementById('selected-package');
-    const nameEl = document.getElementById('selected-package-name');
-    const priceEl = document.getElementById('selected-package-price');
-    const descEl = document.getElementById('selected-package-desc');
-    const qSingle = document.getElementById('question-group-single');
-    const qThree = document.getElementById('question-group-three');
-    const qFull = document.getElementById('question-group-full');
-    const payBtn = document.getElementById('fortune-pay-btn');
-    const waBtn = document.getElementById('fortune-wa-btn');
-
-    function selectPackage(key) {
-      if (!hiddenInput) return;
-      hiddenInput.value = key;
-
-      // 视觉选择效果
-      cards.forEach(card => {
-        const cKey = card.getAttribute('data-package-card');
-        if (cKey === key) {
-          card.classList.add('ring-2', 'ring-primary');
-        } else {
-          card.classList.remove('ring-2', 'ring-primary');
-        }
-      });
-
-      // 控制不同问题区域显示
-      if (qSingle && qThree && qFull) {
-        qSingle.classList.add('hidden');
-        qThree.classList.add('hidden');
-        qFull.classList.add('hidden');
-        if (key === 'single') qSingle.classList.remove('hidden');
-        if (key === 'three') qThree.classList.remove('hidden');
-        if (key === 'full')  qFull.classList.remove('hidden');
-      }
-
-      // 右侧“已选套餐”信息
-      if (nameEl && priceEl && descEl) {
-        const selCard = document.querySelector('[data-package-card="' + key + '"]');
-        if (selCard) {
-          const titleEl = selCard.querySelector('h3');
-          const priceTextEl = selCard.querySelector('p.text-primary');
-          const descTextEl = selCard.querySelector('p.text-xs.text-gray-600');
-          const textName = titleEl ? titleEl.textContent.trim() : '';
-          const textPrice = priceTextEl ? priceTextEl.textContent.trim() : '';
-          const textDesc = descTextEl ? descTextEl.textContent.trim() : '';
-          if (textName) nameEl.textContent = textName;
-          if (textPrice) priceEl.textContent = textPrice;
-          if (textDesc) descEl.textContent = textDesc;
-        }
-      }
-
-      // 更新付款链接
-      if (payBtn && CONFIG.fortunePayments[key]) {
-        payBtn.href = CONFIG.fortunePayments[key];
-      }
-    }
-
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        const key = card.getAttribute('data-package-card');
-        selectPackage(key);
-      });
-      const btn = card.querySelector('[data-select-btn]');
-      if (btn) {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const key = card.getAttribute('data-package-card');
-          selectPackage(key);
-        });
-      }
-    });
-
-    // 根据 URL 参数预选套餐，默认 three
-    const urlParams = new URLSearchParams(window.location.search);
-    const initial = urlParams.get('package') || 'three';
-    selectPackage(initial);
-
-    function buildFortuneMessage() {
-      const pkg = hiddenInput ? hiddenInput.value : 'three';
-      const name = document.getElementById('fr-name')?.value.trim() || '';
-      const email = document.getElementById('fr-email')?.value.trim() || '';
-      const wa = document.getElementById('fr-whatsapp')?.value.trim() || '';
-      const tz = document.getElementById('fr-timezone')?.value.trim() || '';
-      const dob = document.getElementById('fr-dob')?.value.trim() || '';
-      const tob = document.getElementById('fr-birthtime')?.value.trim() || '';
-      const place = document.getElementById('fr-birthplace')?.value.trim() || '';
-      const q1 = document.getElementById('fr-q1')?.value.trim() || '';
-      const q2 = document.getElementById('fr-q2')?.value.trim() || '';
-      const q3 = document.getElementById('fr-q3')?.value.trim() || '';
-      const qSingleText = document.getElementById('fr-single-q')?.value.trim() || '';
-      const qFullText = document.getElementById('fr-full-focus')?.value.trim() || '';
-      const notes = document.getElementById('fr-notes')?.value.trim() || '';
-
-      // ====== 基础必填校验 ======
-      if (!name || !email || !wa) {
-        alert('Please fill in your name, email and your own WhatsApp number.');
-        return null;
-      }
-
-      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      if (!emailOk) {
-        alert('Please enter a valid email address.');
-        return null;
-      }
-
-      if (!dob) {
-        alert('Please add your date of birth so I can read your chart.');
-        return null;
-      }
-
-      if (pkg === 'single' && !qSingleText) {
-        alert('Please write your question.');
-        return null;
-      }
-
-      if (pkg === 'three' && (!q1 || !q2 || !q3)) {
-        alert('Please write all 3 questions, even if they are short.');
-        return null;
-      }
-
-      if (pkg === 'full' && !qFullText) {
-        alert('Please write the main areas you want the full breakdown to focus on.');
-        return null;
-      }
-
-      let title = 'Destiny reading booking';
-      if (pkg === 'single') title += ' (Single Question)';
-      if (pkg === 'three') title += ' (3 Questions)';
-      if (pkg === 'full')  title += ' (Full Chart Breakdown)';
-
-      let msg = title + '\n\n';
-
-      msg += 'Name: ' + name + '\n';
-      msg += 'Email: ' + email + '\n';
-      msg += 'WhatsApp (client): ' + wa + '\n';
-      msg += 'Time zone / city: ' + tz + '\n\n';
-
-      msg += 'Date of birth: ' + dob + '\n';
-      msg += 'Time of birth: ' + tob + '\n';
-      msg += 'City / country of birth: ' + place + '\n\n';
-
-      if (pkg === 'single') {
-        msg += 'Question:\n' + qSingleText + '\n\n';
-      } else if (pkg === 'three') {
-        msg += 'Question 1:\n' + q1 + '\n\n';
-        msg += 'Question 2:\n' + q2 + '\n\n';
-        msg += 'Question 3:\n' + q3 + '\n\n';
-      } else if (pkg === 'full') {
-        msg += 'Main focus areas:\n' + qFullText + '\n\n';
-      }
-
-      if (notes) {
-        msg += 'Extra notes:\n' + notes + '\n\n';
-      }
-
-      msg += 'Package key: ' + pkg;
-
-      return msg;
-    }
-
-    if (waBtn) {
-      waBtn.addEventListener('click', () => {
-        const text = buildFortuneMessage();
-        if (!text) return; // 校验不通过
-        const phone = CONFIG.whatsappNumber;
-        const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(text);
-        window.open(url, '_blank');
-      });
-    }
-  }
-
-  // ----------------- 风水：预定页面逻辑 -----------------
-  if (pageType === 'fengshui-booking') {
-    const cards = document.querySelectorAll('[data-fs-package-card]');
-    const hiddenInput = document.getElementById('fs-selected-package');
-    const nameEl = document.getElementById('fs-selected-package-name');
-    const priceEl = document.getElementById('fs-selected-package-price');
-    const descEl = document.getElementById('fs-selected-package-desc');
-    const mainIssue = document.getElementById('main-issue');
-    const payBtn = document.getElementById('fs-pay-btn');
-    const waBtn = document.getElementById('fs-wa-btn');
-
-    function selectFsPackage(key) {
-      if (!hiddenInput) return;
-      hiddenInput.value = key;
-
-      cards.forEach(card => {
-        const cKey = card.getAttribute('data-fs-package-card');
-        if (cKey === key) {
-          card.classList.add('ring-2', 'ring-primary');
-        } else {
-          card.classList.remove('ring-2', 'ring-primary');
-        }
-      });
-
-      if (nameEl && priceEl && descEl) {
-        const selCard = document.querySelector('[data-fs-package-card="' + key + '"]');
-        if (selCard) {
-          const titleEl = selCard.querySelector('h3');
-          const priceTextEl = selCard.querySelector('p.text-primary');
-          const descTextEl = selCard.querySelector('p.text-xs.text-gray-600');
-          const textName = titleEl ? titleEl.textContent.trim() : '';
-          const textPrice = priceTextEl ? priceTextEl.textContent.trim() : '';
-          const textDesc = descTextEl ? descTextEl.textContent.trim() : '';
-          if (textName) nameEl.textContent = textName;
-          if (textPrice) priceEl.textContent = textPrice;
-          if (textDesc) descEl.textContent = textDesc;
-        }
-      }
-
-      if (mainIssue) {
-        if (key === 'marriage') {
-          mainIssue.placeholder = 'Tell me briefly what is happening in your marriage or love life right now.';
-        } else if (key === 'health') {
-          mainIssue.placeholder = 'Tell me briefly how your body and energy feel at home. Where do you feel most tired or restless?';
-        } else if (key === 'money') {
-          mainIssue.placeholder = 'Tell me briefly about your work and money situation, and how your workspace / home feels around it.';
-        }
-      }
-
-      if (payBtn && CONFIG.fengshuiPayments[key]) {
-        payBtn.href = CONFIG.fengshuiPayments[key];
-      }
-    }
-
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        const key = card.getAttribute('data-fs-package-card');
-        selectFsPackage(key);
-      });
-      const btn = card.querySelector('[data-select-btn]');
-      if (btn) {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const key = card.getAttribute('data-fs-package-card');
-          selectFsPackage(key);
-        });
-      }
-    });
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const initial = urlParams.get('package') || 'health';
-    selectFsPackage(initial);
-
-    function buildFsMessage() {
-      const pkg = hiddenInput ? hiddenInput.value : 'health';
-      const name = document.getElementById('fs-name')?.value.trim() || '';
-      const email = document.getElementById('fs-email')?.value.trim() || '';
-      const wa = document.getElementById('fs-whatsapp')?.value.trim() || '';
-      const tz = document.getElementById('fs-timezone')?.value.trim() || '';
-      const type = document.getElementById('fs-space-type')?.value.trim() || '';
-      const duration = document.getElementById('fs-duration')?.value.trim() || '';
-      const own = document.getElementById('fs-own')?.value.trim() || '';
-      const issue = mainIssue?.value.trim() || '';
-      const layout = document.getElementById('fs-layout')?.value.trim() || '';
-      const notes = document.getElementById('fs-notes')?.value.trim() || '';
-
-      // 基础必填校验
-      if (!name || !email || !wa) {
-        alert('Please fill in your name, email and your own WhatsApp number.');
-        return null;
-      }
-
-      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      if (!emailOk) {
-        alert('Please enter a valid email address.');
-        return null;
-      }
-
-      if (!issue) {
-        alert('Please tell me briefly what feels wrong right now.');
-        return null;
-      }
-
-      let title = 'Feng Shui booking';
-      if (pkg === 'marriage') title += ' (Marriage & Bedroom Reset)';
-      if (pkg === 'health')   title += ' (Health & Energy Home Reset)';
-      if (pkg === 'money')    title += ' (Money & Career Space Upgrade)';
-
-      let msg = title + '\n\n';
-
-      msg += 'Name: ' + name + '\n';
-      msg += 'Email: ' + email + '\n';
-      msg += 'WhatsApp (client): ' + wa + '\n';
-      msg += 'City & time zone: ' + tz + '\n\n';
-
-      msg += 'Space type: ' + type + '\n';
-      msg += 'How long in this space: ' + duration + '\n';
-      msg += 'Rent/own: ' + own + '\n\n';
-
-      msg += 'Main issue:\n' + issue + '\n\n';
-      msg += 'Layout notes:\n' + layout + '\n\n';
-
-      if (notes) {
-        msg += 'Extra notes:\n' + notes + '\n\n';
-      }
-
-      msg += 'Program key: ' + pkg;
-
-      return msg;
-    }
-
-    if (waBtn) {
-      waBtn.addEventListener('click', () => {
-        const text = buildFsMessage();
-        if (!text) return;
-        const phone = CONFIG.whatsappNumber;
-        const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(text);
-        window.open(url, '_blank');
-      });
-    }
-  }
+/* ========== Card whole clickable ========== */
+document.querySelectorAll('.plan-card').forEach(card => {
+  card.addEventListener('click', (e) => {
+    // 避免重复点击按钮时再次触发
+    if (e.target.closest('a')) return;
+    const href = card.getAttribute('data-link');
+    if (href) window.location.href = href;
+  });
 });
+
+/* ========== Helpers ========== */
+function qs(p) {
+  const url = new URL(window.location.href);
+  return url.searchParams.get(p);
+}
+function enc(s) { return encodeURIComponent(s || ''); }
+
+/* ========== Destiny booking ========== */
+(function destinyBooking() {
+  const root = document.getElementById('fortune-booking');
+  if (!root) return;
+
+  const pkg = (qs('package') || 'single').toLowerCase(); // single | three | full
+  const questionsWrap = document.getElementById('dr_questions');
+  const hint = document.getElementById('dr_pkg_hint');
+
+  const map = {
+    single: { count: 1, price: 79, btn: 'pay_single', label: 'Single question' },
+    three:  { count: 3, price: 149, btn: 'pay_three', label: '3 questions' },
+    full:   { count: 0, price: 289, btn: 'pay_full', label: 'Full chart breakdown' }
+  };
+  const meta = map[pkg] || map.single;
+  hint.textContent = meta.count === 0
+    ? 'Full breakdown: no fixed question boxes—describe your situation and focus areas in WhatsApp later.'
+    : `This package includes ${meta.count} question${meta.count>1?'s':''}. Please write clearly.`;
+
+  // render questions
+  questionsWrap.innerHTML = '';
+  if (meta.count > 0) {
+    for (let i = 1; i <= meta.count; i++) {
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <label class="form-label">Question ${i}</label>
+        <textarea id="dr_q${i}" rows="3" class="form-input" placeholder="Your question ${i}"></textarea>
+      `;
+      questionsWrap.appendChild(div);
+    }
+  } else {
+    const info = document.createElement('p');
+    info.className = 'text-sm text-gray-600';
+    info.textContent = 'Use the WhatsApp message to describe your situation and 2–3 focus areas you want me to read.';
+    questionsWrap.appendChild(info);
+  }
+
+  // show pay button
+  ['pay_single','pay_three','pay_full'].forEach(id=>{
+    const el = document.getElementById(id);
+    if (el) {
+      if (id === meta.btn) el.classList.remove('hidden');
+      else el.classList.add('hidden');
+    }
+  });
+
+  // WhatsApp compose
+  const waBtn = document.getElementById('dr_whatsapp');
+  const phone = 'YOUR_WHATSAPP_NUMBER'; // e.g. 15551234567
+  waBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('dr_name').value.trim();
+    const email = document.getElementById('dr_email').value.trim();
+    const dob = document.getElementById('dr_dob').value;
+    const gender = document.getElementById('dr_gender').value;
+    const time = document.getElementById('dr_time').value.trim();
+    const city = document.getElementById('dr_city').value.trim();
+    const tz = document.getElementById('dr_tz').value.trim();
+    if (!name || !email || !dob) {
+      alert('Please fill your name, email and date of birth.');
+      return;
+    }
+    let qsText = '';
+    if (meta.count > 0) {
+      for (let i=1; i<=meta.count; i++) {
+        const val = (document.getElementById(`dr_q${i}`)?.value || '').trim();
+        if (val) qsText += `\nQ${i}: ${val}`;
+      }
+    } else {
+      qsText = '\n(Full breakdown: I will describe my situation and focus areas.)';
+    }
+
+    const text =
+`Destiny Reading – ${meta.label}
+Name: ${name}
+Gender: ${gender || 'N/A'}
+Email: ${email}
+DOB: ${dob}
+Birth time: ${time || 'unknown'}
+Birth city/country: ${city}
+Time zone: ${tz}${qsText ? '\n' + qsText : ''}
+
+(I have paid on the website. Please confirm and let me know timing.)`;
+
+    const url = `https://wa.me/${phone}?text=${enc(text)}`;
+    window.open(url, '_blank');
+  });
+})();
+
+/* ========== Feng Shui booking (with Gender) ========== */
+(function fengshuiBooking() {
+  const root = document.getElementById('fengshui-booking');
+  if (!root) return;
+
+  // 根据 URL 预选 program
+  const program = (qs('program') || 'marriage').toLowerCase(); // marriage|health|money
+  const select = document.getElementById('fs_program');
+  if (select) select.value = program;
+
+  // 显示对应支付按钮
+  const showPay = (val) => {
+    const ids = ['pay_marriage','pay_health','pay_money'];
+    ids.forEach(id => document.getElementById(id)?.classList.add('hidden'));
+    if (val === 'marriage') document.getElementById('pay_marriage')?.classList.remove('hidden');
+    if (val === 'health') document.getElementById('pay_health')?.classList.remove('hidden');
+    if (val === 'money') document.getElementById('pay_money')?.classList.remove('hidden');
+  };
+  showPay(program);
+  select?.addEventListener('change', e => showPay(e.target.value));
+
+  // WhatsApp compose
+  const waBtn = document.getElementById('fs_whatsapp');
+  const phone = 'YOUR_WHATSAPP_NUMBER'; // e.g. 15551234567
+  waBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('fs_name').value.trim();
+    const email = document.getElementById('fs_email').value.trim();
+    const gender = document.getElementById('fs_gender').value;
+    const tz = document.getElementById('fs_tz').value.trim();
+    const space = document.getElementById('fs_space').value;
+    const prog = document.getElementById('fs_program').value;
+    const desc = document.getElementById('fs_desc').value.trim();
+
+    if (!name || !email) {
+      alert('Please fill your name and email.');
+      return;
+    }
+
+    const label = prog === 'marriage' ? 'Marriage & Bedroom Reset'
+                 : prog === 'health' ? 'Health & Energy Home Reset'
+                 : 'Money & Career Space Upgrade';
+
+    const text =
+`Feng Shui – ${label}
+Name: ${name}
+Gender: ${gender}
+Email: ${email}
+City/Time zone: ${tz}
+Space type: ${space}
+Goal / What feels wrong:
+${desc || '(I will send details/photos by WhatsApp)'}
+(I have paid on the website. Please confirm next steps.)`;
+
+    const url = `https://wa.me/${phone}?text=${enc(text)}`;
+    window.open(url, '_blank');
+  });
+})();
