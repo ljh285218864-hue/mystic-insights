@@ -2,19 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Destiny Reading | Your Brand</title>
-  <meta name="description" content="Chinese destiny reading in clear written English for real questions about love, marriage, career, money and timing. Single question, 3-question and full chart packages. Delivered by WhatsApp.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="font-inter text-dark bg-light antialiased">
-
-  <!-- 顶部导航 -->
-  <header id="navbar" class="fixed top-0 left-0 w-full z-50">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<body class="font-inter text-dark bg-light antialiased" data-page="fortune">
+  <!-- 导航 -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <a href="index.html#home" class="flex items-center space-x-2">
         <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
           <i class="fa fa-moon-o text-white text-xl"></i>
@@ -22,102 +20,109 @@
         <span class="brand-text text-2xl font-bold">Your Brand</span>
       </a>
       <nav class="hidden md:flex items-center space-x-8">
-        <a href="fortune.html" class="nav-link nav-link-active">Destiny Reading</a>
+        <a href="fortune.html" class="nav-link text-secondary font-semibold">Destiny Reading</a>
         <a href="feng-shui.html" class="nav-link">Feng Shui</a>
         <a href="shop.html" class="nav-link">Shop</a>
         <a href="index.html#testimonials" class="nav-link">Testimonials</a>
-        <a href="index.html#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full transition-all font-medium text-sm">
-          Contact
-        </a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
       </nav>
-      <button id="mobile-menu-button" class="md:hidden text-dark text-2xl">
+      <button id="mobile-menu-button" class="md:hidden text-white text-2xl">
         <i class="fa fa-bars"></i>
       </button>
     </div>
-
-    <!-- 移动端菜单 -->
-    <div id="mobile-menu"
-         class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
+    <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
       <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-        <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
+        <a href="fortune.html" class="text-dark font-semibold py-2">Destiny Reading</a>
         <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
         <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
         <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
-        <a href="index.html#contact"
-           class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
-          Contact
-        </a>
+        <a href="index.html#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">Contact</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="pt-28 pb-16 bg-gray-900 text-white">
+  <section class="pt-28 pb-16 bg-gray-50">
     <div class="container mx-auto px-4">
-      <div class="flex flex-col lg:flex-row items-center gap-10">
-        <div class="lg:w-1/2 fade-in">
-          <h1 class="text-[clamp(2rem,4vw,3rem)] font-bold mb-4 text-shadow-soft">
-            Destiny readings for questions you can’t stop thinking about.
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="fade-in">
+          <p class="text-xs tracking-[0.2em] uppercase text-secondary mb-3">Destiny readings</p>
+          <h1 class="text-[clamp(2rem,4vw,2.8rem)] font-bold text-slate-900 mb-4">
+            For questions you can’t stop thinking about.
           </h1>
-          <p class="text-gray-200 text-sm md:text-base mb-3">
-            Chinese-style destiny reading (BaZi) for real-life questions: love, marriage, career, money, health, moving, children and timing.
+          <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+            You replay the same questions at night: “Will this relationship last?” “Should I change jobs?” “Why does money always feel unstable?”
           </p>
-          <p class="text-gray-300 text-sm md:text-base mb-6">
-            Everything is written and delivered in English by WhatsApp. No calls, no video. 
-            You read in your own time, keep the answers, and come back to them later.
+          <p class="text-gray-700 mb-6 text-sm leading-relaxed">
+            This is a Chinese-style destiny reading, not vague daily horoscopes. We look at your timing, patterns and blind spots so you can make decisions with a calmer mind.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4 mb-4">
-            <a href="#packages" class="bg-primary hover:bg-primary/90 text-white px-7 py-3 rounded-full text-sm font-medium">
-              Choose a reading package
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="fortune-booking.html?package=three"
+               class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full text-sm font-semibold">
+              Book 3-question reading
             </a>
-            <a href="#how-it-works" class="border border-white/40 hover:border-white text-white px-7 py-3 rounded-full text-sm font-medium">
-              How it works
+            <a href="index.html#contact"
+               class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-full text-sm font-semibold">
+              Ask a quick question first
             </a>
           </div>
-          <p class="text-xs text-gray-400">
-            Typical delivery: about 1 hour after payment for question readings, during working hours.
+          <p class="text-[11px] text-gray-500 mt-3">
+            Online, written replies by WhatsApp. No live video / phone call.
           </p>
         </div>
-        <div class="lg:w-1/2 fade-in">
-          <img src="https://picsum.photos/id/1074/900/650" alt="Destiny chart reading"
-               class="rounded-2xl shadow-2xl w-full object-cover">
+        <div class="fade-in">
+          <div class="relative">
+            <img src="https://picsum.photos/id/1074/900/650" class="rounded-2xl shadow-xl w-full object-cover" alt="Destiny reading workspace">
+            <div class="absolute -bottom-6 -left-4 bg-white rounded-xl shadow-lg px-4 py-3 text-xs w-60">
+              <p class="font-semibold text-slate-800 mb-1">“Now I know what I’m walking into.”</p>
+              <p class="text-gray-500">Client after asking about a job change and relationship timing.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 你可以问什么 -->
-  <section class="py-16 bg-white">
+  <!-- 适合谁 -->
+  <section class="py-14 bg-white">
     <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 items-start">
         <div class="fade-in">
-          <h2 class="text-2xl font-bold text-dark mb-4">What we can really look at</h2>
-          <p class="text-gray-600 text-sm md:text-base mb-4">
-            Your Chinese destiny chart is like a map of your timing, patterns and nature. We use it to answer very specific questions, for example:
-          </p>
-          <ul class="space-y-3 text-sm md:text-base text-gray-700">
-            <li><i class="fa fa-heart-o text-secondary mr-2"></i> Love & marriage – “Should I stay in this relationship?”, “Is there real marriage energy for me in the next few years?”</li>
-            <li><i class="fa fa-briefcase text-secondary mr-2"></i> Career – “Is this job or business worth the sacrifice?”, “What type of work fits my chart?”</li>
-            <li><i class="fa fa-usd text-secondary mr-2"></i> Money – “Why does money come and go?”, “Is this a good timing for investment or expansion?”</li>
-            <li><i class="fa fa-heartbeat text-secondary mr-2"></i> Health – long-term patterns in energy, stress, weak areas in the body that need care.</li>
-            <li><i class="fa fa-home text-secondary mr-2"></i> Moving & relocation – “Is this move good for me?”, “Does this new city support my chart?”</li>
-            <li><i class="fa fa-clock-o text-secondary mr-2"></i> Timing – which years/months are supportive, which are heavy, so you don’t keep pushing at the wrong time.</li>
+          <h2 class="text-xl font-bold text-slate-900 mb-4">This is for you if...</h2>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex gap-3">
+              <span class="mt-1 text-secondary"><i class="fa fa-check-circle"></i></span>
+              <span>You feel stuck in love, work or money and are tired of guessing.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 text-secondary"><i class="fa fa-check-circle"></i></span>
+              <span>You want a clear, honest look at your timing—not “everything will be fine, don’t worry.”</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 text-secondary"><i class="fa fa-check-circle"></i></span>
+              <span>You like direct, practical guidance more than sugar-coated reassurance.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 text-secondary"><i class="fa fa-check-circle"></i></span>
+              <span>You’re open to Chinese metaphysics, but you still live in the real world with bills and responsibilities.</span>
+            </li>
           </ul>
         </div>
         <div class="fade-in">
-          <div class="bg-light rounded-2xl p-8 shadow-lg">
-            <h3 class="text-xl font-bold mb-4">This is not fortune cookies.</h3>
-            <p class="text-gray-600 text-sm md:text-base mb-4">
-              I will not tell you “everything will be perfect” or “you’re cursed forever”.
-              You get a direct, honest answer based on your chart – with clear explanation in normal language.
-            </p>
-            <p class="text-gray-600 text-sm md:text-base mb-4">
-              You can ask about relationships, work, money, family, children, life direction or a decision you are stuck on.
-              We stay grounded and practical, not superstitious.
-            </p>
-            <p class="text-gray-500 text-xs">
-              Readings are private. Your birth data and questions are only used to prepare your reading and are not shared with anyone.
-            </p>
+          <h3 class="text-sm font-semibold text-slate-900 mb-3 uppercase tracking-[0.18em]">Common topics</h3>
+          <div class="grid gap-3 text-sm text-gray-700">
+            <div class="bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
+              <p class="font-semibold text-slate-800 mb-1">Love & marriage</p>
+              <p>“Is this relationship worth fighting for?” “Will I marry?” “Why do I always attract the same type of person?”</p>
+            </div>
+            <div class="bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
+              <p class="font-semibold text-slate-800 mb-1">Work & money</p>
+              <p>“Should I stay or leave this job?” “Is this a good year to start my own thing?” “Why does money feel so unstable?”</p>
+            </div>
+            <div class="bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
+              <p class="font-semibold text-slate-800 mb-1">Life cycles & timing</p>
+              <p>“Is this just a rough season, or is my chart actually like this?” “When does this heavy feeling start to shift?”</p>
+            </div>
           </div>
         </div>
       </div>
@@ -125,205 +130,136 @@
   </section>
 
   <!-- 套餐 -->
-  <section id="packages" class="py-18 pb-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12 fade-in">
-        <h2 class="text-2xl font-bold text-dark mb-3">Choose your reading package</h2>
-        <p class="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
-          All readings are written replies in English, sent by WhatsApp.  
-          No calls, no video – just clear answers you can read and keep.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Single Question -->
-        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col card-hover fade-in">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-bold">Single Question Reading</h3>
-            <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Best for first-time</span>
-          </div>
-          <p class="text-2xl font-bold text-primary mb-2">$XX</p>
-          <p class="text-gray-600 text-sm mb-4">
-            One clear question about love, work, money, health, moving or another topic that is stuck in your mind.
-          </p>
-          <ul class="text-sm text-gray-700 space-y-2 mb-5">
-            <li><i class="fa fa-check text-primary mr-2"></i> 1 focused written answer (about 2–4 paragraphs)</li>
-            <li><i class="fa fa-check text-primary mr-2"></i> Short explanation from your chart (timing + pattern)</li>
-            <li><i class="fa fa-check text-primary mr-2"></i> 1 follow-up clarification question if something is unclear</li>
-          </ul>
-          <div class="mt-auto">
-            <h4 class="text-xs font-semibold text-gray-500 uppercase mb-2">Flow</h4>
-            <ol class="text-xs text-gray-600 space-y-1 mb-4">
-              <li>1. Click “Book this package”</li>
-              <li>2. Fill in your birth data & your one question</li>
-              <li>3. Complete payment</li>
-              <li>4. Receive your written answer on WhatsApp</li>
-            </ol>
-            <a href="fortune-booking.html?package=single"
-               class="block text-center bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full text-sm font-medium">
-              Book this package
-            </a>
-          </div>
-        </div>
-
-        <!-- Three Questions -->
-        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-2 border-primary card-hover fade-in">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-bold">3 Question Reading</h3>
-            <span class="text-xs bg-primary text-white px-3 py-1 rounded-full">Most popular</span>
-          </div>
-          <p class="text-2xl font-bold text-primary mb-2">$XX</p>
-          <p class="text-gray-600 text-sm mb-4">
-            Three connected questions, for example: “Should I stay or leave?”, “What is the timing for real marriage?”, 
-            “What should I work on in myself?”
-          </p>
-          <ul class="text-sm text-gray-700 space-y-2 mb-5">
-            <li><i class="fa fa-check text-primary mr-2"></i> Answers to 3 specific questions</li>
-            <li><i class="fa fa-check text-primary mr-2"></i> Overview of your current life cycle (5–10 years)</li>
-            <li><i class="fa fa-check text-primary mr-2"></i> 2–3 follow-up clarifications inside WhatsApp</li>
-          </ul>
-          <div class="mt-auto">
-            <h4 class="text-xs font-semibold text-gray-500 uppercase mb-2">Flow</h4>
-            <ol class="text-xs text-gray-600 space-y-1 mb-4">
-              <li>1. Click “Book this package”</li>
-              <li>2. Fill in your birth data & your three questions</li>
-              <li>3. Complete payment</li>
-              <li>4. Receive your full written reading on WhatsApp</li>
-            </ol>
-            <a href="fortune-booking.html?package=three"
-               class="block text-center bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full text-sm font-medium">
-              Book this package
-            </a>
-          </div>
-        </div>
-
-        <!-- Full Breakdown -->
-        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col card-hover fade-in">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-bold">Full Chart Breakdown</h3>
-            <span class="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Deep dive</span>
-          </div>
-          <p class="text-2xl font-bold text-primary mb-2">$XX</p>
-          <p class="text-gray-600 text-sm mb-4">
-            A complete written breakdown of your destiny chart: nature, strengths, blind spots, work style, love pattern and
-            major timing, plus answers to your main question.
-          </p>
-          <ul class="text-sm text-gray-700 space-y-2 mb-5">
-            <li><i class="fa fa-check text-primary mr-2"></i> Full chart explanation in clear English</li>
-            <li><i class="fa fa-check text-primary mr-2"></i> Key years and chapters in your life</li>
-            <li><i class="fa fa-check text-primary mr-2"></i> Extra space for follow-up reflections</li>
-          </ul>
-          <div class="mt-auto">
-            <h4 class="text-xs font-semibold text-gray-500 uppercase mb-2">Flow</h4>
-            <ol class="text-xs text-gray-600 space-y-1 mb-4">
-              <li>1. Click “Book this package”</li>
-              <li>2. Fill in your birth data & main focus areas</li>
-              <li>3. Complete payment</li>
-              <li>4. Receive your full written breakdown by WhatsApp</li>
-            </ol>
-            <a href="fortune-booking.html?package=full"
-               class="block text-center bg-primary hover:bg-primary/90 text-white py-2.5 rounded-full text-sm font-medium">
-              Book this package
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 流程说明 -->
-  <section id="how-it-works" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-10 fade-in">
-        <h2 class="text-2xl font-bold text-dark mb-3">How it works</h2>
-        <p class="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
-          Simple and private. Everything happens in writing so you can read slowly and come back to it whenever you need.
-        </p>
-      </div>
-      <div class="grid md:grid-cols-4 gap-6">
-        <div class="bg-light rounded-2xl p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <span class="text-primary font-bold text-sm">1</span>
-          </div>
-          <h3 class="font-semibold mb-2 text-sm">Choose your package</h3>
-          <p class="text-gray-600 text-xs">
-            Pick single question, 3 questions, or a full breakdown – whatever matches what you’re facing.
-          </p>
-        </div>
-        <div class="bg-light rounded-2xl p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <span class="text-primary font-bold text-sm">2</span>
-          </div>
-          <h3 class="font-semibold mb-2 text-sm">Fill in your details</h3>
-          <p class="text-gray-600 text-xs">
-            On the booking page you enter your birth data, time zone and your question(s) in clear, honest words.
-          </p>
-        </div>
-        <div class="bg-light rounded-2xl p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <span class="text-primary font-bold text-sm">3</span>
-          </div>
-          <h3 class="font-semibold mb-2 text-sm">Complete payment</h3>
-          <p class="text-gray-600 text-xs">
-            You pay in USD through the link provided. Once payment is confirmed, I start preparing your reading.
-          </p>
-        </div>
-        <div class="bg-light rounded-2xl p-6 text-center fade-in">
-          <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-            <span class="text-primary font-bold text-sm">4</span>
-          </div>
-          <h3 class="font-semibold mb-2 text-sm">Receive your answers</h3>
-          <p class="text-gray-600 text-xs">
-            I send your written reading on WhatsApp. You can ask short follow-up clarifying questions inside the same chat.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
   <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl font-bold text-dark mb-6 text-center fade-in">Common questions</h2>
-        <div class="space-y-5 text-sm md:text-base">
-          <div class="fade-in">
-            <h3 class="font-semibold text-dark mb-1">Is this reading scary or fatalistic?</h3>
-            <p class="text-gray-600">
-              No. We talk honestly about strengths and weak spots, and about easier and harder timing, but the goal is to
-              help you make better decisions – not to scare you or tell you everything is fixed forever.
-            </p>
-          </div>
-          <div class="fade-in">
-            <h3 class="font-semibold text-dark mb-1">What if I don’t know my exact birth time?</h3>
-            <p class="text-gray-600">
-              If you don’t know your time at all, we can still work with a limited view (mainly big patterns and timing).
-              If you know roughly morning/afternoon/evening, say that in the form and I’ll adjust.
-            </p>
-          </div>
-          <div class="fade-in">
-            <h3 class="font-semibold text-dark mb-1">Can I ask about someone else?</h3>
-            <p class="text-gray-600">
-              You can ask about a relationship dynamic if you have their birth data, but the focus stays on what <strong>you</strong>
-              can do and how your own chart is involved. We don’t spy on other people’s lives.
-            </p>
-          </div>
+      <div class="text-center mb-10 fade-in">
+        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Choose how deep you want to go</h2>
+        <p class="text-sm text-gray-600 max-w-2xl mx-auto">
+          All readings are written replies by WhatsApp. No live call, no video. You can re-read as many times as you need.
+        </p>
+      </div>
+      <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+        <!-- 单个问题 -->
+        <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col fade-in">
+          <h3 class="text-base font-semibold text-slate-900 mb-1">Single question</h3>
+          <p class="text-xs uppercase tracking-[0.18em] text-gray-400 mb-2">Focused & direct</p>
+          <p class="text-primary font-bold text-xl mb-4">$79</p>
+          <p class="text-sm text-gray-700 mb-4">
+            One clear question, one focused answer. Best when you already know exactly what you want to ask.
+          </p>
+          <ul class="text-xs text-gray-600 space-y-2 mb-6">
+            <li><i class="fa fa-circle text-[6px] mr-2"></i>1 main question about love, work, money or timing</li>
+            <li><i class="fa fa-circle text-[6px] mr-2"></i>Written explanation of your chart around this topic</li>
+            <li><i class="fa fa-circle text-[6px] mr-2"></i>1–2 small clarifying follow-up messages allowed</li>
+          </ul>
+          <a href="fortune-booking.html?package=single"
+             class="mt-auto inline-flex items-center justify-center bg-primary/10 hover:bg-primary text-primary hover:text-white px-4 py-2 rounded-full text-xs font-semibold transition-colors">
+            Book single question
+            <i class="fa fa-arrow-right ml-2"></i>
+          </a>
         </div>
+
+        <!-- 三个问题（主推） -->
+        <div class="bg-white rounded-2xl shadow-xl p-6 border border-secondary relative flex flex-col fade-in">
+          <span class="absolute -top-3 left-4 bg-secondary text-white text-[10px] px-2 py-[2px] rounded-full uppercase tracking-[0.18em]">
+            Most chosen
+          </span>
+          <h3 class="text-base font-semibold text-slate-900 mb-1">3 questions</h3>
+          <p class="text-xs uppercase tracking-[0.18em] text-gray-400 mb-2">For real-life situations</p>
+          <p class="text-primary font-bold text-xl mb-4">$149</p>
+          <p class="text-sm text-gray-700 mb-4">
+            Three questions that keep circling in your mind—love, work, family, money. We look at the pattern behind them.
+          </p>
+          <ul class="text-xs text-gray-600 space-y-2 mb-6">
+            <li><i class="fa fa-circle text-[6px] mr-2"></i>Up to 3 questions in one chart</li>
+            <li><i class="fa fa-circle text-[6px] mr-2"></i>How these topics connect in your life cycles</li>
+            <li><i class="fa fa-circle text-[6px] mr-2"></i>Clear “this is supportive / this is risky” timing notes</li>
+            <li><i class="fa fa-circle text-[6px] mr-2"></i>Short follow-up allowed if you need to clarify</li>
+          </ul>
+          <a href="fortune-booking.html?package=three"
+             class="mt-auto inline-flex items-center justify-center bg-primary text-white hover:bg-primary/90 px-4 py-2 rounded-full text-xs font-semibold transition-colors">
+            Book 3-question reading
+            <i class="fa fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+
+        <!-- 完整解析 -->
+        <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col fade-in">
+          <h3 class="text-base font-semibold text-slate-900 mb-1">Full chart breakdown</h3>
+          <p class="text-xs uppercase tracking-[0.18em] text-gray-400 mb-2">Deep pattern work</p>
+          <p class="text-primary font-bold text-xl mb-4">$289</p>
+          <p class="text-sm text-gray-700 mb-4">
+            For when you want to understand your chart as a whole: your nature, cycles and repeating patterns.
+          </p>
+          <ul class="text-xs text-gray-600 space-y-2 mb-6">
+            <li><i class="fa fa-circle text-[6px] mr-2"></i>Full chart reading with key life themes</li>
+            <li><i class="fa fa-circle text-[6px] mr-2"></i>Timing highlights for the next few years</li>
+            <li><i class="fa fa-circle text-[6px] mr-2"></i>Space to ask 2–3 focus areas (love, work, money, health)</li>
+          </ul>
+          <a href="fortune-booking.html?package=full"
+             class="mt-auto inline-flex items-center justify-center bg-primary/10 hover:bg-primary text-primary hover:text-white px-4 py-2 rounded-full text-xs font-semibold transition-colors">
+            Book full chart breakdown
+            <i class="fa fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+      <p class="text-[11px] text-gray-500 text-center mt-4">
+        Prices are in USD. Payment is completed on the website first. After payment, you’ll send your details by WhatsApp so I can start.
+      </p>
+    </div>
+  </section>
+
+  <!-- 流程 -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-10 fade-in">
+        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">How it works</h2>
+        <p class="text-sm text-gray-600 max-w-2xl mx-auto">
+          No live call. No pressure to answer on the spot. You send details once, I sit with your chart properly, then you receive clear written replies.
+        </p>
+      </div>
+      <div class="max-w-4xl mx-auto grid md:grid-cols-4 gap-6 text-sm">
+        <div class="fade-in">
+          <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mb-3 text-xs font-bold">1</div>
+          <p class="font-semibold text-slate-900 mb-1">Choose your package</p>
+          <p class="text-gray-600 text-xs">Pick single, 3 questions or full chart breakdown based on how many things you need to ask.</p>
+        </div>
+        <div class="fade-in">
+          <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mb-3 text-xs font-bold">2</div>
+          <p class="font-semibold text-slate-900 mb-1">Pay on the website</p>
+          <p class="text-gray-600 text-xs">You’ll be taken to a secure payment link in USD. Once paid, you’ll come back to this site.</p>
+        </div>
+        <div class="fade-in">
+          <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mb-3 text-xs font-bold">3</div>
+          <p class="font-semibold text-slate-900 mb-1">Send details by WhatsApp</p>
+          <p class="text-gray-600 text-xs">On the booking page you’ll fill your birth details & questions. A button will open WhatsApp with everything ready to send.</p>
+        </div>
+        <div class="fade-in">
+          <div class="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center mb-3 text-xs font-bold">4</div>
+          <p class="font-semibold text-slate-900 mb-1">Receive your reading</p>
+          <p class="text-gray-600 text-xs">I read your chart and reply by WhatsApp within the stated timeframe. You can ask small clarifying questions after.</p>
+        </div>
+      </div>
+      <div class="max-w-3xl mx-auto mt-10 text-xs text-gray-500 space-y-2 fade-in">
+        <p><strong class="text-slate-800">Important:</strong> This is not a replacement for therapy, medical care or emergency services. I don’t answer health emergency or legal questions.</p>
+        <p>Readings are for adults (18+) only. If you’re in crisis, please contact a local professional or emergency line first.</p>
       </div>
     </div>
   </section>
 
-  <!-- 简短页脚 -->
-  <footer class="bg-dark text-white py-8">
+  <!-- 页脚简版 -->
+  <footer class="bg-dark text-white py-10">
     <div class="container mx-auto px-4 text-center text-xs text-gray-400">
-      <p>&copy; 2025 Your Brand. Destiny readings & Feng Shui consultations.</p>
-      <p class="disclaimer-text mt-2">
-        This work is for reflection and education only and does not replace medical, psychological, legal or financial advice.
+      <p>&copy; 2025 Your Brand. Destiny readings & Feng Shui consultations online.</p>
+      <p class="mt-2">
+        <a href="index.html#contact" class="text-secondary hover:text-secondary/90">Contact</a>
+        ·
+        <a href="index.html#testimonials" class="text-secondary hover:text-secondary/90">Testimonials</a>
       </p>
     </div>
   </footer>
 
-  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible translate-y-4 text-xs">
     <i class="fa fa-chevron-up"></i>
   </button>
 
