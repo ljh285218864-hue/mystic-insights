@@ -1,44 +1,18 @@
+ // Global front-end logic for navbar, mobile menu, back-to-top, fade-in animations and booking pages
 document.addEventListener('DOMContentLoaded', function () {
-  // ========== 1. 配置区：这里要改成你的真实信息 ==========
-  const CONFIG = {
-    // 把 1234567890 换成你的 WhatsApp 手机号（只数字，含国家区号，不带 +）
-    // 例如 +1 234 567 8901 写成 "12345678901"
-    whatsappNumber: '1234567890',
-
-    // 命理三个套餐的付款链接（用户在网页上付款）
-    fortunePayments: {
-      single: 'https://your-payment-link-single.com',  // 单个问题
-      three:  'https://your-payment-link-three.com',   // 三个问题（推荐）
-      full:   'https://your-payment-link-full.com'     // 完整解析
-    },
-
-    // 风水三个套餐的付款链接
-    fengshuiPayments: {
-      marriage: 'https://your-payment-link-marriage.com', // 婚姻卧室重置
-      health:   'https://your-payment-link-health.com',   // 健康能量
-      money:    'https://your-payment-link-money.com'     // 金钱事业
-    }
-  };
-  // ====================================================
-
   const navbar = document.getElementById('navbar');
   const backToTop = document.getElementById('back-to-top');
-  const mobileBtn = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const pageType = document.body.dataset.page || '';
 
-  // ========== 2. 导航栏滚动效果 + 回到顶部 ==========
+  // ====== 导航栏 & 回到顶部 ======
   function handleScroll() {
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-
     if (navbar) {
-      if (scrollY > 40) {
+      if (scrollY > 20) {
         navbar.classList.add('navbar-scrolled');
       } else {
         navbar.classList.remove('navbar-scrolled');
       }
     }
-
     if (backToTop) {
       if (scrollY > 300) {
         backToTop.classList.remove('opacity-0', 'invisible', 'translate-y-4');
@@ -51,13 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', handleScroll);
   handleScroll();
 
-  if (backToTop) {
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // ========== 3. 手机端菜单 ==========
+  const mobileBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
   if (mobileBtn && mobileMenu) {
     mobileBtn.addEventListener('click', () => {
       const isHidden = mobileMenu.classList.contains('invisible');
@@ -74,22 +43,49 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ========== 4. 首页 contact 表单基础校验 ==========
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ====== fade-in 动画：让带 .fade-in 的元素真正显示出来 ======
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if (fadeEls.length) {
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
+
+      fadeEls.forEach(el => observer.observe(el));
+    } else {
+      // 老浏览器：直接全部显示
+      fadeEls.forEach(el => el.classList.add('fade-in-visible'));
+    }
+  }
+
+  // ====== 首页 contact 表单：简单必填校验 ======
   const contactSection = document.getElementById('contact');
   if (contactSection) {
-    const form = contactSection.querySelector('form');
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        // 暂时阻止真正提交（还没有后端）
+    const contactForm = contactSection.querySelector('form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const nameInput = form.querySelector('#name');
-        const emailInput = form.querySelector('#email');
-        const messageInput = form.querySelector('#message');
+        const nameInput = contactForm.querySelector('#name');
+        const emailInput = contactForm.querySelector('#email');
+        const msgInput = contactForm.querySelector('#message');
 
         const name = nameInput ? nameInput.value.trim() : '';
         const email = emailInput ? emailInput.value.trim() : '';
-        const message = messageInput ? messageInput.value.trim() : '';
+        const message = msgInput ? msgInput.value.trim() : '';
 
         if (!name || !email || !message) {
           alert('Please fill in your name, email and a short message so I know how to help.');
@@ -102,12 +98,36 @@ document.addEventListener('DOMContentLoaded', function () {
           return;
         }
 
-        alert('Thank you for your message. This contact form is a preview – until online forms are fully set up, please also contact me directly by WhatsApp or email.');
+        alert('Thank you for your message. This form is a preview – until online forms are fully connected, please also contact me directly by WhatsApp or email.');
       });
     }
   }
 
-  // ========== 5. 命理预定页逻辑（fortune-booking.html） ==========
+  // ====== CONFIG：在这里改成你自己的 WhatsApp 和付款链接 ======
+  const CONFIG = {
+    // 把 1234567890 换成你的 WhatsApp 手机号（只数字，带国家代码，不要加 +）
+    // 例如：+1 234 567 8901  写成 "12345678901"
+    whatsappNumber: '1234567890',
+
+    // 命理三个套餐的付款链接（用户会在网页点击付款）
+    fortunePayments: {
+      single: 'https://your-payment-link-single.com',  // 单个问题
+      three:  'https://your-payment-link-three.com',   // 三个问题（推荐）
+      full:   'https://your-payment-link-full.com'     // 完整解析
+    },
+
+    // 风水三个套餐的付款链接
+    fengshuiPayments: {
+      marriage: 'https://your-payment-link-marriage.com',
+      health:   'https://your-payment-link-health.com',
+      money:    'https://your-payment-link-money.com'
+    }
+  };
+  // ====== CONFIG 结束 ======
+
+  const pageType = document.body.dataset.page || '';
+
+  // ----------------- 命理：预定页面逻辑 -----------------
   if (pageType === 'fortune-booking') {
     const cards = document.querySelectorAll('[data-package-card]');
     const hiddenInput = document.getElementById('selected-package');
@@ -124,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!hiddenInput) return;
       hiddenInput.value = key;
 
-      // 视觉选中效果
+      // 视觉选择效果
       cards.forEach(card => {
         const cKey = card.getAttribute('data-package-card');
         if (cKey === key) {
@@ -134,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // 不同问题区域显示
+      // 控制不同问题区域显示
       if (qSingle && qThree && qFull) {
         qSingle.classList.add('hidden');
         qThree.classList.add('hidden');
@@ -148,9 +168,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (nameEl && priceEl && descEl) {
         const selCard = document.querySelector('[data-package-card="' + key + '"]');
         if (selCard) {
-          const textName = selCard.querySelector('h3')?.textContent?.trim();
-          const textPrice = selCard.querySelector('p.text-primary')?.textContent?.trim();
-          const textDesc = selCard.querySelector('p.text-xs.text-gray-600')?.textContent?.trim();
+          const titleEl = selCard.querySelector('h3');
+          const priceTextEl = selCard.querySelector('p.text-primary');
+          const descTextEl = selCard.querySelector('p.text-xs.text-gray-600');
+          const textName = titleEl ? titleEl.textContent.trim() : '';
+          const textPrice = priceTextEl ? priceTextEl.textContent.trim() : '';
+          const textDesc = descTextEl ? descTextEl.textContent.trim() : '';
           if (textName) nameEl.textContent = textName;
           if (textPrice) priceEl.textContent = textPrice;
           if (textDesc) descEl.textContent = textDesc;
@@ -178,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // 根据 URL 参数 ?package=single/three/full 预选，默认 three
+    // 根据 URL 参数预选套餐，默认 three
     const urlParams = new URLSearchParams(window.location.search);
     const initial = urlParams.get('package') || 'three';
     selectPackage(initial);
@@ -199,23 +222,33 @@ document.addEventListener('DOMContentLoaded', function () {
       const qFullText = document.getElementById('fr-full-focus')?.value.trim() || '';
       const notes = document.getElementById('fr-notes')?.value.trim() || '';
 
-      // 基础必填校验（前端）
+      // ====== 基础必填校验 ======
       if (!name || !email || !wa) {
         alert('Please fill in your name, email and your own WhatsApp number.');
         return null;
       }
+
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!emailOk) {
+        alert('Please enter a valid email address.');
+        return null;
+      }
+
       if (!dob) {
         alert('Please add your date of birth so I can read your chart.');
         return null;
       }
+
       if (pkg === 'single' && !qSingleText) {
         alert('Please write your question.');
         return null;
       }
+
       if (pkg === 'three' && (!q1 || !q2 || !q3)) {
-        alert('Please write all 3 questions, even if short.');
+        alert('Please write all 3 questions, even if they are short.');
         return null;
       }
+
       if (pkg === 'full' && !qFullText) {
         alert('Please write the main areas you want the full breakdown to focus on.');
         return null;
@@ -267,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // ========== 6. 风水预定页逻辑（feng-shui-booking.html） ==========
+  // ----------------- 风水：预定页面逻辑 -----------------
   if (pageType === 'fengshui-booking') {
     const cards = document.querySelectorAll('[data-fs-package-card]');
     const hiddenInput = document.getElementById('fs-selected-package');
@@ -294,9 +327,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (nameEl && priceEl && descEl) {
         const selCard = document.querySelector('[data-fs-package-card="' + key + '"]');
         if (selCard) {
-          const textName = selCard.querySelector('h3')?.textContent?.trim();
-          const textPrice = selCard.querySelector('p.text-primary')?.textContent?.trim();
-          const textDesc = selCard.querySelector('p.text-xs.text-gray-600')?.textContent?.trim();
+          const titleEl = selCard.querySelector('h3');
+          const priceTextEl = selCard.querySelector('p.text-primary');
+          const descTextEl = selCard.querySelector('p.text-xs.text-gray-600');
+          const textName = titleEl ? titleEl.textContent.trim() : '';
+          const textPrice = priceTextEl ? priceTextEl.textContent.trim() : '';
+          const textDesc = descTextEl ? descTextEl.textContent.trim() : '';
           if (textName) nameEl.textContent = textName;
           if (textPrice) priceEl.textContent = textPrice;
           if (textDesc) descEl.textContent = textDesc;
@@ -350,10 +386,18 @@ document.addEventListener('DOMContentLoaded', function () {
       const layout = document.getElementById('fs-layout')?.value.trim() || '';
       const notes = document.getElementById('fs-notes')?.value.trim() || '';
 
+      // 基础必填校验
       if (!name || !email || !wa) {
         alert('Please fill in your name, email and your own WhatsApp number.');
         return null;
       }
+
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!emailOk) {
+        alert('Please enter a valid email address.');
+        return null;
+      }
+
       if (!issue) {
         alert('Please tell me briefly what feels wrong right now.');
         return null;
