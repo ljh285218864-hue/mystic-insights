@@ -46,37 +46,61 @@
   </header>
 
   <!-- 首屏 -->
-  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <!-- 背景大图：以后可以换成你自己的命理/风水风格照片 -->
-      <img src="https://picsum.photos/id/1050/1920/1080" alt="Mystical background" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-dark/60"></div>
-    </div>
-    <div class="container mx-auto px-4 z-10 text-center">
+ <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <!-- 背景大图：以后可以换成你自己的命理/风水风格照片 -->
+    <img src="https://picsum.photos/id/1050/1920/1080" alt="Mystical background" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-dark/60"></div>
+  </div>
+
+  <div class="container mx-auto px-4 z-10">
+    <div class="max-w-3xl mx-auto text-center">
       <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white leading-tight mb-6 fade-in">
         Clear <span class="text-secondary">Destiny Reading</span>, Practical <span class="text-secondary">Feng Shui</span>
       </h1>
-      <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 max-w-2xl mx-auto mb-10 fade-in">
+      <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/90 max-w-2xl mx-auto mb-8 fade-in">
         Two focused services—destiny reading and feng shui consultation—plus a small shop of spiritual objects to support the energy of your life and home.
       </p>
+
       <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
         <!-- 直接跳命理服务页 -->
-        <a href="fortune.html" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all font-medium text-lg">
+        <a href="fortune.html"
+           class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full transition-all font-medium text-lg">
           View Destiny Reading
         </a>
         <!-- 跳商城页 -->
-        <a href="shop.html" class="bg-transparent border-2 border-white hover:border-secondary hover:text-secondary text-white px-8 py-3 rounded-full transition-all font-medium text-lg">
+        <a href="shop.html"
+           class="bg-transparent border-2 border-white hover:border-secondary hover:text-secondary text-white px-8 py-3 rounded-full transition-all font-medium text-lg">
           Browse Shop
         </a>
       </div>
+
+      <!-- 新增：信任感 / 经验条 -->
+      <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-[11px] text-white/80 fade-in">
+        <div class="inline-flex items-center gap-2">
+          <i class="fa fa-check-circle text-secondary"></i>
+          <span>30+ years of Chinese destiny & Feng Shui practice</span>
+        </div>
+        <div class="inline-flex items-center gap-2">
+          <i class="fa fa-whatsapp text-secondary"></i>
+          <span>Written replies in English by WhatsApp — no video calls</span>
+        </div>
+        <div class="inline-flex items-center gap-2">
+          <i class="fa fa-globe text-secondary"></i>
+          <span>Working with clients in the U.S. and worldwide</span>
+        </div>
+      </div>
     </div>
-    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-      <a href="#services" class="flex flex-col items-center">
-        <span class="mb-2 text-sm">Scroll Down</span>
-        <i class="fa fa-chevron-down"></i>
-      </a>
-    </div>
-  </section>
+  </div>
+
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+    <a href="#services" class="flex flex-col items-center">
+      <span class="mb-2 text-sm">Scroll Down</span>
+      <i class="fa fa-chevron-down"></i>
+    </a>
+  </div>
+</section>
+
 
   <!-- 服务概述：三个板块：算命 / 风水 / 商城 -->
   <section id="services" class="py-20 bg-white">
