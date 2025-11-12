@@ -1,106 +1,359 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book Destiny Reading | Your Brand</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Destiny Reading | Your Brand</title>
+  <meta name="description" content="Book a Chinese destiny reading. Choose single question, 3-question or full chart breakdown, fill in your birth data and questions, pay in USD and receive your written answers on WhatsApp.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="font-inter bg-gray-50">
+<body class="font-inter text-dark bg-light antialiased" data-page="fortune-booking">
 
-<header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
-  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-    <a href="index.html#home" class="flex items-center space-x-2">
-      <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center"><i class="fa fa-moon-o text-white text-xl"></i></div>
-      <span class="brand-text text-2xl font-bold">Your Brand</span>
-    </a>
-    <nav class="hidden md:flex items-center space-x-8">
-      <a href="fortune.html" class="nav-link font-medium">Destiny Reading</a>
-      <a href="feng-shui.html" class="nav-link font-medium">Feng Shui</a>
-      <a href="shop.html" class="nav-link font-medium">Shop</a>
-      <a href="index.html#contact" class="nav-cta">Contact</a>
-    </nav>
-    <button id="mobile-menu-button" class="md:hidden text-white text-2xl"><i class="fa fa-bars"></i></button>
-  </div>
-</header>
+  <header id="navbar" class="fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html#home" class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+          <i class="fa fa-moon-o text-white text-xl"></i>
+        </div>
+        <span class="brand-text text-2xl font-bold">Your Brand</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="fortune.html" class="nav-link nav-link-active">Destiny Reading</a>
+        <a href="feng-shui.html" class="nav-link">Feng Shui</a>
+        <a href="shop.html" class="nav-link">Shop</a>
+        <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+        <a href="index.html#contact" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 rounded-full transition-all font-medium text-sm">
+          Contact
+        </a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden text-dark text-2xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
 
-<main id="fortune-booking" class="pt-28 pb-16">
-  <div class="max-w-3xl mx-auto px-4">
-    <h1 class="text-2xl md:text-3xl font-bold mb-2">Destiny reading – booking</h1>
-    <p class="text-gray-600 mb-8">Step 1: Fill your details. Step 2: Questions. Step 3: Pay. Step 4: Tap WhatsApp to send everything.</p>
+    <div id="mobile-menu"
+         class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible">
+      <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <a href="fortune.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Destiny Reading</a>
+        <a href="feng-shui.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Feng Shui</a>
+        <a href="shop.html" class="text-dark hover:text-primary transition-colors font-medium py-2">Shop</a>
+        <a href="index.html#testimonials" class="text-dark hover:text-primary transition-colors font-medium py-2">Testimonials</a>
+        <a href="index.html#contact"
+           class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center">
+          Contact
+        </a>
+      </div>
+    </div>
+  </header>
 
-    <!-- Step 1 基本信息 -->
-    <div class="card mb-6">
-      <h2 class="card-title">Step 1 · Your details</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div>
-          <label class="form-label">Full name</label>
-          <input id="dr_name" type="text" class="form-input" placeholder="Your full name">
+  <section class="pt-28 pb-10 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl fade-in">
+        <h1 class="text-[clamp(1.9rem,3.5vw,2.6rem)] font-bold mb-3 text-shadow-soft">
+          Book your destiny reading
+        </h1>
+        <p class="text-sm md:text-base text-gray-200 mb-2">
+          4 clear steps: choose your package, tell me what’s going on, pay on the website, then add my WhatsApp for your answers.
+        </p>
+        <p class="text-xs text-gray-300">
+          If you’re not sure which package is right for you, the 3-question reading is usually the best start.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-8 fade-in">
+        <h2 class="text-xl font-bold text-dark mb-2">Step 1 · Choose your package</h2>
+        <p class="text-gray-600 text-sm max-w-2xl mx-auto">
+          Click on a card below. If you came here from a button, one package is already selected for you.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl shadow-md p-5 cursor-pointer card-hover fade-in"
+             data-package-card="single">
+          <h3 class="text-base font-bold mb-1">Single Question Reading</h3>
+          <p class="text-primary font-semibold text-lg mb-1">$XX</p>
+          <p class="text-xs text-gray-600 mb-3">
+            One focused question about love, work, money, health, moving or another topic.
+          </p>
+          <ul class="text-xs text-gray-600 space-y-1 mb-3">
+            <li><i class="fa fa-check text-primary mr-1"></i> 1 written answer (2–4 short paragraphs)</li>
+            <li><i class="fa fa-check text-primary mr-1"></i> Short timing & pattern notes</li>
+            <li><i class="fa fa-check text-primary mr-1"></i> 1 clarification question if needed</li>
+          </ul>
+          <button class="mt-1 text-[11px] text-primary underline" data-select-btn>
+            Select this package
+          </button>
         </div>
-        <div>
-          <label class="form-label">Email</label>
-          <input id="dr_email" type="email" class="form-input" placeholder="you@example.com">
+
+        <div class="bg-white rounded-2xl shadow-md p-5 cursor-pointer card-hover fade-in"
+             data-package-card="three">
+          <h3 class="text-base font-bold mb-1">3 Question Reading</h3>
+          <p class="text-primary font-semibold text-lg mb-1">$XX</p>
+          <p class="text-xs text-gray-600 mb-3">
+            Three connected questions, usually about relationships, work and timing for real change.
+          </p>
+          <ul class="text-xs text-gray-600 space-y-1 mb-3">
+            <li><i class="fa fa-check text-primary mr-1"></i> Answers to 3 specific questions</li>
+            <li><i class="fa fa-check text-primary mr-1"></i> Overview of current life cycle (5–10 years)</li>
+            <li><i class="fa fa-check text-primary mr-1"></i> Up to 2–3 clarifications in WhatsApp</li>
+          </ul>
+          <button class="mt-1 text-[11px] text-primary underline" data-select-btn>
+            Select this package (recommended)
+          </button>
         </div>
-        <div>
-          <label class="form-label">Date of birth</label>
-          <input id="dr_dob" type="date" class="form-input">
-        </div>
-        <div>
-          <label class="form-label">Gender (optional)</label>
-          <select id="dr_gender" class="form-input">
-            <option value="">Prefer not to say</option>
-            <option>Female</option>
-            <option>Male</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label class="form-label">Birth time (if known)</label>
-          <input id="dr_time" type="text" class="form-input" placeholder="e.g. 14:20, unknown, around 3pm">
-        </div>
-        <div>
-          <label class="form-label">Birth city / country</label>
-          <input id="dr_city" type="text" class="form-input" placeholder="City, Country">
-        </div>
-        <div class="md:col-span-2">
-          <label class="form-label">Your time zone</label>
-          <input id="dr_tz" type="text" class="form-input" placeholder="e.g. PST / New York / UTC-5">
+
+        <div class="bg-white rounded-2xl shadow-md p-5 cursor-pointer card-hover fade-in"
+             data-package-card="full">
+          <h3 class="text-base font-bold mb-1">Full Chart Breakdown</h3>
+          <p class="text-primary font-semibold text-lg mb-1">$XX</p>
+          <p class="text-xs text-gray-600 mb-3">
+            Complete written overview of your chart plus answers to your main focus area.
+          </p>
+          <ul class="text-xs text-gray-600 space-y-1 mb-3">
+            <li><i class="fa fa-check text-primary mr-1"></i> Nature, strengths, blind spots, life chapters</li>
+            <li><i class="fa fa-check text-primary mr-1"></i> Key years & timing for love, work and money</li>
+            <li><i class="fa fa-check text-primary mr-1"></i> Space for extra reflections & follow-up</li>
+          </ul>
+          <button class="mt-1 text-[11px] text-primary underline" data-select-btn>
+            Select this package
+          </button>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Step 2 问题，根据套餐自动显示数量 -->
-    <div class="card mb-6">
-      <h2 class="card-title">Step 2 · Your question(s)</h2>
-      <p class="text-xs text-gray-500 mb-3" id="dr_pkg_hint"></p>
-      <div id="dr_questions" class="space-y-3"></div>
-    </div>
+  <section id="booking-form-section" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto grid lg:grid-cols-3 gap-8">
+        <aside class="lg:col-span-1 bg-gray-50 rounded-2xl p-6 shadow-sm fade-in">
+          <h3 class="text-sm font-semibold text-gray-700 mb-3">Selected package</h3>
+          <p id="selected-package-name" class="text-base font-bold mb-1">3 Question Reading</p>
+          <p id="selected-package-price" class="text-primary font-semibold mb-2">$XX</p>
+          <p id="selected-package-desc" class="text-xs text-gray-600 mb-4">
+            Three connected questions, usually about relationships, work and timing for real change.
+          </p>
+          <div class="border-t border-gray-200 pt-4 mt-2">
+            <p class="text-[11px] text-gray-500 mb-1">
+              You’ll receive your reading in written English via WhatsApp. Typical delivery: about 1 hour during working hours.
+            </p>
+            <p class="text-[11px] text-gray-500">
+              After payment, you’ll add my WhatsApp and your information will be sent in a pre-filled message.
+            </p>
+          </div>
+        </aside>
 
-    <!-- Step 3 支付（占位） -->
-    <div class="card mb-6">
-      <h2 class="card-title">Step 3 · Pay now for your reading</h2>
-      <div class="grid md:grid-cols-3 gap-4 text-sm">
-        <a id="pay_single" href="#" class="pay-btn hidden">$79 · Single</a>
-        <a id="pay_three" href="#" class="pay-btn hidden">$149 · 3 questions</a>
-        <a id="pay_full" href="#" class="pay-btn hidden">$289 · Full breakdown</a>
+        <div class="lg:col-span-2 bg-gray-50 rounded-2xl p-6 shadow-sm fade-in">
+          <form onsubmit="return false;">
+            <input type="hidden" id="selected-package" name="package" value="three">
+
+            <h2 class="text-lg font-bold mb-4">Step 2 · Tell me about you and your question(s)</h2>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">Your full name</label>
+                <input id="fr-name" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">Email address</label>
+                <input id="fr-email" type="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">Your WhatsApp number (with country code)</label>
+                <input id="fr-whatsapp" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="+1 ... / +44 ... / +86 ...">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">Time zone / city</label>
+                <input id="fr-timezone" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. New York, Pacific Time">
+              </div>
+            </div>
+
+            <h3 class="text-sm font-semibold text-gray-800 mt-4 mb-2">Birth data (for your chart)</h3>
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">Date of birth</label>
+                <input id="fr-dob" type="date" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">Time of birth (if known)</label>
+                <input id="fr-birthtime" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Exact time or “around 8am”">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-gray-700 mb-1">City / country of birth</label>
+                <input id="fr-birthplace" type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+              </div>
+            </div>
+
+            <div id="question-group-single" class="mb-4 hidden">
+              <h3 class="text-sm font-semibold text-gray-800 mb-1">Your one question</h3>
+              <p class="text-[11px] text-gray-500 mb-2">
+                Be as honest and specific as you can. You can write it like you would message a friend:
+                “I want to know if it’s better to stay in this relationship or leave in the next 1–2 years.”
+              </p>
+              <textarea id="fr-single-q" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+            </div>
+
+            <div id="question-group-three" class="mb-4">
+              <h3 class="text-sm font-semibold text-gray-800 mb-1">Your 3 questions</h3>
+              <p class="text-[11px] text-gray-500 mb-3">
+                You can focus on one area or mix: love, work, money, health, moving, children. Try to keep each question clear and simple.
+              </p>
+              <label class="block text-xs font-semibold text-gray-700 mb-1">Question 1</label>
+              <textarea id="fr-q1" rows="3" class="w-full mb-3 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="The main thing on your mind right now."></textarea>
+
+              <label class="block text-xs font-semibold text-gray-700 mb-1">Question 2</label>
+              <textarea id="fr-q2" rows="3" class="w-full mb-3 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="A second angle: for example timing, another person, or a related decision."></textarea>
+
+              <label class="block text-xs font-semibold text-gray-700 mb-1">Question 3</label>
+              <textarea id="fr-q3" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Anything else you really want to understand."></textarea>
+            </div>
+
+            <div id="question-group-full" class="mb-4 hidden">
+              <h3 class="text-sm font-semibold text-gray-800 mb-1">Your main focus areas</h3>
+              <p class="text-[11px] text-gray-500 mb-2">
+                Instead of single questions, tell me the 2–3 areas you want the breakdown to focus on, for example:
+                “love and marriage”, “career path”, “money stability”, “health and stress”.
+              </p>
+              <textarea id="fr-full-focus" rows="5" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Example: I want to understand my love pattern and whether marriage looks supported in the next 5–10 years, plus what kind of work is better for me."></textarea>
+            </div>
+
+            <div class="mb-4">
+              <label class="block text-xs font-semibold text-gray-700 mb-1">Anything else I should know?</label>
+              <textarea id="fr-notes" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Optional. You can mention if you had previous readings, or anything sensitive I should be gentle with."></textarea>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-4 mb-4">
+              <h3 class="text-xs font-semibold text-gray-800 mb-1">Step 3 & 4 · Pay, then add WhatsApp</h3>
+              <p class="text-[11px] text-gray-600 mb-1">
+                First, pay for your selected package on the payment page. Then, click the WhatsApp button – your details and questions
+                will be pre-filled in a message so you don’t need to type everything again.
+              </p>
+              <p class="text-[11px] text-gray-600">
+                I start preparing your reading after payment and WhatsApp message are both received.
+              </p>
+            </div>
+
+            <div class="space-y-3">
+              <a id="fortune-pay-btn"
+                 href="https://your-payment-link-three.com"
+                 target="_blank"
+                 class="w-full block text-center bg-primary hover:bg-primary/90 text-white py-3 rounded-lg transition-colors font-medium text-sm">
+                Step 3 · Pay now for your reading
+              </a>
+
+              <button type="button" id="fortune-wa-btn"
+                      class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg transition-colors font-medium text-sm inline-flex items-center justify-center gap-2">
+                <i class="fa fa-whatsapp"></i>
+                Step 4 · After payment, send everything by WhatsApp
+              </button>
+
+              <p class="text-[11px] text-gray-500">
+                When you tap WhatsApp, a draft message with your info and questions will open. You can review it and then tap send.
+              </p>
+            </div>
+
+            <p class="text-[11px] text-gray-500 mt-3">
+              This reading is for reflection and education only and does not replace medical, psychological, legal or financial advice.
+            </p>
+          </form>
+        </div>
       </div>
-      <p class="text-xs text-gray-500 mt-3">After payment, come back here and tap the WhatsApp button below.</p>
     </div>
+  </section>
+  <!-- FAQ: Destiny Reading -->
+  <section id="faq" class="py-16 bg-gray-50">
 
-    <!-- Step 4 WhatsApp -->
-    <a id="dr_whatsapp" href="#" target="_blank" class="wa-btn block"> <i class="fa fa-whatsapp mr-2"></i>Step 4 · After payment, send everything by WhatsApp</a>
-    <p class="text-[11px] text-gray-500 mt-3">A draft message opens with your details/questions. Review and tap send.</p>
-  </div>
-</main>
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-6 text-center fade-in">
+          Destiny reading – common questions
+        </h2>
+        <div class="space-y-4 text-sm fade-in">
+          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
+            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
+              Is this a live call or written only?
+            </summary>
+            <p class="mt-2 text-gray-600 text-xs">
+              All readings are written replies in English, usually by WhatsApp. There is no live phone or video call,
+              so you can read everything in your own time and re-read later.
+            </p>
+          </details>
 
-<footer class="bg-slate-950 text-white py-10">
-  <div class="max-w-6xl mx-auto px-4 text-center text-sm text-gray-400">
-    &copy; 2025 Your Brand. All rights reserved.
-  </div>
-</footer>
+          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
+            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
+              What kind of questions do you not answer?
+            </summary>
+            <p class="mt-2 text-gray-600 text-xs">
+              I don’t predict exact death dates, diagnose illness, or give legal or lottery predictions.
+              I also don’t replace medical, psychological, legal or financial professionals.
+            </p>
+          </details>
 
-<script src="script.js"></script>
+          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
+            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
+              How long does it take to receive my reading?
+            </summary>
+            <p class="mt-2 text-gray-600 text-xs">
+              Most readings are delivered within 24–48 hours after payment and sending your full details on WhatsApp,
+              excluding weekends and public holidays. If there is any expected delay, I will let you know by message.
+            </p>
+          </details>
+
+          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
+            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
+              What if I don’t know my exact birth time?
+            </summary>
+            <p class="mt-2 text-gray-600 text-xs">
+              Exact birth time is very helpful, but many people don’t know it. If you only know a rough time of day,
+              you can still share that and we will work with what is available.
+              If the time is completely unknown, I will focus more on patterns and timing that are less sensitive to the exact minute.
+            </p>
+          </details>
+
+          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
+            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
+              Can I get a refund if I change my mind?
+            </summary>
+            <p class="mt-2 text-gray-600 text-xs">
+              Because this is a custom, one-on-one service, refunds are generally not offered once I have started
+              working on your chart. If you need to change or cancel, please message me on WhatsApp as soon as
+              possible after payment, and we will see what is possible in your situation.
+            </p>
+          </details>
+
+          <details class="bg-white rounded-xl shadow-sm border border-gray-100 px-4 py-3">
+            <summary class="font-semibold text-slate-900 cursor-pointer text-sm">
+              Will you tell me only “good things” or also difficult timing?
+            </summary>
+            <p class="mt-2 text-gray-600 text-xs">
+              I try to be honest and grounded. If a season is challenging, I will say so and give suggestions on how to
+              move through it more safely. If the timing is supportive, I will show you how to use that window.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white py-6">
+    <div class="container mx-auto px-4 text-center text-[11px] text-gray-400">
+      <p>&copy; 2025 Your Brand. Destiny readings & Feng Shui.</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 invisible translate-y-4">
+    <i class="fa fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>
