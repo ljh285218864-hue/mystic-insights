@@ -20,33 +20,39 @@
     rel="stylesheet"
   />
 
-  <!-- 你自己的样式（确保路径正确，如果在 assets/css 里就改成对应路径） -->
+  <!-- 你自己的样式（注意：这里假设 style.css 在根目录，如果你在 assets/css 下，请改路径） -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="font-inter text-dark bg-light antialiased">
-  <!-- 导航栏 -->
-  <header
-    id="navbar"
-    class="fixed w-full z-50 transition-all duration-300 bg-transparent"
-  >
-    <div
-      class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
-    >
+  <!-- 导航栏（主页导航：算命 / 风水 / 商城跳独立页面） -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <!-- 左侧 logo：回到主页顶部 -->
       <a href="#home" class="flex items-center space-x-2">
-        <div
-          class="w-10 h-10 rounded-full bg-primary flex items-center justify-center"
-        >
+        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
           <i class="fa fa-moon-o text-white text-xl"></i>
         </div>
         <span class="brand-text text-2xl font-bold">Your Brand</span>
       </a>
 
-      <!-- 桌面导航（已删除 Testimonials 按钮） -->
+      <!-- 桌面导航 -->
       <nav class="hidden md:flex items-center space-x-8">
-        <a href="#destiny" class="nav-link font-medium">Destiny Reading</a>
-        <a href="#feng-shui" class="nav-link font-medium">Feng Shui</a>
-        <a href="#shop" class="nav-link font-medium">Shop</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+        <!-- 算命页面 -->
+        <a href="fortune.html" class="nav-link font-medium">
+          Destiny Reading
+        </a>
+        <!-- 风水页面 -->
+        <a href="feng-shui.html" class="nav-link font-medium">
+          Feng Shui
+        </a>
+        <!-- 商城页面 -->
+        <a href="shop.html" class="nav-link font-medium">
+          Shop
+        </a>
+        <!-- 联系：跳到本页底部 contact 区 -->
+        <a href="#contact" class="nav-cta">
+          Contact
+        </a>
       </nav>
 
       <!-- 手机菜单按钮 -->
@@ -55,34 +61,36 @@
       </button>
     </div>
 
-    <!-- 手机菜单（已删除 Testimonials 按钮） -->
+    <!-- 手机导航 -->
     <div
       id="mobile-menu"
       class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 transition-all duration-300 invisible"
     >
-      <div
-        class="max-w-6xl mx-auto px-4 py-4 flex flex-col space-y-4 text-sm"
-      >
+      <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col space-y-4 text-sm">
         <a
-          href="#destiny"
+          href="fortune.html"
           class="text-dark hover:text-primary transition-colors font-medium py-2"
-          >Destiny Reading</a
         >
+          Destiny Reading
+        </a>
         <a
-          href="#feng-shui"
+          href="feng-shui.html"
           class="text-dark hover:text-primary transition-colors font-medium py-2"
-          >Feng Shui</a
         >
+          Feng Shui
+        </a>
         <a
-          href="#shop"
+          href="shop.html"
           class="text-dark hover:text-primary transition-colors font-medium py-2"
-          >Shop</a
         >
+          Shop
+        </a>
         <a
           href="#contact"
           class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full transition-all font-medium text-center"
-          >Contact</a
         >
+          Contact
+        </a>
       </div>
     </div>
   </header>
@@ -288,7 +296,7 @@
     </div>
   </section>
 
-  <!-- 首页 Destiny 预览 -->
+  <!-- 首页 Destiny 预览（保留原来结构） -->
   <section id="destiny" class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex flex-col lg:flex-row items-center gap-12">
@@ -487,7 +495,7 @@
     </div>
   </section>
 
-  <!-- 首页 Shop 预览（保持简单版，你可按需改商品） -->
+  <!-- 首页 Shop 预览 -->
   <section id="shop" class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-16 fade-in">
@@ -765,7 +773,7 @@
     </div>
   </section>
 
-  <!-- Testimonials 区块（内容保留，没有导航按钮了） -->
+  <!-- Testimonials 滚动评价（没有导航按钮了，只作为内容存在） -->
   <section id="testimonials" class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="max-w-4xl mx-auto text-center mb-8 fade-in">
@@ -782,114 +790,59 @@
         <div class="testimonial-marquee">
           <div class="testimonial-pill">
             <span><i class="fa fa-user-circle-o mr-1"></i> Destiny reading</span>
-            <span
-              >"She didn’t sugarcoat, but I finally felt calm about my
-              timing."</span
-            >
+            <span>"She didn’t sugarcoat, but I finally felt calm about my timing."</span>
           </div>
           <div class="testimonial-pill">
-            <span
-              ><i class="fa fa-user-circle-o mr-1"></i> Feng Shui – home</span
-            >
-            <span
-              >"After the bedroom changes, we stopped feeling like strangers in
-              the same bed."</span
-            >
+            <span><i class="fa fa-user-circle-o mr-1"></i> Feng Shui – home</span>
+            <span>"After the bedroom changes, we stopped feeling like strangers in the same bed."</span>
           </div>
           <div class="testimonial-pill">
-            <span
-              ><i class="fa fa-user-circle-o mr-1"></i> 3-question
-              reading</span
-            >
-            <span
-              >"All three questions were connected in a way I never saw
-              before."</span
-            >
+            <span><i class="fa fa-user-circle-o mr-1"></i> 3-question reading</span>
+            <span>"All three questions were connected in a way I never saw before."</span>
           </div>
           <div class="testimonial-pill">
-            <span
-              ><i class="fa fa-user-circle-o mr-1"></i> Money & career</span
-            >
-            <span
-              >"No magic promises, but a clear map for the next few
-              years."</span
-            >
+            <span><i class="fa fa-user-circle-o mr-1"></i> Money & career</span>
+            <span>"No magic promises, but a clear map for the next few years."</span>
           </div>
           <div class="testimonial-pill">
-            <span
-              ><i class="fa fa-user-circle-o mr-1"></i> Health & energy</span
-            >
-            <span
-              >"My house looks the same, but somehow my body finally rests
-              here."</span
-            >
+            <span><i class="fa fa-user-circle-o mr-1"></i> Health & energy</span>
+            <span>"My house looks the same, but somehow my body finally rests here."</span>
           </div>
           <div class="testimonial-pill">
             <span><i class="fa fa-user-circle-o mr-1"></i> Shop</span>
-            <span
-              >"The crystals and burner feel intentional, not random 'lucky'
-              stuff."</span
-            >
+            <span>"The crystals and burner feel intentional, not random 'lucky' stuff."</span>
           </div>
 
           <!-- 第二轮，重复一遍保证无缝滚动 -->
           <div class="testimonial-pill">
             <span><i class="fa fa-user-circle-o mr-1"></i> Destiny reading</span>
-            <span
-              >"She didn’t sugarcoat, but I finally felt calm about my
-              timing."</span
-            >
+            <span>"She didn’t sugarcoat, but I finally felt calm about my timing."</span>
           </div>
           <div class="testimonial-pill">
-            <span
-              ><i class="fa fa-user-circle-o mr-1"></i> Feng Shui – home</span
-            >
-            <span
-              >"After the bedroom changes, we stopped feeling like strangers in
-              the same bed."</span
-            >
+            <span><i class="fa fa-user-circle-o mr-1"></i> Feng Shui – home</span>
+            <span>"After the bedroom changes, we stopped feeling like strangers in the same bed."</span>
           </div>
           <div class="testimonial-pill">
-            <span
-              ><i class="fa fa-user-circle-o mr-1"></i> 3-question
-              reading</span
-            >
-            <span
-              >"All three questions were connected in a way I never saw
-              before."</span
-            >
+            <span><i class="fa fa-user-circle-o mr-1"></i> 3-question reading</span>
+            <span>"All three questions were connected in a way I never saw before."</span>
           </div>
           <div class="testimonial-pill">
-            <span
-              ><i class="fa fa-user-circle-o mr-1"></i> Money & career</span
-            >
-            <span
-              >"No magic promises, but a clear map for the next few
-              years."</span
-            >
+            <span><i class="fa fa-user-circle-o mr-1"></i> Money & career</span>
+            <span>"No magic promises, but a clear map for the next few years."</span>
           </div>
           <div class="testimonial-pill">
-            <span
-              ><i class="fa fa-user-circle-o mr-1"></i> Health & energy</span
-            >
-            <span
-              >"My house looks the same, but somehow my body finally rests
-              here."</span
-            >
+            <span><i class="fa fa-user-circle-o mr-1"></i> Health & energy</span>
+            <span>"My house looks the same, but somehow my body finally rests here."</span>
           </div>
           <div class="testimonial-pill">
             <span><i class="fa fa-user-circle-o mr-1"></i> Shop</span>
-            <span
-              >"The crystals and burner feel intentional, not random 'lucky'
-              stuff."</span
-            >
+            <span>"The crystals and burner feel intentional, not random 'lucky' stuff."</span>
           </div>
         </div>
       </div>
 
       <p class="text-[11px] text-gray-500 text-center mt-3">
-        The line moves automatically. Hover or tap to pause if you want to read
-        something slowly.
+        The line moves automatically. Hover or tap to pause if you want to read something slowly.
       </p>
     </div>
   </section>
@@ -1000,9 +953,9 @@
         <div>
           <h3 class="font-bold text-base mb-4">Services</h3>
           <ul class="space-y-2">
-            <li><a href="#destiny" class="text-gray-400 hover:text-secondary transition-colors">Destiny Reading</a></li>
-            <li><a href="#feng-shui" class="text-gray-400 hover:text-secondary transition-colors">Feng Shui Consultation</a></li>
-            <li><a href="#shop" class="text-gray-400 hover:text-secondary transition-colors">Spiritual Shop</a></li>
+            <li><a href="fortune.html" class="text-gray-400 hover:text-secondary transition-colors">Destiny Reading</a></li>
+            <li><a href="feng-shui.html" class="text-gray-400 hover:text-secondary transition-colors">Feng Shui Consultation</a></li>
+            <li><a href="shop.html" class="text-gray-400 hover:text-secondary transition-colors">Spiritual Shop</a></li>
           </ul>
         </div>
         <div>
@@ -1049,7 +1002,7 @@
     <i class="fa fa-chevron-up"></i>
   </button>
 
-  <!-- 你的脚本（确保路径正确） -->
+  <!-- 你的脚本（注意路径。如果你的脚本在 assets/js 下就改成 assets/js/script.js） -->
   <script src="script.js"></script>
 </body>
 </html>
